@@ -1,12 +1,17 @@
 import React from 'react';
+import CssBaseline from '@material-ui/core/CssBaseline';
+
+import NavBar from './Components/NavBar/NavBar';
+
 import './App.scss';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      foo
+      <CssBaseline />
+      <NavBar />
     </div>
   );
-}
+};
 
 export default App;

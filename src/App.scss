@@ -1,6 +1,10 @@
-@import 'styles/colors.scss';
+@import 'Styles/colors.scss';
 
 body {
-  background-color: $primary-bg-color;
-  color: $primary-font-color;
+  background-color: $primary-bg-color !important;
+  color: $primary-font-color !important;
+}
+
+.App {
+  margin: 25px;
 }

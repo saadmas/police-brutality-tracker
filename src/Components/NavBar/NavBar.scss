@@ -1,0 +1,36 @@
+@import '../../Styles/colors.scss';
+
+.NavBar {
+  display: flex;
+  font-size: 20px;
+}
+
+.AppTitle {
+  font-size: 25px;
+  font-family: 'Krona One', sans-serif;
+  margin-right: 10px;
+}
+
+.NavLink {
+  text-decoration: none;
+  color: $primary-font-color;
+
+  &:hover {
+    opacity: 0.6;
+  }  
+}
+
+.NavLinkText {
+  &:hover {
+    border-bottom: 1px solid $primary-font-color;
+  }  
+}
+
+.NavItem {
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.NavIcon {
+  margin-left: 3px;
+}
