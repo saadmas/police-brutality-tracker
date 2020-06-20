@@ -22,7 +22,6 @@ const App = () => {
     try {
       let data = await fetch(dataUrl);
       data = await data.json();
-      console.log(data.data); ///
       setIncidentData(data.data);
     } catch (error) {
       setIsDataFetchError(true);
