@@ -34,3 +34,14 @@
 .NavIcon {
   margin-left: 3px;
 }
+
+@media screen and (max-width: 600px) {
+  .NavBar {
+    font-size: 15px;
+  }
+
+  .AppTitle {
+    font-size: 15px;
+    margin-right: 2px;
+  }
+}

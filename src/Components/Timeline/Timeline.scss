@@ -1,4 +1,4 @@
-.timeline {
+.Timeline {
   li {
     list-style-type: none;
     position: relative;
@@ -56,4 +56,42 @@
       }
     }
   }  
+}
+
+// Medium
+@media screen and (max-width: 900px) {
+  .Timeline {
+    ul li {
+      div {
+        width: 250px;
+      }
+
+      &:nth-child(even) div {
+        left: -289px;
+      }
+    }
+  }
+}
+
+// Small
+@media screen and (max-width: 600px) {
+  .Timeline {
+    ul li {
+      margin-left: 20px;
+
+      div {
+        width: calc(100vw - 200px);
+      }
+
+      &:nth-child(even) div {
+        left: 45px;
+
+        &::before {
+          left: -15px;
+          border-width: 8px 16px 8px 0;
+          border-color: transparent #F45B69 transparent transparent;
+        }
+      }
+    }
+  }
 }
