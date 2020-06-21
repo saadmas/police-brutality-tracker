@@ -64,7 +64,7 @@ const IncidentCard = ({ incident }) => {
     return (
       <InstagramEmbed
         url={instaLink}
-        maxWidth={500}
+        maxWidth={520}
         hideCaption={false}
       />
     );
@@ -74,7 +74,6 @@ const IncidentCard = ({ incident }) => {
     const qsParts = qs.split('&');
     const idPart = qsParts.find(part => part[0] === 'v');
     const youtubeId = idPart.slice(2);
-    console.log(youtubeId);
     return youtubeId;
   }
 
@@ -85,7 +84,7 @@ const IncidentCard = ({ incident }) => {
       <YouTube
         videoId={videoId}
         opts={{
-          width: '375'
+          width: '510'
         }}
       />
     );
