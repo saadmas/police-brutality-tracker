@@ -13,17 +13,29 @@ const IncidentCard = ({ incident }) => {
     return location;
   };
 
+  const getDomain = (url) => {
+    const host = new URL(url).hostname;
+    const hostParts = host.split('.');
+    const domain = hostParts.length > 2 ? hostParts[1] : hostParts[0];
+    return domain;
+  };
+
+  const getAnchorTag = (link, idx, arr) => {
+    const isLastTag = idx + 1 === arr.length;
+    const domain = getDomain(link);
+    const linkName = isLastTag ? domain : `${domain}, `;
+    return (
+      <a href={link} className="SourceLink">
+        {linkName}
+      </a>
+    );
+  };
+
   const getSources = () => {
     const { links } = incident;
-    const sources = links.map(link => (
-      <iframe
-        source={link}
-        sandbox="allow-same-origin"
-      // width={'100px'}
-      // height={'100px'}
-      />
-    ));
-    return [];
+    const linksWithoutTweets = links.filter(link => !link.includes('twitter'));
+    const sources = linksWithoutTweets.map((link, idx, arr) => getAnchorTag(link, idx, arr));
+    return sources; ///
   };
 
   const getClassNames = () => {
@@ -34,6 +46,21 @@ const IncidentCard = ({ incident }) => {
     }
 
     return classNames.join(' ');
+  };
+
+  const getTweet = () => {
+    const { links } = incident;
+    const tweetLink = links.find(link => link.includes('twitter'));
+
+    if (!tweetLink) {
+      return null;
+    }
+
+    const linkParts = tweetLink.split('/');
+    let tweetId = linkParts[linkParts.length - 1];
+    tweetId = tweetId.split('?')[0];
+    console.log(tweetId);
+    return null;
   };
 
   const getCard = () => {
@@ -53,6 +80,7 @@ const IncidentCard = ({ incident }) => {
             <span className="FieldName">Sources: </span>
             {getSources()}
           </span>
+          {getTweet()}
         </div>
       </li>
     );
@@ -63,7 +91,7 @@ const IncidentCard = ({ incident }) => {
   }
 
   return (
-    <VisibilitySensor onChange={onVisChange}>
+    <VisibilitySensor onChange={onVisChange} partialVisibility={true}>
       {getCard()}
     </VisibilitySensor>
   );

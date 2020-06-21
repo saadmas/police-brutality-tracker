@@ -1,3 +1,5 @@
+@import '../../Styles/colors.scss';
+
 .IncidentCard {
   .Block {
     display: block;
@@ -12,5 +14,13 @@
 
   .FieldName {
     font-weight: bold;
+  }
+
+  .SourceLink {
+    color: $primary-font-color;
+
+    &:hover {
+      opacity: 0.6;
+    }  
   }
 }
