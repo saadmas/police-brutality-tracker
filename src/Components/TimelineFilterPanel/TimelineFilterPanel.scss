@@ -1,0 +1,10 @@
+@import '../../Styles/colors.scss';
+
+.TimelineFilterPanel {
+  margin-left: 200px;
+
+  .MuiOutlinedInput-root {
+    background: $search-box-color;
+    width: 700px;
+  }
+}

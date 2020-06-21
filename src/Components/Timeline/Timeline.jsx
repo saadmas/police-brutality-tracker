@@ -10,6 +10,14 @@ const Timeline = ({ incidentData }) => {
     return incidents;
   };
 
+  if (!incidentData.length) {
+    return (
+      <section className="NoIncidentSection">
+        No police brutality incidents to show
+      </section>
+    );
+  }
+
   return (
     <section className="Timeline">
       <ul>
