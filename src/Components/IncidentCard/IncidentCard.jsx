@@ -1,6 +1,7 @@
 import React from 'react';
 import TweetEmbed from 'react-tweet-embed';
 import InstagramEmbed from 'react-instagram-embed';
+import YouTube from 'react-youtube';
 import VisibilitySensor from 'react-visibility-sensor';
 
 import './IncidentCard.scss';
@@ -34,9 +35,7 @@ const IncidentCard = ({ incident }) => {
 
   const getSources = () => {
     const { links } = incident;
-    const linksWithoutEmbed = links.filter(link => !link.includes('twitter')); /// add insta, yt
-
-    const sources = linksWithoutEmbed.map((link, idx, arr) => getAnchorTag(link, idx, arr));
+    const sources = links.map((link, idx, arr) => getAnchorTag(link, idx, arr));
     return sources;
   };
 
@@ -71,8 +70,25 @@ const IncidentCard = ({ incident }) => {
     );
   };
 
-  const getYouTubeEmbed = (youtubeLink) => {
+  const getYouTubeIdFromQueryString = (qs) => {
+    const qsParts = qs.split('&');
+    const idPart = qsParts.find(part => part[0] === 'v');
+    const youtubeId = idPart.slice(2);
+    console.log(youtubeId);
+    return youtubeId;
+  }
 
+  const getYouTubeEmbed = (youtubeLink) => {
+    const qs = youtubeLink.split('?')[1];
+    const videoId = getYouTubeIdFromQueryString(qs);
+    return (
+      <YouTube
+        videoId={videoId}
+        opts={{
+          width: '375'
+        }}
+      />
+    );
   };
 
   const getEmbed = () => {
@@ -82,15 +98,15 @@ const IncidentCard = ({ incident }) => {
 
     const { links } = incident;
 
-    // const tweetLink = links.find(link => link.includes('twitter'));
-    // if (tweetLink) {
-    //   return getTweet(tweetLink);
-    // }
+    const tweetLink = links.find(link => link.includes('twitter'));
+    if (tweetLink) {
+      return getTweet(tweetLink);
+    }
 
-    // const instagramLink = links.find(link => link.includes('instagram'));
-    // if (instagramLink) {
-    //   return getInstaEmbed(instagramLink);
-    // }
+    const instagramLink = links.find(link => link.includes('instagram'));
+    if (instagramLink) {
+      return getInstaEmbed(instagramLink);
+    }
 
     const youtubeLink = links.find(link => link.includes('youtube'));
     if (youtubeLink) {

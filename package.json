@@ -12,7 +12,8 @@
     "react-scripts": "3.4.1",
     "react-tweet-embed": "^1.2.2",
     "react-twitter-widgets": "^1.9.5",
-    "react-visibility-sensor": "^5.1.1"
+    "react-visibility-sensor": "^5.1.1",
+    "react-youtube": "^7.11.2"
   },
   "scripts": {
     "start": "react-scripts start",
