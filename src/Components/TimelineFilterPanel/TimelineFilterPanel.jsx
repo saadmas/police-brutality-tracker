@@ -9,8 +9,10 @@ import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import './TimelineFilterPanel.scss';
 
 const TimelineFilterPanel = ({ setSearchValue, dateSort, setDateSort }) => {
+  const [searchInputValue, setSearchInputValue] = React.useState('');
 
   const onSearchChange = (e) => {
+    setSearchInputValue(e.target.value);
     setSearchValue(e.target.value);
   };
 
@@ -36,6 +38,7 @@ const TimelineFilterPanel = ({ setSearchValue, dateSort, setDateSort }) => {
           placeholder="Search"
           variant="outlined"
           onChange={onSearchChange}
+          value={searchInputValue}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">

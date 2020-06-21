@@ -1,4 +1,5 @@
 import React from 'react';
+import { useDebounce } from 'use-debounce';
 
 import Timeline from '../../Components/Timeline/Timeline';
 import TimelineSummary from '../../Components/TimelineSummary/TimelineSummary';
@@ -6,7 +7,16 @@ import TimelineFilterPanel from '../../Components/TimelineFilterPanel/TimelineFi
 
 const TimelinePage = ({ incidentData }) => {
   const [dateSort, setDateSort] = React.useState('asc');
+  const [timelineData, setTimelineData] = React.useState(incidentData);
   const [searchValue, setSearchValue] = React.useState('');
+  const [debouncedSearchValue] = useDebounce(searchValue, 200);
+
+
+  React.useEffect(() => {
+    const filteredData = getFilteredIncidentData();
+    const sortedData = getSortedIncidentData(filteredData);
+    setTimelineData(sortedData);
+  }, [dateSort, debouncedSearchValue])
 
   const getSortedIncidentData = (data) => {
     const sortedIncidentData = [...data];
@@ -19,29 +29,27 @@ const TimelinePage = ({ incidentData }) => {
   };
 
   const getFilteredIncidentData = () => {
-    const loweredSearchValue = searchValue.toLowerCase()
+    const loweredSearchValue = debouncedSearchValue.toLowerCase()
     const filteredData = incidentData.filter(incident =>
       incident.date_text.toLowerCase().includes(loweredSearchValue) ||
       incident.name.toLowerCase().includes(loweredSearchValue) ||
       incident.city.toLowerCase().includes(loweredSearchValue) ||
       incident.state.toLowerCase().includes(loweredSearchValue)
     );
+    console.log('test') ///
     return filteredData;
   };
 
-  const filteredData = getFilteredIncidentData();
-  const sortedData = getSortedIncidentData(filteredData);
-
   return (
     <div>
-      <TimelineSummary incidentData={sortedData} />
+      <TimelineSummary incidentData={timelineData} />
       <TimelineFilterPanel
         setSearchValue={setSearchValue}
         dateSort={dateSort}
         setDateSort={setDateSort}
       />
       {/* /// */}
-      <Timeline incidentData={sortedData} />
+      <Timeline incidentData={timelineData} />
     </div>
   );
 };
