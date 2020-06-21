@@ -1,9 +1,11 @@
 import React from 'react';
 import Iframe from 'react-iframe'; ///
+import VisibilitySensor from 'react-visibility-sensor';
 
 import './IncidentCard.scss';
 
 const IncidentCard = ({ incident }) => {
+  const [inViewPort, setInViewPort] = React.useState(true);
 
   const getLocation = () => {
     const { city, state } = incident;
@@ -24,24 +26,46 @@ const IncidentCard = ({ incident }) => {
     return [];
   };
 
+  const getClassNames = () => {
+    const classNames = ['IncidentCard'];
+
+    if (inViewPort) {
+      classNames.push('InView');
+    }
+
+    return classNames.join(' ');
+  };
+
+  const getCard = () => {
+    return (
+      <li className={getClassNames()}>
+        <div>
+          <span className="Block IncidentInfo">{incident.name}</span>
+          <span className="Block">
+            <span className="FieldName">Date: </span>
+            {incident.date_text}
+          </span>
+          <span className="Block">
+            <span className="FieldName">Location: </span>
+            {getLocation()}
+          </span>
+          <span className="Block">
+            <span className="FieldName">Sources: </span>
+            {getSources()}
+          </span>
+        </div>
+      </li>
+    );
+  };
+
+  const onVisChange = (isVisible) => {
+    setInViewPort(isVisible);
+  }
+
   return (
-    <li className="IncidentCard">
-      <div>
-        <span className="Block IncidentInfo">{incident.name}</span>
-        <span className="Block">
-          <span className="FieldName">Date: </span>
-          {incident.date_text}
-        </span>
-        <span className="Block">
-          <span className="FieldName">Location: </span>
-          {getLocation()}
-        </span>
-        <span className="Block">
-          <span className="FieldName">Sources: </span>
-          {getSources()}
-        </span>
-      </div>
-    </li>
+    <VisibilitySensor onChange={onVisChange}>
+      {getCard()}
+    </VisibilitySensor>
   );
 };
 
