@@ -4,18 +4,17 @@ import IncidentCard from '../IncidentCard/IncidentCard';
 
 import './Timeline.scss';
 
-const Timeline = ({ timelineData }) => {
+const Timeline = ({ incidentData }) => {
+
+  const getIncidents = () => {
+    const incidents = incidentData.map(incident => <IncidentCard incident={incident} />);
+    return incidents;
+  };
+
   return (
     <section className="Timeline">
       <ul>
-        <IncidentCard />
-        <IncidentCard />
-        <IncidentCard />
-        <IncidentCard />
-        <IncidentCard />
-        <IncidentCard />
-        <IncidentCard />
-        <IncidentCard />
+        {getIncidents()}
       </ul>
     </section>
   );
