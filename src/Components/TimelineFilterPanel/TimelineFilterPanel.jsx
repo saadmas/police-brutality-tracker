@@ -9,7 +9,7 @@ import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import './TimelineFilterPanel.scss';
 
 const TimelineFilterPanel = ({ setSearchValue, dateSort, setDateSort }) => {
-  const [searchInputValue, setSearchInputValue] = React.useState('');
+  const [searchInputValue, setSearchInputValue] = React.useState(''); /// really need ???
 
   const onSearchChange = (e) => {
     setSearchInputValue(e.target.value);

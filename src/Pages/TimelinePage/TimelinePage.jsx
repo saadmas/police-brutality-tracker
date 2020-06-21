@@ -36,7 +36,6 @@ const TimelinePage = ({ incidentData }) => {
       incident.city.toLowerCase().includes(loweredSearchValue) ||
       incident.state.toLowerCase().includes(loweredSearchValue)
     );
-    console.log('test') ///
     return filteredData;
   };
 
@@ -48,7 +47,6 @@ const TimelinePage = ({ incidentData }) => {
         dateSort={dateSort}
         setDateSort={setDateSort}
       />
-      {/* /// */}
       <Timeline incidentData={timelineData} />
     </div>
   );
