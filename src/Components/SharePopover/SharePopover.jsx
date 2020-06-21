@@ -6,11 +6,13 @@ import {
   RedditShareButton,
   TwitterShareButton,
   WhatsappShareButton,
+  WorkplaceShareButton,
   FacebookIcon,
   LinkedinIcon,
   RedditIcon,
   TwitterIcon,
   WhatsappIcon,
+  WorkplaceIcon
 } from "react-share";
 
 import './SharePopover.scss';
@@ -61,23 +63,6 @@ const SharePopover = ({ setAnchorEl, anchorEl, incident }) => {
     return { summary, title, url, source };
   };
 
-  const getRedditShareProps = () => {
-    let url;
-    const title = 'Defund The Police';
-
-
-    if (incident) {
-      const { name, date_text, links } = incident;
-      const linksText = links.join('\n\n');
-      url = links[0];
-    } else {
-      url = 'defund-the-police.today';
-      summary = 'Check out this timeline of all police brutality incidents since the death of George Floyd.'
-    }
-
-    return { summary, title, url, source };
-  };
-
   const getShareContent = () => {
     return (
       <div className="ShareContent">
@@ -87,7 +72,7 @@ const SharePopover = ({ setAnchorEl, anchorEl, incident }) => {
         <LinkedinShareButton {...getLinkedInShareProps()}>
           <LinkedinIcon size={iconSize} borderRadius={borderRadius} />
         </LinkedinShareButton>
-        <RedditShareButton {...getRedditShareProps()}>
+        <RedditShareButton>
           <RedditIcon size={iconSize} borderRadius={borderRadius} />
         </RedditShareButton>
         <TwitterShareButton>
@@ -96,6 +81,9 @@ const SharePopover = ({ setAnchorEl, anchorEl, incident }) => {
         <WhatsappShareButton>
           <WhatsappIcon size={iconSize} borderRadius={borderRadius} />
         </WhatsappShareButton>
+        <WorkplaceShareButton>
+          <WorkplaceIcon size={iconSize} borderRadius={borderRadius} />
+        </WorkplaceShareButton>
       </div>
     );
   };
