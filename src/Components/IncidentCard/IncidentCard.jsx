@@ -1,5 +1,6 @@
 import React from 'react';
-import Iframe from 'react-iframe'; ///
+import TweetEmbed from 'react-tweet-embed';
+import InstagramEmbed from 'react-instagram-embed';
 import VisibilitySensor from 'react-visibility-sensor';
 
 import './IncidentCard.scss';
@@ -33,9 +34,10 @@ const IncidentCard = ({ incident }) => {
 
   const getSources = () => {
     const { links } = incident;
-    const linksWithoutTweets = links.filter(link => !link.includes('twitter'));
-    const sources = linksWithoutTweets.map((link, idx, arr) => getAnchorTag(link, idx, arr));
-    return sources; ///
+    const linksWithoutEmbed = links.filter(link => !link.includes('twitter')); /// add insta, yt
+
+    const sources = linksWithoutEmbed.map((link, idx, arr) => getAnchorTag(link, idx, arr));
+    return sources;
   };
 
   const getClassNames = () => {
@@ -48,25 +50,60 @@ const IncidentCard = ({ incident }) => {
     return classNames.join(' ');
   };
 
-  const getTweet = () => {
-    const { links } = incident;
-    const tweetLink = links.find(link => link.includes('twitter'));
-
-    if (!tweetLink) {
-      return null;
-    }
-
+  const getTweet = (tweetLink) => {
     const linkParts = tweetLink.split('/');
     let tweetId = linkParts[linkParts.length - 1];
     tweetId = tweetId.split('?')[0];
-    console.log(tweetId);
+    return (
+      <TweetEmbed
+        id={tweetId}
+      />
+    );
+  };
+
+  const getInstaEmbed = (instaLink) => {
+    return (
+      <InstagramEmbed
+        url={instaLink}
+        maxWidth={500}
+        hideCaption={false}
+      />
+    );
+  };
+
+  const getYouTubeEmbed = (youtubeLink) => {
+
+  };
+
+  const getEmbed = () => {
+    if (!inViewPort) {
+      return null;
+    }
+
+    const { links } = incident;
+
+    // const tweetLink = links.find(link => link.includes('twitter'));
+    // if (tweetLink) {
+    //   return getTweet(tweetLink);
+    // }
+
+    // const instagramLink = links.find(link => link.includes('instagram'));
+    // if (instagramLink) {
+    //   return getInstaEmbed(instagramLink);
+    // }
+
+    const youtubeLink = links.find(link => link.includes('youtube'));
+    if (youtubeLink) {
+      return getYouTubeEmbed(youtubeLink);
+    }
+
     return null;
   };
 
   const getCard = () => {
     return (
       <li className={getClassNames()}>
-        <div>
+        <section>
           <span className="Block IncidentInfo">{incident.name}</span>
           <span className="Block">
             <span className="FieldName">Date: </span>
@@ -80,8 +117,10 @@ const IncidentCard = ({ incident }) => {
             <span className="FieldName">Sources: </span>
             {getSources()}
           </span>
-          {getTweet()}
-        </div>
+          <span className="Block SourceBlock">
+            {getEmbed()}
+          </span>
+        </section>
       </li>
     );
   };

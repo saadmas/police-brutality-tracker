@@ -22,7 +22,7 @@
       transition: background .5s ease-in-out;
     }
 
-    &:nth-child(odd) div {
+    &:nth-child(odd) section {
       left: 45px;
       transform: translate3d(200px, 0, 0);
 
@@ -34,7 +34,7 @@
       }
     }
 
-    &:nth-child(even) div {
+    &:nth-child(even) section {
       left: -439px;
       transform: translate3d(-200px, 0, 0);
 
@@ -46,7 +46,7 @@
       }
     }
 
-    div {
+    section {
       position: relative;
       bottom: 0;
       width: 400px;
@@ -73,7 +73,7 @@
         background: $incident-circle-color;
       }
 
-      div {
+      section {
         transform: none;
         visibility: visible;
         opacity: 1;
@@ -88,11 +88,11 @@
 @media screen and (max-width: 900px) {
   .Timeline {
     ul li {
-      div {
+      section {
         width: 250px;
       }
 
-      &:nth-child(even) div {
+      &:nth-child(even) section {
         left: -289px;
       }
     }
@@ -105,11 +105,11 @@
     ul li {
       margin-left: 20px;
 
-      div {
+      section {
         width: calc(100vw - 200px);
       }
 
-      &:nth-child(even) div {
+      &:nth-child(even) section {
         left: 45px;
 
         &::before {
