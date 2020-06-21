@@ -10,6 +10,20 @@
     margin-top: 15px;
   }
 
+  .ButtonBlock {
+    margin-top: 10px;
+
+    .MuiButton-contained {
+      background: white;
+
+      .ShareIcon {
+        margin-left: 5px;
+        margin-bottom: 2px;
+        font-size: 15px;
+      }
+    }
+  }
+
   .IncidentInfo {
     font-size: 22px;
     font-family: 'Suez One';

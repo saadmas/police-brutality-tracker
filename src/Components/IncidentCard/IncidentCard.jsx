@@ -3,11 +3,16 @@ import TweetEmbed from 'react-tweet-embed';
 import InstagramEmbed from 'react-instagram-embed';
 import YouTube from 'react-youtube';
 import VisibilitySensor from 'react-visibility-sensor';
+import Button from '@material-ui/core/Button';
+import ShareIcon from '@material-ui/icons/Share';
+
+import SharePopover from '../SharePopover/SharePopover';
 
 import './IncidentCard.scss';
 
 const IncidentCard = ({ incident }) => {
   const [inViewPort, setInViewPort] = React.useState(true);
+  const [anchorEl, setAnchorEl] = React.useState(null);
 
   const getLocation = () => {
     const { city, state } = incident;
@@ -115,6 +120,10 @@ const IncidentCard = ({ incident }) => {
     return null;
   };
 
+  const onShareClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
   const getCard = () => {
     return (
       <li className={getClassNames()}>
@@ -131,6 +140,16 @@ const IncidentCard = ({ incident }) => {
           <span className="Block">
             <span className="FieldName">Sources: </span>
             {getSources()}
+          </span>
+          <span className="Block ButtonBlock">
+            <Button variant="contained" onClick={onShareClick}>
+              Share
+              <ShareIcon className="ShareIcon" />
+            </Button>
+            <SharePopover
+              anchorEl={anchorEl}
+              setAnchorEl={setAnchorEl}
+            />
           </span>
           <span className="Block SourceBlock">
             {getEmbed()}
