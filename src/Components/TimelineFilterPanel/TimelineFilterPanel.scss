@@ -2,9 +2,24 @@
 
 .TimelineFilterPanel {
   margin-left: 200px;
+  display: flex;
+
+  > div {
+    margin-left: 20px;
+  }
 
   .MuiOutlinedInput-root {
     background: $search-box-color;
     width: 700px;
+  }
+
+  .MuiButton-contained {
+    font-size: 18px;
+    background: #ffd051;
+    height: 50px;
+  }
+
+  .DateSortIcon {
+    font-size: 30px;
   }
 }

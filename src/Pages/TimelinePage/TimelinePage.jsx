@@ -10,7 +10,11 @@ const TimelinePage = ({ incidentData }) => {
 
   const getSortedIncidentData = (data) => {
     const sortedIncidentData = [...data];
-    sortedIncidentData.sort((a, b) => new Date(a.date) - new Date(b.date));
+    if (dateSort === 'asc') {
+      sortedIncidentData.sort((a, b) => new Date(a.date) - new Date(b.date));
+    } else {
+      sortedIncidentData.sort((a, b) => new Date(b.date) - new Date(a.date));
+    }
     return sortedIncidentData;
   };
 
@@ -31,7 +35,11 @@ const TimelinePage = ({ incidentData }) => {
   return (
     <div>
       <TimelineSummary incidentData={sortedData} />
-      <TimelineFilterPanel setSearchValue={setSearchValue} />
+      <TimelineFilterPanel
+        setSearchValue={setSearchValue}
+        dateSort={dateSort}
+        setDateSort={setDateSort}
+      />
       {/* /// */}
       <Timeline incidentData={sortedData} />
     </div>
