@@ -2,18 +2,21 @@
 
 .NavBar {
   display: flex;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .AppTitle {
   font-size: 25px;
+  /// font-family ???
   font-family: 'Krona One', sans-serif;
-  margin-right: 10px;
+  margin-right: 5px;
+  cursor: default;
 }
 
 .NavLink {
   text-decoration: none;
   color: $primary-font-color;
+  margin-left: 20px;
 
   &:hover {
     opacity: 0.6;
@@ -27,8 +30,8 @@
 }
 
 .NavItem {
-  margin-top: 5px;
-  margin-left: 10px;
+  margin-top: 6px;
+  margin-left: 1zpx;
 }
 
 .NavIcon {

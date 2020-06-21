@@ -1,4 +1,5 @@
 import React from 'react';
+import Iframe from 'react-iframe'; ///
 
 import './IncidentCard.scss';
 
@@ -8,6 +9,19 @@ const IncidentCard = ({ incident }) => {
     const { city, state } = incident;
     const location = `${city}, ${state}`;
     return location;
+  };
+
+  const getSources = () => {
+    const { links } = incident;
+    const sources = links.map(link => (
+      <iframe
+        source={link}
+        sandbox="allow-same-origin"
+      // width={'100px'}
+      // height={'100px'}
+      />
+    ));
+    return [];
   };
 
   return (
@@ -23,8 +37,8 @@ const IncidentCard = ({ incident }) => {
           {getLocation()}
         </span>
         <span className="Block">
-          <span className="FieldName">Links: </span>
-          {incident.link}
+          <span className="FieldName">Sources: </span>
+          {getSources()}
         </span>
       </div>
     </li>
