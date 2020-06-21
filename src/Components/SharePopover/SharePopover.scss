@@ -1,0 +1,12 @@
+@import '../../Styles//colors.scss';
+
+.ShareContent {
+  width: 250px;
+  background-color: $share-content-color;
+  height: 150px;
+  padding: 2px;
+
+  button {
+    margin: 10px;
+  }
+}

@@ -149,6 +149,7 @@ const IncidentCard = ({ incident }) => {
             <SharePopover
               anchorEl={anchorEl}
               setAnchorEl={setAnchorEl}
+              incident={incident}
             />
           </span>
           <span className="Block SourceBlock">

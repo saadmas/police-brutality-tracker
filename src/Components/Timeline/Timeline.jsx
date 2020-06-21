@@ -13,7 +13,8 @@ const Timeline = ({ incidentData }) => {
   return (
     <section className="Timeline">
       <ul>
-        {getIncidents()}
+        {/* /// */}
+        {getIncidents().slice(0, 1)}
       </ul>
     </section>
   );
