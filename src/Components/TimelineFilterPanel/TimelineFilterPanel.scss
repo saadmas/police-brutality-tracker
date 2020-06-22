@@ -1,7 +1,7 @@
 @import '../../Styles/colors.scss';
 
 .TimelineFilterPanel {
-  margin-left: 200px;
+  margin-left: 80px;
   margin-bottom: 100px;
   display: flex;
 
@@ -10,8 +10,8 @@
   }
 
   .MuiOutlinedInput-root {
-    background: $search-box-color;
-    width: 700px;
+    background: $filter-bg-color;
+    width: 400px;
     font-size: 20px;
   }
 
@@ -28,5 +28,13 @@
 
   .DateSortIcon {
     font-size: 30px;
+  }
+
+
+  .LocationSelect {
+    .MuiInputBase-root {
+      background-color: white;
+      width: 250px;
+    }
   }
 }
