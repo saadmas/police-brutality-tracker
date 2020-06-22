@@ -4,6 +4,7 @@ import InstagramEmbed from 'react-instagram-embed';
 import YouTube from 'react-youtube';
 import Button from '@material-ui/core/Button';
 import ShareIcon from '@material-ui/icons/Share';
+import MessageRoundedIcon from '@material-ui/icons/MessageRounded';
 
 import SharePopover from '../SharePopover/SharePopover';
 
@@ -121,7 +122,7 @@ const IncidentCard = ({ incident }) => {
           {getSources()}
         </span>
         <span className="Block ButtonBlock">
-          <Button variant="contained" onClick={onShareClick}>
+          <Button variant="outlined" className="ShareButton" onClick={onShareClick}>
             Share
             <ShareIcon className="ShareIcon" />
           </Button>
@@ -130,6 +131,10 @@ const IncidentCard = ({ incident }) => {
             setAnchorEl={setAnchorEl}
             incident={incident}
           />
+          <Button variant="outlined" className="ContactButton">
+            Contact Legislator
+            <MessageRoundedIcon className="ContactIcon" />
+          </Button>
         </span>
         <span className="Block SourceBlock">
           {getEmbed()}

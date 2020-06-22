@@ -95,7 +95,7 @@ const SharePopover = ({ setAnchorEl, anchorEl, incident }) => {
       anchorEl={anchorEl}
       anchorOrigin={{
         vertical: 'bottom',
-        horizontal: 'right',
+        horizontal: 'left',
       }}
       transformOrigin={{
         vertical: 'top',

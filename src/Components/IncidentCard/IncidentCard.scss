@@ -13,12 +13,25 @@
   .ButtonBlock {
     margin-top: 10px;
 
-    .MuiButton-contained {
-      background: $share-content-color;
-      font-size: 15px;
-      font-weight: 800;
+    .MuiButton-outlined {
+      border: 2px solid $primary-bg-color;
 
-      .ShareIcon {
+      &:hover {
+        font-weight: 800;
+        border: 3px solid black;
+      }
+
+      &.ShareButton {
+        font-size: 15px;
+      }
+
+      &.ContactButton {
+        margin-left: 8px;
+        font-size: 15px;
+        font-weight: 800;
+      }
+
+      .ShareIcon, .ContactIcon {
         margin-left: 5px;
         margin-bottom: 2px;
         font-size: 15px;
