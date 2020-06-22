@@ -39,5 +39,7 @@
   .TimelineElement {
     width: 500px;
     border-radius: 10px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
   }
 }

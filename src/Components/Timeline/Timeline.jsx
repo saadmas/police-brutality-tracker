@@ -43,13 +43,13 @@ const Timeline = ({ incidentData }) => {
   };
 
   const getEvenItemStyleProps = () => ({
-    contentStyle: { background: 'rgb(33, 150, 243)', color: '#e0e0e0' },
+    contentStyle: { background: 'rgb(33, 150, 243)', borderColor: 'rgb(33, 150, 243)', color: '#e0e0e0' },
     contentArrowStyle: { borderRight: '7px solid  rgb(33, 150, 243)' },
     iconStyle: { background: 'rgb(33, 150, 243)', color: '#e0e0e0' },
   });
 
   const getOddItemStyleProps = () => ({
-    contentStyle: { background: 'rgb(233, 30, 99)', color: '#fff' },
+    contentStyle: { background: 'rgb(233, 30, 99)', borderColor: 'rgb(233, 30, 99)', color: '#fff' },
     contentArrowStyle: { borderRight: '7px solid  rgb(233, 30, 99)' },
     iconStyle: { background: 'rgb(233, 30, 99)', color: '#fff' },
   });
