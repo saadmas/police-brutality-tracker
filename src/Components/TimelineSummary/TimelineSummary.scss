@@ -1,5 +1,7 @@
 @import '../../Styles/colors.scss';
 
+@import '../../Styles/colors.scss';
+
 .TimelineSummary {
   display: flex;
   justify-content: space-evenly;
@@ -23,6 +25,8 @@
   }
 
   .IncidentCountContainer {
+    color: $primary-font-color;
+    text-align: center;
     cursor: default;
     border: 5px solid $timeline-summary-bg-color;
     border-radius: 4px;

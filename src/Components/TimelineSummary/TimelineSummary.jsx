@@ -1,5 +1,6 @@
 import React from 'react';
 import CountUp from 'react-countup';
+import Paper from '@material-ui/core/Paper';
 
 import './TimelineSummary.scss';
 
@@ -50,24 +51,24 @@ const TimelineSummary = ({ incidentData }) => {
 
   return (
     <div className="TimelineSummary">
-      <div className="IncidentCountContainer">
+      <Paper className="IncidentCountContainer" elevation={3} variant="outlined">
         {getTotalIncidentCount()}
         <div>
           police brutality incidents since May 25th, 2020
         </div>
-      </div>
-      <div className="IncidentCountContainer">
+      </Paper>
+      <Paper className="IncidentCountContainer" elevation={20}>
         {getWeekIncidentCount()}
         <div>
           police brutality incidents in the past week
         </div>
-      </div>
-      <div className="IncidentCountContainer">
+      </Paper>
+      <Paper className="IncidentCountContainer" elevation={24}>
         {getTodayIncidentCount()}
         <div>
           police brutality incidents today
         </div>
-      </div>
+      </Paper>
     </div>
   );
 };
