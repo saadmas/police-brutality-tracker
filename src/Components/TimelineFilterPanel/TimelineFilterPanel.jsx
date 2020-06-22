@@ -30,9 +30,9 @@ const TimelineFilterPanel = ({ setSearchValue, dateSort, setDateSort, incidentDa
 
   const getDateSortIcon = () => {
     if (dateSort === 'desc') {
-      return <ArrowUpwardIcon className="DateSortIcon" />;
+      return <ArrowDownwardIcon className="DateSortIcon" />;
     }
-    return <ArrowDownwardIcon className="DateSortIcon" />;
+    return <ArrowUpwardIcon className="DateSortIcon" />;
   };
 
   const onStateFilterChange = (e, state) => {

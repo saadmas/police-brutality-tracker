@@ -101,6 +101,7 @@ const SharePopover = ({ setAnchorEl, anchorEl, incident }) => {
         vertical: 'top',
         horizontal: 'left',
       }}
+      className="SharePopover"
     >
       {getShareContent()}
     </Popover>
