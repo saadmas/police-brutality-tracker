@@ -17,11 +17,11 @@
 
   .MuiButton-contained {
     font-size: 18px;
-    background: #ffd051;
+    background: $date-sort-bg-color;
     height: 60px;
 
     &:hover {
-      background: #ffd051;
+      background: $date-sort-bg-color;
       opacity: 0.7;
     }
   }

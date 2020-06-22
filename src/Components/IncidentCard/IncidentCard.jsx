@@ -4,7 +4,6 @@ import InstagramEmbed from 'react-instagram-embed';
 import YouTube from 'react-youtube';
 import Button from '@material-ui/core/Button';
 import ShareIcon from '@material-ui/icons/Share';
-import MessageRoundedIcon from '@material-ui/icons/MessageRounded';
 
 import SharePopover from '../SharePopover/SharePopover';
 
@@ -114,6 +113,10 @@ const IncidentCard = ({ incident }) => {
       <section className="IncidentCard">
         <span className="Block IncidentInfo">{incident.name}</span>
         <span className="Block">
+          <span className="FieldName">Date: </span>
+          {incident.date_text}
+        </span>
+        <span className="Block">
           <span className="FieldName">Location: </span>
           {getLocation()}
         </span>
@@ -131,10 +134,6 @@ const IncidentCard = ({ incident }) => {
             setAnchorEl={setAnchorEl}
             incident={incident}
           />
-          <Button variant="outlined" className="ContactButton">
-            Contact Legislator
-            <MessageRoundedIcon className="ContactIcon" />
-          </Button>
         </span>
         <span className="Block SourceBlock">
           {getEmbed()}
