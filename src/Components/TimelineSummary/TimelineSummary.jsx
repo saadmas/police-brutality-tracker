@@ -50,19 +50,19 @@ const TimelineSummary = ({ incidentData }) => {
 
   return (
     <div className="TimelineSummary">
-      <div className="TotalCount">
+      <div className="IncidentCountContainer">
         {getTotalIncidentCount()}
         <div>
           police brutality incidents since May 25th, 2020
         </div>
       </div>
-      <div className="WeekCount">
+      <div className="IncidentCountContainer">
         {getWeekIncidentCount()}
         <div>
           police brutality incidents in the past week
         </div>
       </div>
-      <div className="TodayCount">
+      <div className="IncidentCountContainer">
         {getTodayIncidentCount()}
         <div>
           police brutality incidents today

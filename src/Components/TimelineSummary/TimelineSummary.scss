@@ -21,18 +21,10 @@
     padding: 10px;
   }
 
-  .TotalCount {
+  .IncidentCountContainer {
+    cursor: default;
     border: 5px solid $timeline-summary-bg-color;
-    background: $timeline-summary-bg-color;
-  }
-
-  .WeekCount {
-    border: 5px solid $timeline-summary-bg-color;
-    background: $timeline-summary-bg-color;
-  }
-
-  .TodayCount {
-    border: 5px solid $timeline-summary-bg-color;
+    border-radius: 4px;
     background: $timeline-summary-bg-color;
   }
 }
