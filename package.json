@@ -20,6 +20,7 @@
     "use-debounce": "^3.4.2"
   },
   "scripts": {
+    "svgr": "svgr -d src/Icons/ public/assets/icons",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -39,5 +40,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@svgr/cli": "^5.4.0"
   }
 }

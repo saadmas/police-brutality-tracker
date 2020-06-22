@@ -1,3 +1,5 @@
+@import '../../Styles/colors.scss';
+
 .Timeline {
   
   .LoadMoreButton {
@@ -18,5 +20,23 @@
       width: 60px;
       height: 60px;
     }
+  }
+
+  .IncidentDate {
+    font-size: 20px !important;
+    font-weight: bold;
+    font-family: 'Krona One';
+  }
+
+  // .RoundIcon { ///
+  //   width: 50px;
+  //   height: 50px;
+
+  //   background: red !important;
+  // }
+
+  .TimelineElement {
+    width: 535px;
+    border-radius: 10px;
   }
 }
