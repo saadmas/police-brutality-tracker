@@ -17,7 +17,7 @@ import IncidentCard from '../IncidentCard/IncidentCard';
 import './Timeline.scss';
 
 const Timeline = ({ incidentData }) => {
-  const timelineIncrement = 2;
+  const timelineIncrement = 10;
   const icons = [
     <Arrest className="RoundIcon" />,
     <Baton className="RoundIcon" />,

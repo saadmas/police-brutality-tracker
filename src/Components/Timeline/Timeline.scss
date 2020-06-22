@@ -25,6 +25,7 @@
   .IncidentDate {
     font-size: 20px !important;
     font-weight: bold;
+    padding-left: 5px;
     font-family: 'Krona One';
   }
 
@@ -36,7 +37,7 @@
   // }
 
   .TimelineElement {
-    width: 535px;
+    width: 500px;
     border-radius: 10px;
   }
 }

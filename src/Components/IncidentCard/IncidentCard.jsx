@@ -57,7 +57,7 @@ const IncidentCard = ({ incident }) => {
     return (
       <InstagramEmbed
         url={instaLink}
-        maxWidth={520}
+        maxWidth={400}
         hideCaption={false}
       />
     );
@@ -77,7 +77,7 @@ const IncidentCard = ({ incident }) => {
       <YouTube
         videoId={videoId}
         opts={{
-          width: '510'
+          width: '475'
         }}
       />
     );
@@ -91,7 +91,7 @@ const IncidentCard = ({ incident }) => {
       return getTweet(tweetLink);
     }
 
-    const instagramLink = links.find(link => link.includes('instagram'));
+    const instagramLink = links.find(link => link.includes('instagram')); /// test only insta links
     if (instagramLink) {
       return getInstaEmbed(instagramLink);
     }
@@ -112,10 +112,6 @@ const IncidentCard = ({ incident }) => {
     return (
       <section className="IncidentCard">
         <span className="Block IncidentInfo">{incident.name}</span>
-        <span className="Block">
-          <span className="FieldName">Date: </span>
-          {incident.date_text}
-        </span>
         <span className="Block">
           <span className="FieldName">Location: </span>
           {getLocation()}
