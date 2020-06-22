@@ -1,129 +1,22 @@
-@import '../../Styles//colors.scss';
-
-.NoIncidentSection {
-  font-size: 50px;
-  margin-top: 100px;
-  text-align: center;
-}
-
 .Timeline {
-  li {
-    list-style-type: none;
-    position: relative;
-    width: 6px;
-    margin: 0 auto;
-    padding-top: 50px;
-    background: $primary-font-color;
-
-    &::after {
-      content: '';
-      position: absolute;
-      left: 50%;
-      bottom: 0;
-      transform: translateX(-50%);
-      width: 30px;
+  
+  .LoadMoreButton {
+    box-shadow: none;
+    
+    svg {
+      display: inline-block;
+      width: 40px;
       height: 30px;
-      border-radius: 50%;
-      background: $primary-font-color;
-      transition: background .5s ease-in-out;
+      position: absolute;
+      left: auto;
+      top: auto;
+      margin-left: auto;
+      margin-top: auto;
     }
 
-    &:nth-child(odd) section {
-      left: 45px;
-      transform: translate3d(200px, 0, 0);
-
-
-      &::before {
-        left: -15px;
-        border-width: 8px 16px 8px 0;
-        border-color: transparent $incident-card-color transparent transparent;
-      }
-    }
-
-    &:nth-child(even) section {
-      left: -589px;
-      transform: translate3d(-200px, 0, 0);
-
-
-      &:before {
-        right: -15px;
-        border-width: 8px 0 8px 16px;
-        border-color: transparent transparent transparent $incident-card-color;
-      }
-    }
-
-    section {
-      position: relative;
-      bottom: 0;
-      width: 550px;
-      padding: 15px;
-      background: $incident-card-color;
-      visibility: hidden;
-      opacity: 0;
-      transition: all .5s ease-in-out;
-
-      &::before {
-        content: '';
-        position: absolute;
-        bottom: 7px;
-        width: 0;
-        height: 0;
-        border-style: solid;
-      }
-    }
-  }
-
-  li {
-    &.InView {
-      &::after {
-        background: $incident-circle-color;
-      }
-
-      section {
-        transform: none;
-        visibility: visible;
-        opacity: 1;
-      }
-    }
-  }
-}
-
- 
-
-// Medium
-@media screen and (max-width: 900px) {
-  .Timeline {
-    ul li {
-      section {
-        width: 250px;
-      }
-
-      &:nth-child(even) section {
-        left: -289px;
-      }
-    }
-  }
-}
-
-// Small
-@media screen and (max-width: 600px) {
-  .Timeline {
-    ul li {
-      margin-left: 20px;
-
-      section {
-        width: calc(100vw - 200px);
-      }
-
-      &:nth-child(even) section {
-        left: 45px;
-
-        &::before {
-          left: -15px;
-          border-width: 8px 16px 8px 0;
-          border-color: transparent $incident-card-color transparent transparent;
-        }
-      }
+    .FabButton {
+      width: 60px;
+      height: 60px;
     }
   }
 }

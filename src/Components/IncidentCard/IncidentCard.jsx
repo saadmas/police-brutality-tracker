@@ -2,7 +2,6 @@ import React from 'react';
 import TweetEmbed from 'react-tweet-embed';
 import InstagramEmbed from 'react-instagram-embed';
 import YouTube from 'react-youtube';
-import VisibilitySensor from 'react-visibility-sensor';
 import Button from '@material-ui/core/Button';
 import ShareIcon from '@material-ui/icons/Share';
 
@@ -11,7 +10,6 @@ import SharePopover from '../SharePopover/SharePopover';
 import './IncidentCard.scss';
 
 const IncidentCard = ({ incident }) => {
-  const [inViewPort, setInViewPort] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const getLocation = () => {
@@ -42,16 +40,6 @@ const IncidentCard = ({ incident }) => {
     const { links } = incident;
     const sources = links.map((link, idx, arr) => getAnchorTag(link, idx, arr));
     return sources;
-  };
-
-  const getClassNames = () => {
-    const classNames = ['IncidentCard'];
-
-    if (inViewPort) {
-      classNames.push('InView');
-    }
-
-    return classNames.join(' ');
   };
 
   const getTweet = (tweetLink) => {
@@ -96,10 +84,6 @@ const IncidentCard = ({ incident }) => {
   };
 
   const getEmbed = () => {
-    if (!inViewPort) {
-      return null;
-    }
-
     const { links } = incident;
 
     const tweetLink = links.find(link => link.includes('twitter'));
@@ -126,49 +110,39 @@ const IncidentCard = ({ incident }) => {
 
   const getCard = () => {
     return (
-      <li className={getClassNames()}>
-        <section>
-          <span className="Block IncidentInfo">{incident.name}</span>
-          <span className="Block">
-            <span className="FieldName">Date: </span>
-            {incident.date_text}
-          </span>
-          <span className="Block">
-            <span className="FieldName">Location: </span>
-            {getLocation()}
-          </span>
-          <span className="Block">
-            <span className="FieldName">Sources: </span>
-            {getSources()}
-          </span>
-          <span className="Block ButtonBlock">
-            <Button variant="contained" onClick={onShareClick}>
-              Share
-              <ShareIcon className="ShareIcon" />
-            </Button>
-            <SharePopover
-              anchorEl={anchorEl}
-              setAnchorEl={setAnchorEl}
-              incident={incident}
-            />
-          </span>
-          <span className="Block SourceBlock">
-            {getEmbed()}
-          </span>
-        </section>
-      </li>
+      <section className="IncidentCard">
+        <span className="Block IncidentInfo">{incident.name}</span>
+        <span className="Block">
+          <span className="FieldName">Date: </span>
+          {incident.date_text}
+        </span>
+        <span className="Block">
+          <span className="FieldName">Location: </span>
+          {getLocation()}
+        </span>
+        <span className="Block">
+          <span className="FieldName">Sources: </span>
+          {getSources()}
+        </span>
+        <span className="Block ButtonBlock">
+          <Button variant="contained" onClick={onShareClick}>
+            Share
+            <ShareIcon className="ShareIcon" />
+          </Button>
+          <SharePopover
+            anchorEl={anchorEl}
+            setAnchorEl={setAnchorEl}
+            incident={incident}
+          />
+        </span>
+        <span className="Block SourceBlock">
+          {getEmbed()}
+        </span>
+      </section>
     );
   };
 
-  const onVisChange = (isVisible) => {
-    setInViewPort(isVisible);
-  }
-
-  return (
-    <VisibilitySensor onChange={onVisChange} partialVisibility={true}>
-      {getCard()}
-    </VisibilitySensor>
-  );
+  return getCard();
 };
 
 export default IncidentCard;
