@@ -16,8 +16,7 @@ import IncidentCard from '../IncidentCard/IncidentCard';
 
 import './Timeline.scss';
 
-const Timeline = ({ incidentData }) => {
-  const timelineIncrement = 10;
+const Timeline = ({ incidentData, loadMore }) => {
   const icons = [
     <Arrest className="RoundIcon" />,
     <Baton className="RoundIcon" />,
@@ -28,7 +27,6 @@ const Timeline = ({ incidentData }) => {
     <PoliceBadge className="RoundIcon" />,
     <PoliceOfficerHead className="RoundIcon" />
   ];
-  const [timelineSize, setTimeLineSize] = React.useState(timelineIncrement);
 
   const getIcon = (elementIndex) => {
     const idxStr = elementIndex.toString();
@@ -55,9 +53,7 @@ const Timeline = ({ incidentData }) => {
   });
 
   const getIncidents = () => {
-    const sliceEnd = timelineSize > incidentData.length ? incidentData.length : timelineSize;
-    let incidents = incidentData.slice(0, sliceEnd);
-    incidents = incidents.map((incident, index) => {
+    const incidents = incidentData.map((incident, index) => {
       const styleProps = index % 2 === 0 ? getEvenItemStyleProps() : getOddItemStyleProps();
       return (
         <VerticalTimelineElement
@@ -82,10 +78,6 @@ const Timeline = ({ incidentData }) => {
       </section>
     );
   }
-
-  const loadMore = () => {
-    setTimeLineSize(prevSize => prevSize + timelineIncrement);
-  };
 
   const getLoadMoreButton = () => (
     <Fab classes={{ root: 'FabButton' }} color="primary" aria-label="add">

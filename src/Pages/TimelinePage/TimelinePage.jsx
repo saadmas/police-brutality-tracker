@@ -6,16 +6,19 @@ import TimelineSummary from '../../Components/TimelineSummary/TimelineSummary';
 import TimelineFilterPanel from '../../Components/TimelineFilterPanel/TimelineFilterPanel';
 
 const TimelinePage = ({ incidentData }) => {
+  const timelineIncrement = 5;
   const [dateSort, setDateSort] = React.useState('asc');
   const [timelineData, setTimelineData] = React.useState(incidentData);
   const [locationFilter, setLocationFilter] = React.useState({ location: '', type: 'state' });
   const [searchValue, setSearchValue] = React.useState('');
+  const [timelineSize, setTimeLineSize] = React.useState(timelineIncrement);
   const [debouncedSearchValue] = useDebounce(searchValue, 200);
 
   React.useEffect(() => {
     const filteredData = getFilteredIncidentData();
     const sortedData = getSortedIncidentData(filteredData);
     setTimelineData(sortedData);
+    setTimeLineSize(timelineIncrement);
   }, [dateSort, debouncedSearchValue, locationFilter])
 
   const getSortedIncidentData = (data) => {
@@ -60,6 +63,16 @@ const TimelinePage = ({ incidentData }) => {
 
   };
 
+  const getIncidentsSlice = () => {
+    const sliceEnd = timelineSize > incidentData.length ? incidentData.length : timelineSize;
+    const incidentSlice = incidentData.slice(0, sliceEnd);
+    return incidentSlice;
+  };
+
+  const loadMore = () => {
+    setTimeLineSize(prevSize => prevSize + timelineIncrement);
+  };
+
   return (
     <div>
       <TimelineSummary incidentData={timelineData} />
@@ -70,7 +83,10 @@ const TimelinePage = ({ incidentData }) => {
         incidentData={incidentData}
         updateLocation={updateLocation}
       />
-      <Timeline incidentData={timelineData} />
+      <Timeline
+        incidentData={getIncidentsSlice()}
+        loadMore={loadMore}
+      />
     </div>
   );
 };
