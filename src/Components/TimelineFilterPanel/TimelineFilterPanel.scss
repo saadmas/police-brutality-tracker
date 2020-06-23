@@ -72,16 +72,17 @@
     .MuiOutlinedInput-root {
       background: $filter-bg-color;
       width: 250px;
-      font-size: 10px;
+      font-size: 16px;
     }
 
     .MuiButton-contained {
-      font-size: 10px;
-      height: 30px;
+      font-size: 12px;
+      height: 35px;
     }
 
     .DateSortIcon {
-      font-size: 18px;
+      font-size: 20px;
+      margin-bottom: 5px;
     }
   
     .LocationSelect {

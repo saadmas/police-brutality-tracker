@@ -14,3 +14,20 @@
     margin: 10px;
   }
 }
+
+@media screen and (max-width: 420px) {
+  .ShareContent {
+    width: 175px;
+    height: 80px;
+    padding: 5px;
+
+    svg {
+      width: 40px;
+      height: 20px;
+    }
+
+    button {
+      margin: 5px;
+    }
+  }
+}
