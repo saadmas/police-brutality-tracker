@@ -27,11 +27,14 @@ const IncidentCard = ({ incident }) => {
   const getAnchorTag = (link, idx, arr) => {
     const isLastTag = idx + 1 === arr.length;
     const domain = getDomain(link);
-    const linkName = isLastTag ? domain : `${domain}, `;
+    const trailingComma = !isLastTag && ', ';
     return (
-      <a href={link} className="SourceLink">
-        {linkName}
-      </a>
+      <span>
+        <a href={link} className="SourceLink">
+          {domain}
+        </a>
+        {trailingComma}
+      </span>
     );
   };
 
