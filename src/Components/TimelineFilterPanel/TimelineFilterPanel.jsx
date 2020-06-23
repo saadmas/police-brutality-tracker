@@ -100,7 +100,11 @@ const TimelineFilterPanel = ({ setSearchValue, dateSort, setDateSort, incidentDa
         />
       </div>
       <div>
-        <Button variant="contained" onClick={onDateSortClick}>
+        <Button
+          variant="contained"
+          onClick={onDateSortClick}
+          className={dateSort === 'desc' ? "DateDesc" : "DateAsc"}
+        >
           Sort By Date
           {getDateSortIcon()}
         </Button>

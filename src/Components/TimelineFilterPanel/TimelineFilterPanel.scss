@@ -1,9 +1,9 @@
 @import '../../Styles/colors.scss';
 
 .TimelineFilterPanel {
-  margin-left: 80px;
   margin-bottom: 100px;
   display: flex;
+  justify-content: center;
 
   > div {
     margin-left: 20px;
@@ -17,12 +17,25 @@
 
   .MuiButton-contained {
     font-size: 18px;
-    background: $date-sort-bg-color;
     height: 60px;
+    color: $primary-font-color;
+
+    &.DateAsc {
+      background: #614385;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #516395, #614385);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #516395, #614385); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+
+    &.DateDesc {
+      background: #614385;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to top, #516395, #614385);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to top, #516395, #614385); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
 
     &:hover {
-      background: $date-sort-bg-color;
-      opacity: 0.7;
+      background: #614385;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to left, #516395, #614385);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to left, #516395, #614385); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */      
     }
   }
 

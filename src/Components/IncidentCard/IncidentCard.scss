@@ -13,17 +13,19 @@
   .ButtonBlock {
     margin-top: 10px;
 
-    .MuiButton-outlined {
-      border: 2px solid $primary-font-color;
-
-      &:hover {
-        font-weight: 800;
-        border: 3px solid $primary-font-color;
-      }
-
+    .MuiButtonBase-root {
       &.ShareButton {
         font-size: 15px;
         color: $primary-font-color;
+        background: #000000;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to top, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to top, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        &:hover {
+          background: #000000;  /* fallback for old browsers */
+          background: -webkit-linear-gradient(to bottom, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+          background: linear-gradient(to bottom, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
       }
 
       .ShareIcon {

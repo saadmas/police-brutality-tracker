@@ -51,19 +51,19 @@ const TimelineSummary = ({ incidentData }) => {
 
   return (
     <div className="TimelineSummary">
-      <Paper className="IncidentCountContainer" elevation={3} variant="outlined">
+      <Paper className="IncidentCountContainer TotalCount" elevation={24}>
         {getTotalIncidentCount()}
         <div>
           police brutality incidents since May 25th, 2020
         </div>
       </Paper>
-      <Paper className="IncidentCountContainer" elevation={20}>
+      <Paper className="IncidentCountContainer WeekCount" elevation={24}>
         {getWeekIncidentCount()}
         <div>
           police brutality incidents in the past week
         </div>
       </Paper>
-      <Paper className="IncidentCountContainer" elevation={24}>
+      <Paper className="IncidentCountContainer TodayCount" elevation={24}>
         {getTodayIncidentCount()}
         <div>
           police brutality incidents today

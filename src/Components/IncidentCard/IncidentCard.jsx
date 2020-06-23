@@ -125,7 +125,7 @@ const IncidentCard = ({ incident }) => {
           {getSources()}
         </span>
         <span className="Block ButtonBlock">
-          <Button variant="outlined" className="ShareButton" onClick={onShareClick}>
+          <Button className="ShareButton" onClick={onShareClick}>
             Share
             <ShareIcon className="ShareIcon" />
           </Button>

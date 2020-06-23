@@ -28,8 +28,25 @@
     color: $primary-font-color;
     text-align: center;
     cursor: default;
-    border: 5px solid $timeline-summary-bg-color;
-    border-radius: 4px;
-    background: $timeline-summary-bg-color;
+  }
+
+  .TotalCount {
+    background: #b92b27;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #1565C0, #b92b27);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #1565C0, #b92b27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+  }
+
+  .WeekCount {
+    background: #b92b27;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #1565C0, #b92b27);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #1565C0, #b92b27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      
+  }
+
+  .TodayCount {
+    background: #b92b27;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1565C0, #b92b27);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #1565C0, #b92b27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
   }
 }

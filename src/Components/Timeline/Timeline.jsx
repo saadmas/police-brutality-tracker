@@ -41,27 +41,23 @@ const Timeline = ({ incidentData, loadMore }) => {
   };
 
   const getEvenItemStyleProps = () => ({
-    contentStyle: { background: 'rgb(33, 150, 243)', borderColor: 'rgb(33, 150, 243)', color: '#e0e0e0' },
-    contentArrowStyle: { borderRight: '7px solid  rgb(33, 150, 243)' },
-    iconStyle: { background: 'rgb(33, 150, 243)', color: '#e0e0e0' },
+    contentArrowStyle: { borderRight: '7px solid #667db6' }
   });
 
   const getOddItemStyleProps = () => ({
-    contentStyle: { background: 'rgb(233, 30, 99)', borderColor: 'rgb(233, 30, 99)', color: '#fff' },
-    contentArrowStyle: { borderRight: '7px solid  rgb(233, 30, 99)' },
-    iconStyle: { background: 'rgb(233, 30, 99)', color: '#fff' },
+    contentArrowStyle: { borderRight: '7px solid #D31027' }
   });
 
   const getIncidents = () => {
     const incidents = incidentData.map((incident, index) => {
-      const styleProps = index % 2 === 0 ? getEvenItemStyleProps() : getOddItemStyleProps();
+      const isEven = index % 2 === 0;
+      const styleProps = isEven ? getEvenItemStyleProps() : getOddItemStyleProps();
+      const className = isEven ? 'Even' : 'Odd';
       return (
         <VerticalTimelineElement
           date={incident.date_text}
-          dateClassName="IncidentDate"
-          textClassName="TimelineElement"
-          iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-          icon={getIcon(index)}
+          dateClassName="IncidentDate" b
+          textClassName={`TimelineElement ${className}`}
           {...styleProps}
         >
           <IncidentCard incident={incident} />
