@@ -56,10 +56,43 @@
     padding-bottom: 0px;
     border-bottom: 1px solid $primary-font-color;
     
-
     &:hover {
       color: #2c2c2c;
       border-bottom: 1px solid #2c2c2c;
     }  
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .IncidentCard {
+  
+    .Block {
+      font-size: 10px;
+    }
+  
+    .SourceBlock {
+      margin-top: 0px;
+    }
+
+    .IncidentInfo {
+      font-size: 20px;
+      margin-bottom: 5px;
+      font-family: 'Spectral', serif;
+    }
+
+    .ButtonBlock {
+      margin-top: 8px;
+  
+      .MuiButtonBase-root {
+        &.ShareButton {
+          font-size: 10px;
+        }
+
+        .ShareIcon {
+          margin-left: 3px;
+          font-size: 10px;
+        }
+      }
+    }
   }
 }
