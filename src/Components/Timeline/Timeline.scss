@@ -1,6 +1,8 @@
-@import '../../Styles/colors.scss';
+@import '../../Styles/variables.scss';
 
 .Timeline {
+  margin-top: 100px;
+
   .LoadMoreButton {
     box-shadow: none;
 
@@ -73,4 +75,5 @@
   color: white;
   font-size: 35px;
   font-family: 'Spectral', sans-serif;
+  margin-top: 50px;
 }
