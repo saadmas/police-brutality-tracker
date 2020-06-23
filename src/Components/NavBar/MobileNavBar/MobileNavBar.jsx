@@ -10,6 +10,7 @@ import ScheduleIcon from '@material-ui/icons/Schedule';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import CallReceivedIcon from '@material-ui/icons/CallReceived';
 import GavelOutlinedIcon from '@material-ui/icons/GavelOutlined';
+import { Link } from 'react-router-dom'
 
 import './MobileNavBar.scss';
 
@@ -27,19 +28,19 @@ const MobileNavBar = () => {
   const getNavBar = () => {
     return (
       <List>
-        <ListItem button>
+        <ListItem button component={Link} to={'/'} onClick={closeBlade}>
           <ListItemIcon><ScheduleIcon /></ListItemIcon>
           <ListItemText primary="Timeline" />
         </ListItem>
-        <ListItem button>
+        <ListItem button component={Link} to={'/donations'} onClick={closeBlade}>
           <ListItemIcon><CallReceivedIcon /></ListItemIcon>
           <ListItemText primary="Donations" />
         </ListItem>
-        <ListItem button>
+        <ListItem button component={Link} to={'/report-incident'} onClick={closeBlade}>
           <ListItemIcon><GavelOutlinedIcon /></ListItemIcon>
           <ListItemText primary="Report Incident" />
         </ListItem>
-        <ListItem button>
+        <ListItem button component={Link} to={'/about'} onClick={closeBlade}>
           <ListItemIcon><InfoOutlinedIcon /></ListItemIcon>
           <ListItemText primary="About" />
         </ListItem>

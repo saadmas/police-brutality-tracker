@@ -12,11 +12,19 @@
 
   .MenuButton, button {
     color: $primary-font-color;
-    position: fixed;
-    top: 12px;
+    position: absolute;
+    top: 13px;
     right: 0;
+
+    svg {
+      font-size: 30px;
+    }
   }
 
+  a {
+    text-decoration: none;
+    color: white;
+  }
 }
 
 .MuiDrawer-paper {
