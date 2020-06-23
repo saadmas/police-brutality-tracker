@@ -52,7 +52,7 @@
 
   .TimelineElement  {
     width: 500px;
-    border-radius: 10px;
+    border-radius: 3px;
     -webkit-box-shadow: none;
     box-shadow: none;
 
@@ -76,4 +76,34 @@
   font-size: 35px;
   font-family: 'Spectral', sans-serif;
   margin-top: 50px;
+}
+
+@media screen and (max-width: 420px) {
+  .Timeline {
+    margin-top: 10px;
+
+    .LoadMoreButton {
+      .FabButton {
+        top: 20px;
+        right: 10px;
+      }
+    }
+  
+    .IncidentDate {
+      font-weight: bold;
+      color: white;
+    }
+  
+    .RoundIcon {
+      width: 30px;
+      height: 30px;
+      top: 40%;
+      left: 42%;
+    }
+  
+    .TimelineElement  {
+      width: 250px;
+      border-radius: 3px;
+    }
+  }
 }
