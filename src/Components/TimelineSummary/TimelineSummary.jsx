@@ -12,7 +12,7 @@ const TimelineSummary = ({ incidentData }) => {
         end={incidentData.length}
         className="IncidentCount"
         duration={5}
-        delay={3}
+        delay={1}
       />
     );
   };
@@ -31,7 +31,7 @@ const TimelineSummary = ({ incidentData }) => {
         end={thisWeekIncidents.length}
         className="IncidentCount"
         duration={5}
-        delay={3}
+        delay={1}
       />
     );
   };
@@ -44,7 +44,7 @@ const TimelineSummary = ({ incidentData }) => {
         end={todayIncidents.length}
         className="IncidentCount"
         duration={5}
-        delay={3}
+        delay={1}
       />
     );
   };
