@@ -16,7 +16,7 @@ import IncidentCard from '../IncidentCard/IncidentCard';
 
 import './Timeline.scss';
 
-const Timeline = ({ incidentData, loadMore }) => {
+const Timeline = ({ incidentData, loadMore, fullIncidentListLength }) => {
   const icons = [
     <PoliceOfficerHead className="RoundIcon" />,
     <PoliceCar className="RoundIcon" />,
@@ -27,6 +27,8 @@ const Timeline = ({ incidentData, loadMore }) => {
     <Handcuffs className="RoundIcon" />,
     <PoliceBadge className="RoundIcon" />,
   ];
+
+  const isFullIncidentList = () => fullIncidentListLength === incidentData.length;
 
   const getIcon = (elementIndex) => {
     const idxStr = elementIndex.toString();
@@ -53,6 +55,11 @@ const Timeline = ({ incidentData, loadMore }) => {
       const isEven = index % 2 === 0;
       const styleProps = isEven ? getEvenItemStyleProps() : getOddItemStyleProps();
       const className = isEven ? 'Even' : 'Odd';
+      ///
+      const instagramLink = incident.links.find(link => link.includes('instagram')); /// test only insta links
+      if (!instagramLink) {
+        return null;
+      }
       return (
         <VerticalTimelineElement
           date={incident.date_text}
@@ -77,6 +84,19 @@ const Timeline = ({ incidentData, loadMore }) => {
     );
   }
 
+  const getLoadMoreElement = () => {
+    if (isFullIncidentList()) {
+      return null;
+    }
+
+    return (
+      <VerticalTimelineElement
+        iconOnClick={loadMore}
+        iconClassName="LoadMoreButton"
+        icon={getLoadMoreButton()}
+      />
+    );
+  };
   const getLoadMoreButton = () => (
     <Fab classes={{ root: 'FabButton' }} color="primary" aria-label="add">
       <AddIcon />
@@ -87,11 +107,7 @@ const Timeline = ({ incidentData, loadMore }) => {
     <section className="Timeline">
       <VerticalTimeline>
         {getIncidents()}
-        <VerticalTimelineElement
-          iconOnClick={loadMore}
-          iconClassName="LoadMoreButton"
-          icon={getLoadMoreButton()}
-        />
+        {getLoadMoreElement()}
       </VerticalTimeline>
     </section>
   );

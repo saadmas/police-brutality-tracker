@@ -5,7 +5,7 @@ import TimelineSummary from '../../Components/TimelineSummary/TimelineSummary';
 import TimelineFilterPanel from '../../Components/TimelineFilterPanel/TimelineFilterPanel';
 
 const TimelinePage = ({ incidentData }) => {
-  const timelineIncrement = 5;
+  const timelineIncrement = 20; /// 5
   const [dateSort, setDateSort] = React.useState('asc');
   const [timelineData, setTimelineData] = React.useState(incidentData);
   const [locationFilter, setLocationFilter] = React.useState({ location: '', type: 'state' });
@@ -85,6 +85,7 @@ const TimelinePage = ({ incidentData }) => {
       <Timeline
         incidentData={getIncidentsSlice()}
         loadMore={loadMore}
+        fullIncidentListLength={timelineData.length}
       />
     </div>
   );
