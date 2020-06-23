@@ -45,7 +45,7 @@ const Timeline = ({ incidentData, loadMore }) => {
   });
 
   const getOddItemStyleProps = () => ({
-    contentArrowStyle: { borderRight: '7px solid #D31027' }
+    contentArrowStyle: { borderRight: '7px solid #93291E' }
   });
 
   const getIncidents = () => {
