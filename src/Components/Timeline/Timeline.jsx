@@ -5,13 +5,13 @@ import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 
 import Handcuffed from '../../Icons/Handcuffed';
-import RiotShield from '../../Icons/RiotShield';
 import Handcuffs from '../../Icons/Handcuffs';
 import Manacles from '../../Icons/Manacles';
 import PistolGun from '../../Icons/PistolGun';
-import PoliceCar from '../../Icons/PoliceCar';
 import PoliceBadge from '../../Icons/PoliceBadge';
+import PoliceCar from '../../Icons/PoliceCar';
 import PoliceOfficerHead from '../../Icons/PoliceOfficerHead';
+import RiotShield from '../../Icons/RiotShield';
 import IncidentCard from '../IncidentCard/IncidentCard';
 
 import './Timeline.scss';
