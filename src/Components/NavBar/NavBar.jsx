@@ -4,10 +4,14 @@ import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import CallReceivedIcon from '@material-ui/icons/CallReceived';
 import GavelOutlinedIcon from '@material-ui/icons/GavelOutlined';
 
+import useWindowDimensions from '../../Hooks/useWindowDimensions';
+
 import './NavBar.scss';
 
 const NavBar = () => {
-  return (
+  const { width } = useWindowDimensions();
+
+  const getDesktopNav = () => (
     <nav className="NavBar">
       <div className="AppTitle">
         Police Brutality Tracker
@@ -32,6 +36,8 @@ const NavBar = () => {
       </div>
     </nav>
   );
+
+  return getDesktopNav();
 };
 
 export default NavBar;
