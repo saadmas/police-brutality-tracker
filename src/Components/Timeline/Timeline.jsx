@@ -56,7 +56,7 @@ const Timeline = ({ incidentData, loadMore, fullIncidentListLength }) => {
       const styleProps = isEven ? getEvenItemStyleProps() : getOddItemStyleProps();
       const className = isEven ? 'Even' : 'Odd';
       ///
-      const instagramLink = incident.links.find(link => link.includes('instagram')); /// test only insta links
+      const instagramLink = incident.links.find(link => link.includes('youtube')); /// test only insta links
       if (!instagramLink) {
         return null;
       }

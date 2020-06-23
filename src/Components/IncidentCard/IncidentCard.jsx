@@ -6,10 +6,13 @@ import Button from '@material-ui/core/Button';
 import ShareIcon from '@material-ui/icons/Share';
 import SharePopover from '../SharePopover/SharePopover';
 
+import useWindowDimensions from '../../Hooks/useWindowDimensions';
+
 import './IncidentCard.scss';
 
 const IncidentCard = ({ incident }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const { width } = useWindowDimensions();
 
   const getLocation = () => {
     const { city, state } = incident;
@@ -75,11 +78,12 @@ const IncidentCard = ({ incident }) => {
   const getYouTubeEmbed = (youtubeLink) => {
     const qs = youtubeLink.split('?')[1];
     const videoId = getYouTubeIdFromQueryString(qs);
+    const isMobile = width <= 420;
     return (
       <YouTube
         videoId={videoId}
         opts={{
-          width: '475'
+          width: isMobile ? '220' : '475'
         }}
       />
     );
@@ -87,6 +91,7 @@ const IncidentCard = ({ incident }) => {
 
   const getEmbed = () => {
     const { links } = incident;
+    const isMobile = width <= 420;
 
     const tweetLink = links.find(link => link.includes('twitter'));
     if (tweetLink) {
@@ -94,7 +99,7 @@ const IncidentCard = ({ incident }) => {
     }
 
     const instagramLink = links.find(link => link.includes('instagram')); /// test only insta links
-    if (instagramLink) {
+    if (instagramLink && !isMobile) {
       return getInstaEmbed(instagramLink);
     }
 
