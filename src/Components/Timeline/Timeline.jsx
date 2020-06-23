@@ -10,7 +10,7 @@ import Handcuffed from '.././../Icons/Handcuffed';
 import Handcuffs from '.././../Icons/Handcuffs';
 import Manacles from '.././../Icons/Manacles';
 import PoliceBadge from '.././../Icons/PoliceBadge';
-import PoliceCar from '.././../Icons/PoliceCar';
+import PistolGun from '.././../Icons/PistolGun';
 import PoliceOfficerHead from '.././../Icons/PoliceOfficerHead';
 import IncidentCard from '../IncidentCard/IncidentCard';
 
@@ -23,7 +23,7 @@ const Timeline = ({ incidentData, loadMore }) => {
     <Handcuffed className="RoundIcon" />,
     <Handcuffs className="RoundIcon" />,
     <Manacles className="RoundIcon" />,
-    <PoliceCar className="RoundIcon" />,
+    // <PoliceCar className="RoundIcon" />,///
     <PoliceBadge className="RoundIcon" />,
     <PoliceOfficerHead className="RoundIcon" />
   ];
@@ -58,6 +58,7 @@ const Timeline = ({ incidentData, loadMore }) => {
           date={incident.date_text}
           dateClassName="IncidentDate" b
           textClassName={`TimelineElement ${className}`}
+          icon={<PistolGun />}
           {...styleProps}
         >
           <IncidentCard incident={incident} />

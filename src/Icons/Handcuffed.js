@@ -4,6 +4,10 @@ function SvgHandcuffed(props) {
   return (
     <svg
       viewBox="0 0 512 512"
+      style={{
+        height: 512,
+        width: 512,
+      }}
       {...props}
     >
       <path d="M0 0h512v512H0z" />
