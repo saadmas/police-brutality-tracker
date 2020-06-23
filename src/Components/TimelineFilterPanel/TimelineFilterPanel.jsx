@@ -55,7 +55,9 @@ const TimelineFilterPanel = ({ searchValue, setSearchValue, dateSort, setDateSor
   };
 
   const getCities = () => {
-    const cities = incidentData.map(incident => incident.city);
+    const cities = incidentData
+      .filter(incident => !!incident.city)
+      .map(incident => incident.city);
     const uniqueCities = Array.from(new Set(cities));
     uniqueCities.sort((a, b) => a.localeCompare(b));
     return uniqueCities;
