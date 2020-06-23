@@ -2,10 +2,10 @@
 
 .MobileNavBar {
   color: $primary-font-color;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Spectral', sans-serif;
 
   .AppTitle {
-    font-size: 15px;
+    font-size: 20px;
     display: flex;
     justify-content: center;
   }
@@ -26,7 +26,6 @@
   .MuiTypography-root {
     font-family: 'Montserrat', sans-serif !important;
   }
-
 
   .MuiListItemIcon-root {
     color: $primary-font-color;
