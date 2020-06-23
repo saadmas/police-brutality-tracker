@@ -5,19 +5,26 @@ import SearchIcon from '@material-ui/icons/Search';
 import Button from '@material-ui/core/Button';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
+import ClearIcon from '@material-ui/icons/Clear';
 import Autocomplete from '@material-ui/lab/Autocomplete';
+import { useDebounce } from 'use-debounce';
 
 import { usStates } from './usaLocations';
 
 import './TimelineFilterPanel.scss';
 
-const TimelineFilterPanel = ({ setSearchValue, dateSort, setDateSort, incidentData, updateLocation }) => {
-  const [searchInputValue, setSearchInputValue] = React.useState(''); /// really need ???
+const TimelineFilterPanel = ({ searchValue, setSearchValue, dateSort, setDateSort, incidentData, updateLocation }) => {
+  const [cityValue, setCityValue] = React.useState('');
+  const [stateValue, setStateValue] = React.useState('');
+  const [searchInput, setSearchInput] = React.useState('');
+  const [debouncedSearchInput] = useDebounce(searchInput, 275);
 
+  React.useEffect(() => {
+    setSearchValue(debouncedSearchInput);
+  }, [debouncedSearchInput]);
 
   const onSearchChange = (e) => {
-    setSearchInputValue(e.target.value);
-    setSearchValue(e.target.value);
+    setSearchInput(e.target.value);
   };
 
   const onDateSortClick = () => {
@@ -36,10 +43,14 @@ const TimelineFilterPanel = ({ setSearchValue, dateSort, setDateSort, incidentDa
   };
 
   const onStateFilterChange = (e, state) => {
+    setStateValue(state);
+    setCityValue('');
     updateLocation({ location: state, type: 'state' });
   };
 
   const onCityFilterChange = (e, city) => {
+    setCityValue(city);
+    setStateValue('');
     updateLocation({ location: city, type: 'city' });
   };
 
@@ -50,6 +61,18 @@ const TimelineFilterPanel = ({ setSearchValue, dateSort, setDateSort, incidentDa
     return uniqueCities;
   };
 
+  const clearSearch = () => {
+    setSearchInput('');
+  };
+
+  const getCloseIcon = () => {
+    return !!searchInput ? (
+      <InputAdornment position="start">
+        <ClearIcon onClick={clearSearch} className="CloseIcon" />
+      </InputAdornment>
+    ) : null;
+  };
+
   return (
     <div className="TimelineFilterPanel">
       <div>
@@ -57,13 +80,14 @@ const TimelineFilterPanel = ({ setSearchValue, dateSort, setDateSort, incidentDa
           placeholder="Search"
           variant="outlined"
           onChange={onSearchChange}
-          value={searchInputValue}
+          value={searchInput}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
                 <SearchIcon />
               </InputAdornment>
             ),
+            endAdornment: getCloseIcon()
           }}
         />
       </div>
@@ -74,6 +98,7 @@ const TimelineFilterPanel = ({ setSearchValue, dateSort, setDateSort, incidentDa
           options={usStates}
           autoHighlight
           autoComplete
+          value={stateValue}
           renderInput={params => (
             <TextField
               {...params}
@@ -90,6 +115,7 @@ const TimelineFilterPanel = ({ setSearchValue, dateSort, setDateSort, incidentDa
           options={getCities()}
           autoHighlight
           autoComplete
+          value={cityValue}
           renderInput={params => (
             <TextField
               {...params}

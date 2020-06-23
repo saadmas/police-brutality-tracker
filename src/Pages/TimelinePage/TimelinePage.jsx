@@ -1,5 +1,4 @@
 import React from 'react';
-import { useDebounce } from 'use-debounce';
 
 import Timeline from '../../Components/Timeline/Timeline';
 import TimelineSummary from '../../Components/TimelineSummary/TimelineSummary';
@@ -12,14 +11,13 @@ const TimelinePage = ({ incidentData }) => {
   const [locationFilter, setLocationFilter] = React.useState({ location: '', type: 'state' });
   const [searchValue, setSearchValue] = React.useState('');
   const [timelineSize, setTimeLineSize] = React.useState(timelineIncrement);
-  const [debouncedSearchValue] = useDebounce(searchValue, 200);
 
   React.useEffect(() => {
     const filteredData = getFilteredIncidentData();
     const sortedData = getSortedIncidentData(filteredData);
     setTimelineData(sortedData);
     setTimeLineSize(timelineIncrement);
-  }, [dateSort, debouncedSearchValue, locationFilter])
+  }, [dateSort, searchValue, locationFilter])
 
   const getSortedIncidentData = (data) => {
     const sortedIncidentData = [...data];
@@ -46,7 +44,7 @@ const TimelinePage = ({ incidentData }) => {
   };
 
   const getFilteredIncidentData = () => {
-    const loweredSearchValue = debouncedSearchValue.toLowerCase()
+    const loweredSearchValue = searchValue.toLowerCase();
     const filteredData = incidentData.filter(incident => {
       const isLocationMatch = applyLocationFilter(incident);
       if (!isLocationMatch) return false;
@@ -60,12 +58,12 @@ const TimelinePage = ({ incidentData }) => {
   };
 
   const updateLocation = (location) => {
-
+    setLocationFilter(location);
   };
 
   const getIncidentsSlice = () => {
-    const sliceEnd = timelineSize > incidentData.length ? incidentData.length : timelineSize;
-    const incidentSlice = incidentData.slice(0, sliceEnd);
+    const sliceEnd = timelineSize > timelineData.length ? timelineData.length : timelineSize;
+    const incidentSlice = timelineData.slice(0, sliceEnd);
     return incidentSlice;
   };
 
@@ -77,6 +75,7 @@ const TimelinePage = ({ incidentData }) => {
     <div>
       <TimelineSummary incidentData={timelineData} />
       <TimelineFilterPanel
+        searchValue={searchValue}
         setSearchValue={setSearchValue}
         dateSort={dateSort}
         setDateSort={setDateSort}

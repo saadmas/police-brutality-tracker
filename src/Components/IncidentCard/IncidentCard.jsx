@@ -4,7 +4,6 @@ import InstagramEmbed from 'react-instagram-embed';
 import YouTube from 'react-youtube';
 import Button from '@material-ui/core/Button';
 import ShareIcon from '@material-ui/icons/Share';
-import Paper from '@material-ui/core/Paper';
 import SharePopover from '../SharePopover/SharePopover';
 
 import './IncidentCard.scss';
@@ -110,7 +109,7 @@ const IncidentCard = ({ incident }) => {
 
   const getCard = () => {
     return (
-      <section className="IncidentCard" elevation={24}>
+      <section className="IncidentCard">
         <span className="Block IncidentInfo">{incident.name}</span>
         <span className="Block">
           <span className="FieldName">Date: </span>
