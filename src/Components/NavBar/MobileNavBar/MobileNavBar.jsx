@@ -12,6 +12,8 @@ import CallReceivedIcon from '@material-ui/icons/CallReceived';
 import GavelOutlinedIcon from '@material-ui/icons/GavelOutlined';
 import { Link } from 'react-router-dom'
 
+import SendIcon from '@material-ui/icons/Send';
+
 import './MobileNavBar.scss';
 
 const MobileNavBar = () => {
@@ -33,7 +35,7 @@ const MobileNavBar = () => {
           <ListItemText primary="Timeline" />
         </ListItem>
         <ListItem button component={Link} to={'/donations'} onClick={closeBlade}>
-          <ListItemIcon><CallReceivedIcon /></ListItemIcon>
+          <ListItemIcon><SendIcon /></ListItemIcon>
           <ListItemText primary="Donations" />
         </ListItem>
         <ListItem button component={Link} to={'/report-incident'} onClick={closeBlade}>
