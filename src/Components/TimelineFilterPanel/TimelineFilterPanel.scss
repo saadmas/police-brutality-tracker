@@ -3,6 +3,7 @@
 .TimelineFilterPanel {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 
   > div {
     margin-left: 20px;
@@ -10,48 +11,68 @@
 
   .MuiOutlinedInput-root {
     background: $filter-bg-color;
-    width: 400px;
-    font-size: 20px;
+    width: 300px;
+    font-size: 12px;
   }
 
   .MuiButton-contained {
-    font-size: 18px;
-    height: 60px;
+    font-size: 12px;
+    height: 50px;
+    width: 150px;
     color: $primary-font-color;
     font-family: 'Montserrat', sans-serif;
 
     &.DateAsc {
-      background: #614385;  /* fallback for old browsers */
-      background: -webkit-linear-gradient(to right, #516395, #614385);  /* Chrome 10-25, Safari 5.1-6 */
-      background: linear-gradient(to right, #516395, #614385); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      background: #e9d362;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to top, #333333, #e9d362);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to top, #333333, #e9d362); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+       
+      &:hover {
+        background: #e9d362;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to left, #333333, #e9d362);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to left, #333333, #e9d362); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
+      }
     }
 
     &.DateDesc {
-      background: #614385;  /* fallback for old browsers */
-      background: -webkit-linear-gradient(to top, #516395, #614385);  /* Chrome 10-25, Safari 5.1-6 */
-      background: linear-gradient(to top, #516395, #614385); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    }
-
-    &:hover {
-      background: #614385;  /* fallback for old browsers */
-      background: -webkit-linear-gradient(to left, #516395, #614385);  /* Chrome 10-25, Safari 5.1-6 */
-      background: linear-gradient(to left, #516395, #614385); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */      
+      background: #e9d362;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to bottom, #333333, #e9d362);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to bottom, #333333, #e9d362); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      
+      &:hover {
+        background: #e9d362;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #333333, #e9d362);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #333333, #e9d362); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
     }
   }
 
-  .DateSortIcon {
-    font-size: 30px;
+  .DateSortIcon, .ShareIcon {
+    font-size: 20px;
   }
 
   .LocationSelect {
     .MuiInputBase-root {
       background-color: white;
-      width: 250px;
+      width: 225px;
     }
   }
 
   .CloseIcon {
     cursor: pointer;
+  }
+  
+  .ShareButton {
+    background: #73C8A9;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #373B44, #73C8A9);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #373B44, #73C8A9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    &:hover {
+      background: #73C8A9;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to bottom, #373B44, #73C8A9);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to bottom, #373B44, #73C8A9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
   }
 }
 
@@ -77,7 +98,13 @@
 
     .MuiButton-contained {
       font-size: 12px;
-      height: 35px;
+      height: 40px;
+      width: 180px;
+    }
+
+    .DateSortContainer {
+      margin-top: 5px;
+      margin-bottom: 20px;
     }
 
     .DateSortIcon {

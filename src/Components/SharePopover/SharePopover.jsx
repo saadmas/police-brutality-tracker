@@ -98,10 +98,12 @@ const SharePopover = ({ isPopoverVisible, incident }) => {
     return { title, url, separator };
   };
 
+  const getClassName = () => !!incident ? 'ShareIncidentContent' : 'ShareTimelineContent'
+
   const getShareContent = () => {
     return isPopoverVisible && (
       <div>
-        <div className="ShareContent">
+        <div className={getClassName()}>
           <div className="Arrow" />
           <FacebookShareButton {...getFacebookShareProps()}>
             <FacebookIcon size={iconSize} borderRadius={borderRadius} />

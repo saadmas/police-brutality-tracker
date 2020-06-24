@@ -22,11 +22,6 @@ const IncidentCard = ({ incident }) => {
     return location;
   };
 
-  const facebookLink = incident.links.find(link => link.includes('facebook'));
-  if (!facebookLink) {
-    return null; ///
-  }
-
   const getDomain = (url) => {
     const host = new URL(url).hostname;
 
@@ -123,7 +118,7 @@ const IncidentCard = ({ incident }) => {
       return getTweet(tweetLink);
     }
 
-    const instagramLink = links.find(link => link.includes('instagram')); /// test only insta links
+    const instagramLink = links.find(link => link.includes('instagram'));
     if (instagramLink && !isMobile) {
       return getInstaEmbed(instagramLink);
     }

@@ -8,6 +8,9 @@ import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import ClearIcon from '@material-ui/icons/Clear';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import { useDebounce } from 'use-debounce';
+import SharePopover from '../SharePopover/SharePopover';
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+import ShareIcon from '@material-ui/icons/Share';
 
 import { usStates } from './usaLocations';
 
@@ -17,6 +20,7 @@ const TimelineFilterPanel = ({ searchValue, setSearchValue, dateSort, setDateSor
   const [cityValue, setCityValue] = React.useState('');
   const [stateValue, setStateValue] = React.useState('');
   const [searchInput, setSearchInput] = React.useState('');
+  const [isPopoverVisible, setPopoverVisible] = React.useState(false);
   const [debouncedSearchInput] = useDebounce(searchInput, 275);
 
   React.useEffect(() => {
@@ -37,9 +41,9 @@ const TimelineFilterPanel = ({ searchValue, setSearchValue, dateSort, setDateSor
 
   const getDateSortIcon = () => {
     if (dateSort === 'desc') {
-      return <ArrowDownwardIcon className="DateSortIcon" />;
+      return <ArrowDownwardIcon className="ButtonIcon" />;
     }
-    return <ArrowUpwardIcon className="DateSortIcon" />;
+    return <ArrowUpwardIcon className="ButtonIcon" />;
   };
 
   const onStateFilterChange = (e, state) => {
@@ -73,6 +77,14 @@ const TimelineFilterPanel = ({ searchValue, setSearchValue, dateSort, setDateSor
         <ClearIcon onClick={clearSearch} className="CloseIcon" />
       </InputAdornment>
     ) : null;
+  };
+
+  const onShareClick = (event) => {
+    setPopoverVisible(prevVisibility => !prevVisibility);
+  };
+
+  const handleClickAwayFromShare = () => {
+    setPopoverVisible(false);
   };
 
   return (
@@ -127,7 +139,7 @@ const TimelineFilterPanel = ({ searchValue, setSearchValue, dateSort, setDateSor
           )}
         />
       </div>
-      <div>
+      <div className="DateSortContainer">
         <Button
           variant="contained"
           onClick={onDateSortClick}
@@ -136,6 +148,17 @@ const TimelineFilterPanel = ({ searchValue, setSearchValue, dateSort, setDateSor
           Sort By Date
           {getDateSortIcon()}
         </Button>
+      </div>
+      <div>
+        <ClickAwayListener onClickAway={handleClickAwayFromShare}>
+          <div>
+            <Button className="ShareButton" variant="contained" onClick={onShareClick}>
+              Share Timeline
+            <ShareIcon className="ShareIcon" />
+            </Button>
+            <SharePopover isPopoverVisible={isPopoverVisible} />
+          </div>
+        </ClickAwayListener>
       </div>
     </div>
   );
