@@ -55,11 +55,7 @@ const Timeline = ({ incidentData, loadMore, fullIncidentListLength }) => {
       const isEven = index % 2 === 0;
       const styleProps = isEven ? getEvenItemStyleProps() : getOddItemStyleProps();
       const className = isEven ? 'Even' : 'Odd';
-      ///
-      const instagramLink = incident.links.find(link => link.includes('youtube')); /// test only insta links
-      if (!instagramLink) {
-        return null;
-      }
+
       return (
         <VerticalTimelineElement
           date={incident.date_text}
