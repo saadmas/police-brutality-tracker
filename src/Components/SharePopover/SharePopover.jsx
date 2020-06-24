@@ -31,7 +31,7 @@ const SharePopover = ({ isPopoverVisible, incident }) => {
       url = links[0];
       quote = `${name} on ${date_text}. See it for yourself:\n\n ${linksText}`;
     } else {
-      quote = 'Check out this timeline of all police brutality incidents since the death of George Floyd.'
+      quote = 'Check out this timeline of all police brutality incidents since the death of George Floyd'
       url = 'https://www.defund-the-police.today';
     }
 
@@ -51,7 +51,7 @@ const SharePopover = ({ isPopoverVisible, incident }) => {
       summary = `${name} on ${date_text}. See it for yourself:\n\n ${linksText}`;
     } else {
       url = 'https://www.defund-the-police.today';
-      summary = 'Check out this timeline of all police brutality incidents since the death of George Floyd.'
+      summary = 'Check out this timeline of all police brutality incidents since the death of George Floyd';
     }
 
     return { summary, title, url, source };
@@ -59,11 +59,12 @@ const SharePopover = ({ isPopoverVisible, incident }) => {
 
   const getRedditShareProps = () => {
     let url;
-    const title = 'Defund The Police!';
+    let title = 'Defund The Police!';
 
     if (incident) {
       url = incident.links[0];
     } else {
+      title = 'Defund The Police! Check out this timeline of all police brutality incidents since the death of George Floyd';
       url = 'https://www.defund-the-police.today';
     }
 
@@ -72,12 +73,13 @@ const SharePopover = ({ isPopoverVisible, incident }) => {
 
   const getTwitterShareProps = () => {
     let url;
-    const title = 'Defund The Police!';
+    let title = 'Defund The Police!\n\n';
     const hashtags = ['DefundThePolice', 'BlackLivesMatter'];
 
     if (incident) {
       url = incident.links[0];
     } else {
+      title = 'Defund The Police! Check out this timeline of all police brutality incidents since the death of George Floyd\n\n';
       url = 'https://www.defund-the-police.today';
     }
 
@@ -86,12 +88,13 @@ const SharePopover = ({ isPopoverVisible, incident }) => {
 
   const getWhatsappShareProps = () => {
     let url;
-    const title = 'Defund The Police!';
+    let title = 'Defund The Police!';
     const separator = '\n\n';
 
     if (incident) {
       url = incident.links[0];
     } else {
+      title = 'Defund The Police! Check out this timeline of all police brutality incidents since the death of George Floyd\n\n';
       url = 'https://www.defund-the-police.today';
     }
 
