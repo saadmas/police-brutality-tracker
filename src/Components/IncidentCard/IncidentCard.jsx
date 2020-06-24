@@ -39,7 +39,7 @@ const IncidentCard = ({ incident }) => {
     const domain = getDomain(link);
     const trailingComma = !isLastTag && ', ';
     return (
-      <span>
+      <span key={`source-${incident.date}-${link}-${idx}`}>
         <a href={link} className="SourceLink">
           {domain}
         </a>

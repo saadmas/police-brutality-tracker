@@ -58,6 +58,7 @@ const Timeline = ({ incidentData, loadMore, fullIncidentListLength }) => {
 
       return (
         <VerticalTimelineElement
+          key={`incident-${index}-timeline-element`}
           date={incident.date_text}
           dateClassName="IncidentDate" b
           textClassName={`TimelineElement ${className}`}
