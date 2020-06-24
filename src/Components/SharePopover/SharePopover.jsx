@@ -17,13 +17,9 @@ import {
 
 import './SharePopover.scss';
 
-const SharePopover = ({ setAnchorEl, anchorEl, incident }) => {
+const SharePopover = ({ isPopoverVisible, incident }) => {
   const [iconSize, setIconSize] = React.useState(40);
   const [borderRadius, setBorderRadius] = React.useState(30);
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
   const getFacebookShareProps = () => {
     let quote;
@@ -64,48 +60,34 @@ const SharePopover = ({ setAnchorEl, anchorEl, incident }) => {
   };
 
   const getShareContent = () => {
-    return (
-      <div className="ShareContent">
-        <FacebookShareButton {...getFacebookShareProps()}>
-          <FacebookIcon size={iconSize} borderRadius={borderRadius} />
-        </FacebookShareButton>
-        <LinkedinShareButton {...getLinkedInShareProps()}>
-          <LinkedinIcon size={iconSize} borderRadius={borderRadius} />
-        </LinkedinShareButton>
-        <RedditShareButton>
-          <RedditIcon size={iconSize} borderRadius={borderRadius} />
-        </RedditShareButton>
-        <TwitterShareButton>
-          <TwitterIcon size={iconSize} borderRadius={borderRadius} />
-        </TwitterShareButton>
-        <WhatsappShareButton>
-          <WhatsappIcon size={iconSize} borderRadius={borderRadius} />
-        </WhatsappShareButton>
-        <WorkplaceShareButton>
-          <WorkplaceIcon size={iconSize} borderRadius={borderRadius} />
-        </WorkplaceShareButton>
+    return isPopoverVisible && (
+      <div>
+        <div className="ShareContent">
+          <div className="Arrow" />
+          <FacebookShareButton {...getFacebookShareProps()}>
+            <FacebookIcon size={iconSize} borderRadius={borderRadius} />
+          </FacebookShareButton>
+          <LinkedinShareButton {...getLinkedInShareProps()}>
+            <LinkedinIcon size={iconSize} borderRadius={borderRadius} />
+          </LinkedinShareButton>
+          <RedditShareButton>
+            <RedditIcon size={iconSize} borderRadius={borderRadius} />
+          </RedditShareButton>
+          <TwitterShareButton>
+            <TwitterIcon size={iconSize} borderRadius={borderRadius} />
+          </TwitterShareButton>
+          <WhatsappShareButton>
+            <WhatsappIcon size={iconSize} borderRadius={borderRadius} />
+          </WhatsappShareButton>
+          <WorkplaceShareButton>
+            <WorkplaceIcon size={iconSize} borderRadius={borderRadius} />
+          </WorkplaceShareButton>
+        </div>
       </div>
     );
   };
 
-  return (
-    <Popover
-      open={!!anchorEl}
-      onClose={handleClose}
-      anchorEl={anchorEl}
-      anchorOrigin={{
-        vertical: 'bottom',
-        horizontal: 'left',
-      }}
-      transformOrigin={{
-        vertical: 'top',
-        horizontal: 'left',
-      }}
-      className="SharePopover"
-    >
-      {getShareContent()}
-    </Popover>
-  );
+  return getShareContent();
 };
 
 export default SharePopover;

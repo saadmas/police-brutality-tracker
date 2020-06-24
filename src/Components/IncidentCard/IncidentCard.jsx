@@ -5,13 +5,14 @@ import YouTube from 'react-youtube';
 import Button from '@material-ui/core/Button';
 import ShareIcon from '@material-ui/icons/Share';
 import SharePopover from '../SharePopover/SharePopover';
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 
 import useWindowDimensions from '../../Hooks/useWindowDimensions';
 
 import './IncidentCard.scss';
 
 const IncidentCard = ({ incident }) => {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [isPopoverVisible, setPopoverVisible] = React.useState(false);
   const { width } = useWindowDimensions();
 
   const getLocation = () => {
@@ -112,7 +113,11 @@ const IncidentCard = ({ incident }) => {
   };
 
   const onShareClick = (event) => {
-    setAnchorEl(event.currentTarget);
+    setPopoverVisible(prevVisibility => !prevVisibility);
+  };
+
+  const handleClickAwayFromShare = () => {
+    setPopoverVisible(false);
   };
 
   const getCard = () => {
@@ -132,15 +137,15 @@ const IncidentCard = ({ incident }) => {
           {getSources()}
         </span>
         <span className="Block ButtonBlock">
-          <Button className="ShareButton" variant="outlined" onClick={onShareClick}>
-            Share
+          <ClickAwayListener onClickAway={handleClickAwayFromShare}>
+            <div>
+              <Button className="ShareButton" variant="outlined" onClick={onShareClick}>
+                Share
             <ShareIcon className="ShareIcon" />
-          </Button>
-          <SharePopover
-            anchorEl={anchorEl}
-            setAnchorEl={setAnchorEl}
-            incident={incident}
-          />
+              </Button>
+              <SharePopover isPopoverVisible={isPopoverVisible} />
+            </div>
+          </ClickAwayListener>
         </span>
         <span className="Block SourceBlock">
           {getEmbed()}

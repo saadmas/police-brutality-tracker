@@ -1,15 +1,25 @@
 @import '../../Styles//variables.scss';
 
 .ShareContent {
+  margin-top: 0px;
   width: 200px;
   height: 150px;
   padding: 2px;
-
-  background: #000000;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  margin-left: -10px;
+  position: absolute;
+  background: #202020;  /* fallback for old browsers */
   
-
+  .Arrow {
+    content: '';
+    position: absolute;
+    bottom: 149px;
+    left: 50px;
+    height: 0;
+    width: 0;
+    border: 7px solid transparent;
+    border-bottom: 7px solid #202020;
+  }
+  
   button {
     margin: 10px;
   }
@@ -17,13 +27,20 @@
 
 @media screen and (max-width: 420px) {
   .ShareContent {
-    width: 175px;
-    height: 80px;
-    padding: 5px;
+    width: 250px;
+    height: 200px;
+    padding: 15px;
+    margin-top: 2px;
+    margin-left: -6px;
+
+    .Arrow {
+      top: -12px;
+      left: 35px;
+    }
 
     svg {
-      width: 40px;
-      height: 20px;
+      width: 100px;
+      height: 40px;
     }
 
     button {

@@ -28,6 +28,16 @@ const Timeline = ({ incidentData, loadMore, fullIncidentListLength }) => {
     <PoliceBadge className="RoundIcon" />,
   ];
 
+  ///
+  const getDomain = (url) => {
+    const host = new URL(url).hostname;
+    const hostParts = host.split('.');
+    const domain = hostParts.length > 2 ? hostParts[1] : hostParts[0];
+    return domain;
+  };
+  const links = incidentData.map(inc => inc.links);
+  console.log(links);
+
   const getGeorgeFloydIncident = () => ({
     city: 'Minneapolis',
     date: '2020-05-25',
