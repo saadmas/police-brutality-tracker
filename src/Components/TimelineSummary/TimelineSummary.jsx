@@ -46,7 +46,15 @@ const TimelineSummary = ({ incidentData }) => {
     />
   );
 
-  const getIncidentText = (count) => count > 1 ? 'incidents' : 'incident';
+  const getIncidentText = (count) => {
+    let incidentText = 'incidents';
+
+    if (count === 1) {
+      incidentText = 'incident';
+    }
+
+    return incidentText;
+  };
 
   const totalIncidentCount = getTotalIncidentCount();
   const weekIncidentCount = getWeekIncidentCount();

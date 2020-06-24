@@ -83,7 +83,7 @@ const IncidentCard = ({ incident }) => {
       <YouTube
         videoId={videoId}
         opts={{
-          width: isMobile ? '220' : '475'
+          width: isMobile ? '220' : '470'
         }}
       />
     );
