@@ -28,30 +28,6 @@ const Timeline = ({ incidentData, loadMore, fullIncidentListLength }) => {
     <PoliceBadge className="RoundIcon" />,
   ];
 
-  ///
-  const getDomain = (url) => {
-    const host = new URL(url).hostname;
-    const hostParts = host.split('.');
-    const domain = hostParts.length > 2 ? hostParts[1] : hostParts[0];
-    return domain;
-  };
-  const links = incidentData.map(inc => inc.links);
-  console.log(links);
-
-  const getGeorgeFloydIncident = () => ({
-    city: 'Minneapolis',
-    date: '2020-05-25',
-    date_text: 'May 25th',
-    links: [
-      'https://www.nytimes.com/2020/05/31/us/george-floyd-investigation.html',
-      'https://www.cnn.com/2020/06/01/us/george-floyd-three-videos-minneapolis/index.html',
-      'https://www.cnbc.com/2020/06/03/3-more-cops-charged-in-george-floyd-death-other-officers-murder-charge-upgraded.html',
-      'https://www.youtube.com/watch?v=vksEJR9EPQ8'
-    ],
-    name: 'Police officer kills George Floyd by kneeling on his neck for 8 minutes and 46 seconds',
-    state: 'Minnesota'
-  });
-
   const isFullIncidentList = () => fullIncidentListLength === incidentData.length;
 
   const getIcon = (elementIndex) => {
@@ -75,9 +51,7 @@ const Timeline = ({ incidentData, loadMore, fullIncidentListLength }) => {
   });
 
   const getIncidents = () => {
-    const georgeFloydIncident = getGeorgeFloydIncident();
-    const incidents = [georgeFloydIncident, ...incidentData];
-    const incidentElements = incidents.map((incident, index) => {
+    const incidentElements = incidentData.map((incident, index) => {
       const isEven = index % 2 === 0;
       const styleProps = isEven ? getEvenItemStyleProps() : getOddItemStyleProps();
       const className = isEven ? 'Even' : 'Odd';

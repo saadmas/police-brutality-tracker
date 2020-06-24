@@ -22,11 +22,27 @@ const App = () => {
     try {
       let data = await fetch(dataUrl);
       data = await data.json();
-      setIncidentData(data.data);
+      const incidents = data.data;
+      const georgeFloydIncident = getGeorgeFloydIncident();
+      setIncidentData([georgeFloydIncident, ...incidents]);
     } catch (error) {
       setIsDataFetchError(true);
     }
   };
+
+  const getGeorgeFloydIncident = () => ({
+    city: 'Minneapolis',
+    date: '2020-05-25',
+    date_text: 'May 25th',
+    links: [
+      'https://www.nytimes.com/2020/05/31/us/george-floyd-investigation.html',
+      'https://www.cnn.com/2020/06/01/us/george-floyd-three-videos-minneapolis/index.html',
+      'https://www.cnbc.com/2020/06/03/3-more-cops-charged-in-george-floyd-death-other-officers-murder-charge-upgraded.html',
+      'https://www.youtube.com/watch?v=vksEJR9EPQ8'
+    ],
+    name: 'Police officer kills George Floyd by kneeling on his neck for 8 minutes and 46 seconds',
+    state: 'Minnesota'
+  });
 
   const getRoutes = () => {
     if (incidentData && incidentData.length) {
