@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import ShareIcon from '@material-ui/icons/Share';
 import SharePopover from '../SharePopover/SharePopover';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+import { FacebookProvider, EmbeddedPost } from 'react-facebook';
 
 import useWindowDimensions from '../../Hooks/useWindowDimensions';
 
@@ -20,6 +21,11 @@ const IncidentCard = ({ incident }) => {
     const location = `${city}, ${state}`;
     return location;
   };
+
+  const facebookLink = incident.links.find(link => link.includes('facebook'));
+  if (!facebookLink) {
+    return null; ///
+  }
 
   const getDomain = (url) => {
     const host = new URL(url).hostname;
@@ -75,6 +81,18 @@ const IncidentCard = ({ incident }) => {
     );
   };
 
+  const getFacebookEmbed = (facebookLink) => {
+    const isMobile = width <= 420;
+    return (
+      <FacebookProvider appId="306545370511738">
+        <EmbeddedPost
+          href={facebookLink}
+          width={isMobile ? '220' : '470'}
+        />
+      </FacebookProvider>
+    );
+  };
+
   const getYouTubeIdFromQueryString = (qs) => {
     const qsParts = qs.split('&');
     const idPart = qsParts.find(part => part[0] === 'v');
@@ -113,6 +131,11 @@ const IncidentCard = ({ incident }) => {
     const youtubeLink = links.find(link => link.includes('youtube'));
     if (youtubeLink) {
       return getYouTubeEmbed(youtubeLink);
+    }
+
+    const facebookLink = links.find(link => link.includes('facebook'));
+    if (facebookLink) {
+      return getFacebookEmbed(facebookLink);
     }
 
     return null;
