@@ -23,6 +23,12 @@ const IncidentCard = ({ incident }) => {
 
   const getDomain = (url) => {
     const host = new URL(url).hostname;
+
+    const isYoutuDOTbe = host.includes('youtu.be');
+    if (isYoutuDOTbe) {
+      return 'youtube';
+    }
+
     const hostParts = host.split('.');
     const domain = hostParts.length > 2 ? hostParts[1] : hostParts[0];
     return domain;
