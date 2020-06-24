@@ -32,7 +32,7 @@ const SharePopover = ({ isPopoverVisible, incident }) => {
       quote = `${name} on ${date_text}. See it for yourself:\n\n ${linksText}`;
     } else {
       quote = 'Check out this timeline of all police brutality incidents since the death of George Floyd.'
-      url = 'defund-the-police.today';
+      url = 'https://www.defund-the-police.today';
     }
 
     return { quote, hashtag, url };
@@ -42,7 +42,7 @@ const SharePopover = ({ isPopoverVisible, incident }) => {
     let summary;
     let url;
     const title = 'Defund The Police!';
-    const source = 'defund-the-police.today';
+    const source = 'https://www.defund-the-police.today';
 
     if (incident) {
       const { name, date_text, links } = incident;
@@ -50,7 +50,7 @@ const SharePopover = ({ isPopoverVisible, incident }) => {
       url = links[0];
       summary = `${name} on ${date_text}. See it for yourself:\n\n ${linksText}`;
     } else {
-      url = 'defund-the-police.today';
+      url = 'https://www.defund-the-police.today';
       summary = 'Check out this timeline of all police brutality incidents since the death of George Floyd.'
     }
 
@@ -64,7 +64,7 @@ const SharePopover = ({ isPopoverVisible, incident }) => {
     if (incident) {
       url = incident.links[0];
     } else {
-      url = 'defund-the-police.today';
+      url = 'https://www.defund-the-police.today';
     }
 
     return { title, url };
@@ -78,7 +78,7 @@ const SharePopover = ({ isPopoverVisible, incident }) => {
     if (incident) {
       url = incident.links[0];
     } else {
-      url = 'defund-the-police.today';
+      url = 'https://www.defund-the-police.today';
     }
 
     return { title, url, hashtags };
@@ -92,7 +92,7 @@ const SharePopover = ({ isPopoverVisible, incident }) => {
     if (incident) {
       url = incident.links[0];
     } else {
-      url = 'defund-the-police.today';
+      url = 'https://www.defund-the-police.today';
     }
 
     return { title, url, separator };

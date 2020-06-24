@@ -8,7 +8,6 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ScheduleIcon from '@material-ui/icons/Schedule';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
-import CallReceivedIcon from '@material-ui/icons/CallReceived';
 import GavelOutlinedIcon from '@material-ui/icons/GavelOutlined';
 import { Link } from 'react-router-dom'
 
@@ -38,7 +37,7 @@ const MobileNavBar = () => {
           <ListItemIcon><SendIcon /></ListItemIcon>
           <ListItemText primary="Donations" />
         </ListItem>
-        <ListItem button component={Link} to={'/report-incident'} onClick={closeBlade}>
+        <ListItem button component={Link} to={'/report-an-incident'} onClick={closeBlade}>
           <ListItemIcon><GavelOutlinedIcon /></ListItemIcon>
           <ListItemText primary="Report Incident" />
         </ListItem>

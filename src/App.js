@@ -5,6 +5,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import NavBar from './Components/NavBar/NavBar';
 import TimelinePage from './Pages/TimelinePage/TimelinePage';
 import ErrorPage from './Pages/ErrorPage/ErrorPage';
+import DonationsPage from './Pages/DonationsPage/DonationsPage';
 
 import './App.scss';
 
@@ -51,6 +52,11 @@ const App = () => {
             exact
             path="/"
             render={(props) => <TimelinePage incidentData={incidentData} {...props} />}
+          />
+          <Route
+            exact
+            path="/donations"
+            render={(props) => <DonationsPage {...props} />}
           />
           <Route component={ErrorPage} />
         </Switch>

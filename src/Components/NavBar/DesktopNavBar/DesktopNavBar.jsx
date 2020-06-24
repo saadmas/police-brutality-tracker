@@ -18,11 +18,11 @@ const DesktopNavBar = () => {
           <span className="NavLinkText">Timeline</span>
           <ScheduleIcon className="NavIcon" />
         </Link>
-        <Link className="NavLink" to="/about">
+        <Link className="NavLink" to="/donations">
           <span className="NavLinkText">Donations</span>
           <CallReceivedIcon className="NavIcon" />
         </Link>
-        <Link className="NavLink" to="/about">
+        <Link className="NavLink" to="/report-an-incident">
           <span className="NavLinkText">Report Incident</span>
           <GavelOutlinedIcon className="NavIcon" />
         </Link>
