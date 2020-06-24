@@ -149,7 +149,7 @@ const IncidentCard = ({ incident }) => {
                 Share
             <ShareIcon className="ShareIcon" />
               </Button>
-              <SharePopover isPopoverVisible={isPopoverVisible} />
+              <SharePopover isPopoverVisible={isPopoverVisible} incident={incident} />
             </div>
           </ClickAwayListener>
         </span>

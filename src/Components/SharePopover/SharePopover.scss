@@ -2,12 +2,13 @@
 
 .ShareContent {
   margin-top: 0px;
+  z-index: 999;
   width: 200px;
   height: 150px;
   padding: 2px;
   margin-left: -10px;
   position: absolute;
-  background: #202020;  /* fallback for old browsers */
+  background: #202020;
   
   .Arrow {
     content: '';

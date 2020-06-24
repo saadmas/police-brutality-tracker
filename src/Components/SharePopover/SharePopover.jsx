@@ -1,5 +1,4 @@
 import React from 'react';
-import Popover from '@material-ui/core/Popover';
 import {
   FacebookShareButton,
   LinkedinShareButton,
@@ -24,7 +23,7 @@ const SharePopover = ({ isPopoverVisible, incident }) => {
   const getFacebookShareProps = () => {
     let quote;
     let url;
-    const hashtag = 'DefundThePolice';
+    const hashtag = '#DefundThePolice';
 
     if (incident) {
       const { name, date_text, links } = incident;
@@ -42,9 +41,8 @@ const SharePopover = ({ isPopoverVisible, incident }) => {
   const getLinkedInShareProps = () => {
     let summary;
     let url;
-    const title = 'Defund The Police';
+    const title = 'Defund The Police!';
     const source = 'defund-the-police.today';
-
 
     if (incident) {
       const { name, date_text, links } = incident;
@@ -59,6 +57,47 @@ const SharePopover = ({ isPopoverVisible, incident }) => {
     return { summary, title, url, source };
   };
 
+  const getRedditShareProps = () => {
+    let url;
+    const title = 'Defund The Police!';
+
+    if (incident) {
+      url = incident.links[0];
+    } else {
+      url = 'defund-the-police.today';
+    }
+
+    return { title, url };
+  };
+
+  const getTwitterShareProps = () => {
+    let url;
+    const title = 'Defund The Police!';
+    const hashtags = ['DefundThePolice', 'BlackLivesMatter'];
+
+    if (incident) {
+      url = incident.links[0];
+    } else {
+      url = 'defund-the-police.today';
+    }
+
+    return { title, url, hashtags };
+  };
+
+  const getWhatsappShareProps = () => {
+    let url;
+    const title = 'Defund The Police!';
+    const separator = '\n\n';
+
+    if (incident) {
+      url = incident.links[0];
+    } else {
+      url = 'defund-the-police.today';
+    }
+
+    return { title, url, separator };
+  };
+
   const getShareContent = () => {
     return isPopoverVisible && (
       <div>
@@ -70,16 +109,16 @@ const SharePopover = ({ isPopoverVisible, incident }) => {
           <LinkedinShareButton {...getLinkedInShareProps()}>
             <LinkedinIcon size={iconSize} borderRadius={borderRadius} />
           </LinkedinShareButton>
-          <RedditShareButton>
+          <RedditShareButton {...getRedditShareProps()}>
             <RedditIcon size={iconSize} borderRadius={borderRadius} />
           </RedditShareButton>
-          <TwitterShareButton>
+          <TwitterShareButton {...getTwitterShareProps()}>
             <TwitterIcon size={iconSize} borderRadius={borderRadius} />
           </TwitterShareButton>
-          <WhatsappShareButton>
+          <WhatsappShareButton {...getWhatsappShareProps()}>
             <WhatsappIcon size={iconSize} borderRadius={borderRadius} />
           </WhatsappShareButton>
-          <WorkplaceShareButton>
+          <WorkplaceShareButton {...getFacebookShareProps()}>
             <WorkplaceIcon size={iconSize} borderRadius={borderRadius} />
           </WorkplaceShareButton>
         </div>
