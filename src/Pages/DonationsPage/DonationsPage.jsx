@@ -1,11 +1,19 @@
 import React from 'react';
 
+import DesktopDonationsPage from './DesktopDonationsPage/DesktopDonationsPage';
+import useWindowDimensions from '../../Hooks/useWindowDimensions';
+
 const DonationsPage = () => {
-  return (
-    <div>
-      DONATIONS PAGE
-    </div>
-  );
+  const { width } = useWindowDimensions();
+
+  const getResponsiveDonationsPage = () => {
+    if (width > 420) {
+      return <DesktopDonationsPage />;
+    }
+    // return <MobileDonationsPage />;
+  };
+
+  return getResponsiveDonationsPage();
 };
 
 export default DonationsPage;
