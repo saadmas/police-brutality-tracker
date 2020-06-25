@@ -14,6 +14,7 @@ html, body {
 
 .App {
   margin: 25px;
+  overflow-y: hidden !important;
 
   .MuiInputBase-input {
     font-family: 'Montserrat', sans-serif;
