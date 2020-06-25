@@ -7,6 +7,7 @@ import ShareIcon from '@material-ui/icons/Share';
 import SharePopover from '../SharePopover/SharePopover';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import { FacebookProvider, EmbeddedPost } from 'react-facebook';
+import Divider from '@material-ui/core/Divider';
 
 import useWindowDimensions from '../../Hooks/useWindowDimensions';
 
@@ -148,6 +149,7 @@ const IncidentCard = ({ incident }) => {
     return (
       <section className="IncidentCard">
         <span className="Block IncidentInfo">{incident.name}</span>
+        <Divider className="NameDivider" />
         <span className="Block">
           <span className="FieldName">When: </span>
           {incident.date_text}
