@@ -149,11 +149,11 @@ const IncidentCard = ({ incident }) => {
       <section className="IncidentCard">
         <span className="Block IncidentInfo">{incident.name}</span>
         <span className="Block">
-          <span className="FieldName">Date: </span>
+          <span className="FieldName">When: </span>
           {incident.date_text}
         </span>
         <span className="Block">
-          <span className="FieldName">Location: </span>
+          <span className="FieldName">Where: </span>
           {getLocation()}
         </span>
         <span className="Block">
