@@ -16,7 +16,7 @@ const TimelineSummary = ({ incidentData }) => {
       });
   };
 
-  const getTotalIncidentCount = () => incidentData.length;
+  const getTotalIncidentCount = () => incidentData.length - 1;
 
   const getWeekIncidentCount = () => {
     const today = new Date();
@@ -65,7 +65,10 @@ const TimelineSummary = ({ incidentData }) => {
       <Paper className="IncidentCountContainer TotalCount" elevation={24}>
         {getCountUpElement(totalIncidentCount)}
         <div>
-          police brutality {getIncidentText(totalIncidentCount)} since May 25th, 2020
+          police brutality {getIncidentText(totalIncidentCount)} since George Floyd's death
+          <div className="GeorgeFloydIncidentDate">
+            (May 25th, 2020)
+          </div>
         </div>
       </Paper>
       <Paper className="IncidentCountContainer WeekCount" elevation={24}>
