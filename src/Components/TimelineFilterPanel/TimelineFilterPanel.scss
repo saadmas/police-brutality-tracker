@@ -1,9 +1,13 @@
 @import '../../Styles/variables.scss';
-
 .TimelineFilterPanel {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+
+  ::placeholder {
+    color: black !important; 
+    font-weight: 800;
+  }
 
   > div {
     margin-left: 20px;
