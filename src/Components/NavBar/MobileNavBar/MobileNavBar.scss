@@ -2,10 +2,10 @@
 
 .MobileNavBar {
   color: $primary-font-color;
-  font-family: 'Spectral', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
 
   .AppTitle {
-    font-size: 20px;
+    font-size: 22px;
     display: flex;
     justify-content: center;
   }
@@ -13,7 +13,7 @@
   .MenuButton, button {
     color: $primary-font-color;
     position: absolute;
-    top: 13px;
+    top: 25px;
     right: 0;
 
     svg {
@@ -32,7 +32,7 @@
   color: $primary-font-color !important;
 
   .MuiTypography-root {
-    font-family: 'Montserrat', sans-serif !important;
+    font-family: 'Josefin Sans', sans-serif !important;
   }
 
   .MuiListItemIcon-root {
