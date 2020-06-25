@@ -72,7 +72,7 @@ const TimelinePage = ({ incidentData }) => {
   };
 
   return (
-    <div>
+    <div className="TimelinePage">
       <TimelineSummary incidentData={timelineData} />
       <TimelineFilterPanel
         searchValue={searchValue}
