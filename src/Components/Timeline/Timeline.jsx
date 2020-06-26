@@ -83,7 +83,7 @@ const Timeline = ({ incidentData, loadMore, fullIncidentListLength }) => {
   }
 
   const getLoadMoreElement = () => {
-    if (isFullIncidentList()) {
+    if (isFullIncidentList() || incidentData.length === 1) {
       return null;
     }
 

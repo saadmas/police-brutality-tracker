@@ -12,12 +12,10 @@ const TimelinePage = ({ incidentData, match, history }) => {
   const [locationFilter, setLocationFilter] = React.useState({ location: '', type: 'state' });
   const [searchValue, setSearchValue] = React.useState('');
   const [timelineSize, setTimeLineSize] = React.useState(timelineIncrement);
+  const [isSingleIncidentTimeline, setSingleIncidentTimeline] = React.useState(false);
 
   React.useEffect(() => {
-    const isValidIncident = incidentData.find(incident => incident.id === routeIncidentId);
-    if (!isValidIncident) {
-      history.push('/');
-    }
+    handleIncidentFromRoute();
   }, [routeIncidentId]);
 
   React.useEffect(() => {
@@ -27,7 +25,19 @@ const TimelinePage = ({ incidentData, match, history }) => {
     setTimeLineSize(timelineIncrement);
   }, [dateSort, searchValue, locationFilter])
 
+  const handleIncidentFromRoute = () => {
+    if (!routeIncidentId) {
+      return;
+    }
 
+    const isValidIncident = incidentData.find(incident => incident.id === routeIncidentId);
+    if (!isValidIncident) {
+      history.push('/');
+      return;
+    }
+
+    setSingleIncidentTimeline(true);
+  };
 
   const getSortedIncidentData = (data) => {
     const sortedIncidentData = [...data];
@@ -72,7 +82,16 @@ const TimelinePage = ({ incidentData, match, history }) => {
   };
 
   const getIncidentsForTimeline = () => {
-    return getIncidentsSlice();
+    let incidents;
+
+    if (isSingleIncidentTimeline) {
+      const incidentFromRoute = timelineData.find(incident => incident.id === routeIncidentId);
+      incidents = [incidentFromRoute];
+    } else {
+      incidents = getIncidentsSlice();
+    }
+
+    return incidents;
   };
 
   const getIncidentsSlice = () => {

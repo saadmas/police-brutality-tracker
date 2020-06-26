@@ -41,7 +41,8 @@ const App = () => {
       'https://www.youtube.com/watch?v=vksEJR9EPQ8'
     ],
     name: 'Police officer kills George Floyd by kneeling on his neck for 8 minutes and 46 seconds',
-    state: 'Minnesota'
+    state: 'Minnesota',
+    id: 'george-floyd'
   });
 
   const getRoutes = () => {
