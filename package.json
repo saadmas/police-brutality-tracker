@@ -13,6 +13,7 @@
     "react-instagram-embed": "^1.5.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
+    "react-scroll": "^1.7.16",
     "react-share": "^4.2.0",
     "react-tweet-embed": "^1.2.2",
     "react-twitter-widgets": "^1.9.5",
