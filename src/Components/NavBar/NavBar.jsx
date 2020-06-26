@@ -10,7 +10,7 @@ const NavBar = () => {
   const { width } = useWindowDimensions();
 
   const getResponsiveNavBar = () => {
-    if (width > 420) {
+    if (width > 1100) {
       return <DesktopNavBar />;
     }
     return <MobileNavBar />;

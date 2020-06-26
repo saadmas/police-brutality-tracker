@@ -66,12 +66,9 @@
 
     .IncidentCount {
       font-size: 35px;
-
-
     }
   
     > div {
-      border-radius: 2px;
       margin-bottom: 12px;
       width: 200px;
     }
@@ -80,6 +77,33 @@
       .GeorgeFloydIncidentDate {
         margin-top: 4px;
         font-size: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (min-device-width: 421px) and (max-width: 1300px) {
+  .TimelineSummary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+    .IncidentCount {
+      font-size: 40px;
+    }
+  
+    > div {
+      margin-bottom: 12px;
+      width: 250px;
+    }
+
+    .TotalCount {
+      .GeorgeFloydIncidentDate {
+        margin-top: 4px;
+        font-size: 14px;
       }
     }
   }

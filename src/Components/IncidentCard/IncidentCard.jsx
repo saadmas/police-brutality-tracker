@@ -77,13 +77,23 @@ const IncidentCard = ({ incident }) => {
     );
   };
 
+  const getSocialEmbedWidth = () => {
+    switch (true) {
+      case width <= 420:
+        return '220';
+      case width <= 1300:
+        return '400';
+      default:
+        return '470';
+    }
+  }
+
   const getFacebookEmbed = (facebookLink) => {
-    const isMobile = width <= 420;
     return (
       <FacebookProvider appId="306545370511738">
         <EmbeddedPost
           href={facebookLink}
-          width={isMobile ? '220' : '470'}
+          width={getSocialEmbedWidth()}
         />
       </FacebookProvider>
     );
@@ -104,7 +114,7 @@ const IncidentCard = ({ incident }) => {
       <YouTube
         videoId={videoId}
         opts={{
-          width: isMobile ? '220' : '470'
+          width: getSocialEmbedWidth()
         }}
       />
     );

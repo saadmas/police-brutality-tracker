@@ -112,3 +112,18 @@
     margin-top: 30px;
   }
 }
+
+@media screen and (min-device-width: 421px) and (max-width: 1300px) {
+  .Timeline {
+    .TimelineElement {
+      width: 450px;
+    }
+
+    .LoadMoreButton {
+      .FabButton {
+        top: 20px;
+        right: 8px;
+      }
+    }
+  }
+}

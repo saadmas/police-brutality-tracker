@@ -24,7 +24,7 @@ const SharePopover = ({ isPopoverVisible, incident }) => {
 
   const getShareIncidentProps = (incident, removeUrlFromText) => {
     const { name, date_text, id } = incident;
-    const url = `${appUrl}#${id}`
+    const url = `${appUrl}/timeline/${id}`
     let shareText = `${name} on ${date_text}.\n\nLearn more about it and view all police brutality incidents since George Floyd's death\n\n`;
 
     if (!removeUrlFromText) {
