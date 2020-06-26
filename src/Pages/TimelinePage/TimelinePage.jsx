@@ -1,8 +1,13 @@
 import React from 'react';
+import CachedIcon from '@material-ui/icons/Cached';
+import Button from '@material-ui/core/Button';
+import Container from '@material-ui/core/Container';
 
 import Timeline from '../../Components/Timeline/Timeline';
 import TimelineSummary from '../../Components/TimelineSummary/TimelineSummary';
 import TimelineFilterPanel from '../../Components/TimelineFilterPanel/TimelineFilterPanel';
+
+import './TimelinePage.scss';
 
 const TimelinePage = ({ incidentData, match, history }) => {
   const timelineIncrement = 5;
@@ -104,17 +109,31 @@ const TimelinePage = ({ incidentData, match, history }) => {
     setTimeLineSize(prevSize => prevSize + timelineIncrement);
   };
 
+  const getShowFullTimelineButton = () => isSingleIncidentTimeline && (
+    <Container>
+      <Button className="ShowAllIncidentsButton">
+        View all police brutality incidents since George Floyd's death
+      <CachedIcon className="ShowTimelineIcon" />
+      </Button>
+    </Container>
+  );
+
+  const getTimelineFilterPanel = () => !isSingleIncidentTimeline && (
+    <TimelineFilterPanel
+      searchValue={searchValue}
+      setSearchValue={setSearchValue}
+      dateSort={dateSort}
+      setDateSort={setDateSort}
+      incidentData={incidentData}
+      updateLocation={updateLocation}
+    />
+  );
+
   return (
     <div className="TimelinePage">
       <TimelineSummary incidentData={timelineData} />
-      <TimelineFilterPanel
-        searchValue={searchValue}
-        setSearchValue={setSearchValue}
-        dateSort={dateSort}
-        setDateSort={setDateSort}
-        incidentData={incidentData}
-        updateLocation={updateLocation}
-      />
+      {getTimelineFilterPanel()}
+      {getShowFullTimelineButton()}
       <Timeline
         incidentData={getIncidentsForTimeline()}
         loadMore={loadMore}

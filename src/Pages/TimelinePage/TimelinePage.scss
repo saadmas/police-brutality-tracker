@@ -1,0 +1,58 @@
+@import '../../Styles/variables.scss';
+
+.TimelinePage {
+  .ShowAllIncidentsButton  {
+    height: 100px;
+    font-size: 22px;
+    margin-left: 250px;
+    border-radius: 5px;
+    padding: 1px 20px;
+    color: $primary-font-color;
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: none;
+
+    background: #614385;
+    background: #614385;
+    background: linear-gradient(to left, #516395, #614385);
+
+      
+    &:hover {
+      background: #614385;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #516395, #614385);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #516395, #614385); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+,  */
+    }
+
+    .ShowTimelineIcon {
+      margin-left: 5px;
+      margin-bottom: 2px;
+      font-size: 35px;
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .TimelinePage {
+    .ShowAllIncidentsButton  {
+      height: 50px;
+      width: 230px;
+      font-size: 11px;
+      margin-left: 36px;
+      border-radius: 5px;
+      padding: 1px 10px;
+      color: $primary-font-color;
+      font-family: 'Josefin Sans', sans-serif;
+      text-transform: none;
+      margin-top: 10px;
+      margin-bottom: 30px;
+
+
+  
+      .ShowTimelineIcon {
+        margin-left: 2px;
+        margin-bottom: 2px;
+        font-size: 20px;
+      }
+    }
+  }
+  
+}
