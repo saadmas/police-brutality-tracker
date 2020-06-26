@@ -2,7 +2,6 @@ import React from 'react';
 import CachedIcon from '@material-ui/icons/Cached';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
-import { useLocation } from 'react-router-dom'
 
 import Timeline from '../../Components/Timeline/Timeline';
 import TimelineSummary from '../../Components/TimelineSummary/TimelineSummary';
@@ -10,10 +9,9 @@ import TimelineFilterPanel from '../../Components/TimelineFilterPanel/TimelineFi
 
 import './TimelinePage.scss';
 
-const TimelinePage = ({ incidentData, history }) => {
+const TimelinePage = ({ incidentData, history, match }) => {
   const timelineIncrement = 5;
-  const { hash } = useLocation();
-  const routeIncidentId = hash && hash.substring(1);
+  const [routeIncidentId, setRouteIncidentId] = React.useState(match.params.incidentId);
   const [dateSort, setDateSort] = React.useState('asc');
   const [timelineData, setTimelineData] = React.useState(incidentData);
   const [locationFilter, setLocationFilter] = React.useState({ location: '', type: 'state' });
@@ -34,7 +32,8 @@ const TimelinePage = ({ incidentData, history }) => {
 
   const handleIncidentFromRoute = () => {
     if (!routeIncidentId) {
-      return;
+      setSingleIncidentTimeline(false);
+      history.push('/');
     }
 
     const isValidIncident = incidentData.find(incident => incident.id === routeIncidentId);
