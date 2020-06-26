@@ -16,7 +16,7 @@ const TimelineSummary = ({ incidentData }) => {
       });
   };
 
-  const getTotalIncidentCount = () => incidentData.length - 1;
+  const getTotalIncidentCount = () => incidentData.filter(incident => incident.id !== 'george-floyd').length;
 
   const getWeekIncidentCount = () => {
     const today = new Date();
