@@ -10,7 +10,7 @@ import TimelineFilterPanel from '../../Components/TimelineFilterPanel/TimelineFi
 
 import './TimelinePage.scss';
 
-const TimelinePage = ({ incidentData, match, history }) => {
+const TimelinePage = ({ incidentData, history }) => {
   const timelineIncrement = 5;
   const { hash } = useLocation();
   const routeIncidentId = hash && hash.substring(1);
@@ -111,9 +111,14 @@ const TimelinePage = ({ incidentData, match, history }) => {
     setTimeLineSize(prevSize => prevSize + timelineIncrement);
   };
 
+  const showFullTimeline = () => {
+    setSingleIncidentTimeline(false);
+    history.push('/');
+  };
+
   const getShowFullTimelineButton = () => isSingleIncidentTimeline && (
     <Container>
-      <Button className="ShowAllIncidentsButton">
+      <Button className="ShowAllIncidentsButton" onClick={showFullTimeline}>
         View all police brutality incidents since George Floyd's death
       <CachedIcon className="ShowTimelineIcon" />
       </Button>
