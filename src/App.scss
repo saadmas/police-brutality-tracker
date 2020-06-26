@@ -19,4 +19,56 @@ html, body {
   .MuiInputBase-input {
     font-family: 'Montserrat', sans-serif;
   }
+
+  .ErrorPaper {
+    background: #0f0f0f !important;
+    display: flex;
+    justify-content: center;
+    color: $primary-font-color;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 50px;
+
+    > section {
+      background: #ED213A;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #93291E, #ED213A);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #93291E, #ED213A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      font-size: 25px;
+      margin-top: 30px;
+      padding: 50px 40px;
+      width: 600px;
+      height: 300px;
+      text-align: center;
+    }
+
+    .RefreshIcon {
+      font-size: 80px;
+      margin-top: 20px;
+      display: block;
+      margin-left: 215px;
+    }
+  }
 }
+
+@media screen and (max-width: 420px) {
+  .App {
+
+    .ErrorPaper {
+      margin-top: 20px;
+      
+      > section {
+        font-size: 15px;
+        padding: 20px;
+        width: 300px;
+        height: 200px;
+      }
+      
+      .RefreshIcon {
+        font-size: 50px;
+        margin-top: 15px;
+        display: block;
+        margin-left: 105px;
+      }
+    }
+  }
+}
+  

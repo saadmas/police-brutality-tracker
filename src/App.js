@@ -1,6 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Paper from '@material-ui/core/Paper';
+import RefreshIcon from '@material-ui/icons/Refresh';
 
 import NavBar from './Components/NavBar/NavBar';
 import TimelinePage from './Pages/TimelinePage/TimelinePage';
@@ -67,7 +69,14 @@ const App = () => {
 
   const getAppContent = () => {
     if (isDataFetchError) {
-      return <h2>Uh oh... Error fetching police incidents data. <br />Please refresh the page to try again.</h2>
+      return (
+        <Paper className="ErrorPaper" elevation={24}>
+          <section>
+            Uh oh... Error fetching police incidents data. <br />Please refresh the page to try again.
+          <RefreshIcon className="RefreshIcon" />
+          </section>
+        </Paper>
+      );
     }
     return getRoutes();
   }
