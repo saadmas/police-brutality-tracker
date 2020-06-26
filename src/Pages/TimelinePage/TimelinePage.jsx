@@ -4,8 +4,9 @@ import Timeline from '../../Components/Timeline/Timeline';
 import TimelineSummary from '../../Components/TimelineSummary/TimelineSummary';
 import TimelineFilterPanel from '../../Components/TimelineFilterPanel/TimelineFilterPanel';
 
-const TimelinePage = ({ incidentData }) => {
+const TimelinePage = ({ incidentData, match, history }) => {
   const timelineIncrement = 5;
+  const routeIncidentId = match.params.incidentId;
   const [dateSort, setDateSort] = React.useState('asc');
   const [timelineData, setTimelineData] = React.useState(incidentData);
   const [locationFilter, setLocationFilter] = React.useState({ location: '', type: 'state' });
@@ -13,11 +14,20 @@ const TimelinePage = ({ incidentData }) => {
   const [timelineSize, setTimeLineSize] = React.useState(timelineIncrement);
 
   React.useEffect(() => {
+    const isValidIncident = incidentData.find(incident => incident.id === routeIncidentId);
+    if (!isValidIncident) {
+      history.push('/');
+    }
+  }, [routeIncidentId]);
+
+  React.useEffect(() => {
     const filteredData = getFilteredIncidentData();
     const sortedData = getSortedIncidentData(filteredData);
     setTimelineData(sortedData);
     setTimeLineSize(timelineIncrement);
   }, [dateSort, searchValue, locationFilter])
+
+
 
   const getSortedIncidentData = (data) => {
     const sortedIncidentData = [...data];
@@ -61,6 +71,10 @@ const TimelinePage = ({ incidentData }) => {
     setLocationFilter(location);
   };
 
+  const getIncidentsForTimeline = () => {
+    return getIncidentsSlice();
+  };
+
   const getIncidentsSlice = () => {
     const sliceEnd = timelineSize > timelineData.length ? timelineData.length : timelineSize;
     const incidentSlice = timelineData.slice(0, sliceEnd);
@@ -83,7 +97,7 @@ const TimelinePage = ({ incidentData }) => {
         updateLocation={updateLocation}
       />
       <Timeline
-        incidentData={getIncidentsSlice()}
+        incidentData={getIncidentsForTimeline()}
         loadMore={loadMore}
         fullIncidentListLength={timelineData.length}
       />
