@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom';
 
 import Timeline from '../../Components/Timeline/Timeline';
 import TimelineSummary from '../../Components/TimelineSummary/TimelineSummary';
@@ -27,11 +27,12 @@ const TimelinePage = ({ incidentData }) => {
 
   const getIncidentIdToScrollTo = () => {
     if (!routeHash) {
-      return null;
+      return;
     }
 
     const incidentId = routeHash.substring(1);
     const incidentToScrollTo = timelineData.find(incident => incident.id === incidentId);
+
     if (incidentToScrollTo) {
       return incidentId;
     }

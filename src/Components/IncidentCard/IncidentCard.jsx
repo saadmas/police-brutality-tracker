@@ -13,7 +13,7 @@ import useWindowDimensions from '../../Hooks/useWindowDimensions';
 
 import './IncidentCard.scss';
 
-const IncidentCard = ({ incident }) => {
+const IncidentCard = ({ incident, incidentIdToScrollTo }) => {
   const [isPopoverVisible, setPopoverVisible] = React.useState(false);
   const { width } = useWindowDimensions();
 
@@ -113,6 +113,10 @@ const IncidentCard = ({ incident }) => {
   const getEmbed = () => {
     const { links } = incident;
     const isMobile = width <= 420;
+
+    if (incidentIdToScrollTo !== incident.id) {
+      return null;
+    }
 
     const tweetLink = links.find(link => link.includes('twitter'));
     if (tweetLink) {

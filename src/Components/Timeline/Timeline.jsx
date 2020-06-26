@@ -3,7 +3,7 @@ import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeli
 import 'react-vertical-timeline-component/style.min.css';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
-import { Link, Element as ScrollElement, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'; ///
+import ScrollableAnchor, { goToAnchor } from 'react-scrollable-anchor';
 
 import Handcuffed from '../../Icons/Handcuffed';
 import Handcuffs from '../../Icons/Handcuffs';
@@ -30,31 +30,8 @@ const Timeline = ({ incidentData, loadMore, fullIncidentListLength, incidentIdTo
   ];
 
   React.useEffect(() => {
-    Events.scrollEvent.register('begin', function (to, element) {
-      console.log("begin", arguments);
-    });
-
-    Events.scrollEvent.register('end', function (to, element) {
-      console.log("end", arguments);
-    });
-
-    scrollSpy.update();
-
-    return () => {
-      Events.scrollEvent.remove('begin');
-      Events.scrollEvent.remove('end');
-    }
-  });
-
-  React.useEffect(() => {
     if (incidentIdToScrollTo) {
-      scroller.scrollTo(incidentIdToScrollTo, {
-        duration: 1500,
-        delay: 2000,
-        smooth: true,
-        containerId: 'VerticalIncidentTimeline',
-        // isDynamic: true
-      })
+      goToAnchor(incidentIdToScrollTo);
     }
   }, [incidentIdToScrollTo])
 
@@ -88,7 +65,7 @@ const Timeline = ({ incidentData, loadMore, fullIncidentListLength, incidentIdTo
 
       return (
         <VerticalTimelineElement
-          // id={incident.id} ///
+          id={incident.id}
           key={`incident-${index}-timeline-element`}
           date={incident.date_text}
           dateClassName="IncidentDate" b
@@ -97,9 +74,12 @@ const Timeline = ({ incidentData, loadMore, fullIncidentListLength, incidentIdTo
           iconStyle={{ background: '#0A0A0A' }}
           {...styleProps}
         >
-          <ScrollElement name={incident.id}>
-            <IncidentCard incident={incident} />
-          </ScrollElement>
+          <ScrollableAnchor id={incident.id}>
+            <IncidentCard
+              incident={incident}
+              incidentIdToScrollTo={incidentIdToScrollTo}
+            />
+          </ScrollableAnchor >
         </VerticalTimelineElement>
       );
     });
