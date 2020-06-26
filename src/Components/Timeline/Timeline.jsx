@@ -3,6 +3,7 @@ import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeli
 import 'react-vertical-timeline-component/style.min.css';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
+import ScrollableAnchor, { goToAnchor } from 'react-scrollable-anchor';
 
 import Handcuffed from '../../Icons/Handcuffed';
 import Handcuffs from '../../Icons/Handcuffs';
@@ -16,7 +17,7 @@ import IncidentCard from '../IncidentCard/IncidentCard';
 
 import './Timeline.scss';
 
-const Timeline = ({ incidentData, loadMore, fullIncidentListLength }) => {
+const Timeline = ({ incidentData, loadMore, fullIncidentListLength, isSingleIncidentTimeline }) => {
   const icons = [
     <Handcuffed className="RoundIcon" />,
     <PoliceOfficerHead className="RoundIcon" />,
@@ -58,6 +59,7 @@ const Timeline = ({ incidentData, loadMore, fullIncidentListLength }) => {
 
       return (
         <VerticalTimelineElement
+          id={incident.id}
           key={`incident-${index}-timeline-element`}
           date={incident.date_text}
           dateClassName="IncidentDate" b
@@ -66,7 +68,10 @@ const Timeline = ({ incidentData, loadMore, fullIncidentListLength }) => {
           iconStyle={{ background: '#0A0A0A' }}
           {...styleProps}
         >
-          <IncidentCard incident={incident} />
+          <ScrollableAnchor id={incident.id}>
+
+            <IncidentCard incident={incident} />
+          </ScrollableAnchor>
         </VerticalTimelineElement>
       );
     });
@@ -83,7 +88,7 @@ const Timeline = ({ incidentData, loadMore, fullIncidentListLength }) => {
   }
 
   const getLoadMoreElement = () => {
-    if (isFullIncidentList() || incidentData.length === 1) {
+    if (isFullIncidentList() || isSingleIncidentTimeline) {
       return null;
     }
 

@@ -51,7 +51,7 @@ const App = () => {
         <Switch>
           <Route
             exact
-            path="/:incidentId?"
+            path="/"
             render={(props) => <TimelinePage incidentData={incidentData} {...props} />}
           />
           <Route
