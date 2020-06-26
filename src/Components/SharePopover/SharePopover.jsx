@@ -20,6 +20,20 @@ const SharePopover = ({ isPopoverVisible, incident }) => {
   const iconSize = 40;
   const borderRadius = 30;
   const appUrl = 'https://defund-the-police.today/';
+  const shareTimelineText = 'Check out this timeline of all police brutality incidents since the death of George Floyd';
+
+  const getShareIncidentProps = (incident, removeUrlFromText) => {
+    const { name, date_text, id } = incident;
+    const url = `${appUrl}#${id}`
+    let shareText = `${name} on ${date_text}.\n\nLearn more about it and view all police brutality incidents since George Floyd's death\n\n`;
+
+    if (!removeUrlFromText) {
+      shareText += url;
+      shareText += '\n\n';
+    }
+
+    return { shareText, url };
+  };
 
   const getFacebookShareProps = () => {
     let quote;
@@ -27,12 +41,11 @@ const SharePopover = ({ isPopoverVisible, incident }) => {
     const hashtag = '#DefundThePolice';
 
     if (incident) {
-      const { name, date_text, links } = incident;
-      const linksText = links.join('\n\n');
-      url = links[0];
-      quote = `${name} on ${date_text}. See it for yourself:\n\n ${linksText}`;
+      const shareIncidentProps = getShareIncidentProps(incident);
+      quote = shareIncidentProps.shareText;
+      url = shareIncidentProps.url;
     } else {
-      quote = 'Check out this timeline of all police brutality incidents since the death of George Floyd';
+      quote = shareTimelineText;
       url = appUrl;
     }
 
@@ -41,18 +54,19 @@ const SharePopover = ({ isPopoverVisible, incident }) => {
 
   const getLinkedInShareProps = () => {
     let summary;
+    let source;
     let url;
     const title = 'Defund The Police!';
-    const source = appUrl;
 
     if (incident) {
-      const { name, date_text, links } = incident;
-      const linksText = links.join('\n\n');
-      url = links[0];
-      summary = `${name} on ${date_text}. See it for yourself:\n\n ${linksText}`;
+      const shareIncidentProps = getShareIncidentProps(incident);
+      summary = shareIncidentProps.shareText;
+      url = shareIncidentProps.url;
+      source = shareIncidentProps.url;
     } else {
+      source = appUrl;
       url = appUrl;
-      summary = 'Check out this timeline of all police brutality incidents since the death of George Floyd';
+      summary = shareTimelineText;
     }
 
     return { summary, title, url, source };
@@ -60,12 +74,14 @@ const SharePopover = ({ isPopoverVisible, incident }) => {
 
   const getRedditShareProps = () => {
     let url;
-    let title = 'Defund The Police!';
+    let title;
 
     if (incident) {
-      url = incident.links[0];
+      const shareIncidentProps = getShareIncidentProps(incident);
+      title = shareIncidentProps.shareText;
+      url = shareIncidentProps.url;
     } else {
-      title = 'Defund The Police! Check out this timeline of all police brutality incidents since the death of George Floyd';
+      title = shareTimelineText;
       url = appUrl;
     }
 
@@ -74,13 +90,15 @@ const SharePopover = ({ isPopoverVisible, incident }) => {
 
   const getTwitterShareProps = () => {
     let url;
-    let title = 'Defund The Police!\n\n';
+    let title;
     const hashtags = ['DefundThePolice', 'BlackLivesMatter'];
 
     if (incident) {
-      url = incident.links[0];
+      const shareIncidentProps = getShareIncidentProps(incident, true);
+      title = shareIncidentProps.shareText;
+      url = shareIncidentProps.url;
     } else {
-      title = 'Defund The Police! Check out this timeline of all police brutality incidents since the death of George Floyd\n\n';
+      title = shareTimelineText;
       url = appUrl;
     }
 
@@ -89,13 +107,15 @@ const SharePopover = ({ isPopoverVisible, incident }) => {
 
   const getWhatsappShareProps = () => {
     let url;
-    let title = 'Defund The Police!';
+    let title;
     const separator = '\n\n';
 
     if (incident) {
-      url = incident.links[0];
+      const shareIncidentProps = getShareIncidentProps(incident, true);
+      title = shareIncidentProps.shareText;
+      url = shareIncidentProps.url;
     } else {
-      title = 'Defund The Police! Check out this timeline of all police brutality incidents since the death of George Floyd\n\n';
+      title = shareTimelineText;
       url = appUrl;
     }
 
