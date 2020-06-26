@@ -114,7 +114,6 @@ const TimelineFilterPanel = ({ searchValue, setSearchValue, dateSort, setDateSor
           autoComplete
           value={stateValue}
           blurOnSelect
-          autoSelect
           renderInput={params => (
             <TextField
               {...params}
@@ -133,7 +132,6 @@ const TimelineFilterPanel = ({ searchValue, setSearchValue, dateSort, setDateSor
           autoComplete
           value={cityValue}
           blurOnSelect
-          autoSelect
           renderInput={params => (
             <TextField
               {...params}
