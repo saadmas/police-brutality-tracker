@@ -21,13 +21,13 @@ const Timeline = ({ incidentData, loadMore, fullIncidentListLength, isSingleInci
 
   const icons = [
     <Handcuffed className="RoundIcon" />,
-    <PoliceBadge className="RoundIcon" />,
     <PoliceOfficerHead className="RoundIcon" />,
     <PoliceCar className="RoundIcon" />,
     <Manacles className="RoundIcon" />,
     <PistolGun className="RoundIcon" />,
     <RiotShield className="RoundIcon" />,
     <Handcuffs className="RoundIcon" />,
+    <PoliceBadge className="RoundIcon" />,
   ];
 
   const isFullIncidentList = () => fullIncidentListLength === incidentData.length;
