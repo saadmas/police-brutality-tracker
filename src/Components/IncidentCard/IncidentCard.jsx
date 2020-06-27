@@ -24,7 +24,14 @@ const IncidentCard = ({ incident }) => {
   };
 
   const getDomain = (url) => {
-    const host = new URL(url).hostname;
+    let host;
+
+    try {
+      host = new URL(url).hostname;
+    }
+    catch (e) {
+      return null;
+    }
 
     const isYoutuDOTbe = host.includes('youtu.be');
     if (isYoutuDOTbe) {
@@ -38,7 +45,12 @@ const IncidentCard = ({ incident }) => {
 
   const getAnchorTag = (link, idx, arr) => {
     const isLastTag = idx + 1 === arr.length;
+
     const domain = getDomain(link);
+    if (!domain) {
+      return null;
+    }
+
     const trailingComma = !isLastTag && ', ';
     return (
       <span key={`source-${incident.date}-${link}-${idx}`}>
