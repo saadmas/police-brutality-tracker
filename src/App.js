@@ -72,7 +72,9 @@ const App = () => {
             path="/report-incident"
             render={openDonationsForm}
           />
-          <Route component={ErrorPage} />
+          <Route
+            render={(props) => <TimelinePage incidentData={incidentData} {...props} />}
+          />
         </Switch>
       );
     }
