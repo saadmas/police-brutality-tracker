@@ -22,7 +22,7 @@ const DesktopNavBar = () => {
           <span className="NavLinkText">Donations</span>
           <CallReceivedIcon className="NavIcon" />
         </Link>
-        <Link className="NavLink" to="/report-an-incident">
+        <Link className="NavLink" to="/report-incident">
           <span className="NavLinkText">Report Incident</span>
           <GavelOutlinedIcon className="NavIcon" />
         </Link>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Paper from '@material-ui/core/Paper';
 import RefreshIcon from '@material-ui/icons/Refresh';
@@ -7,7 +7,6 @@ import RefreshIcon from '@material-ui/icons/Refresh';
 import NavBar from './Components/NavBar/NavBar';
 import TimelinePage from './Pages/TimelinePage/TimelinePage';
 import ErrorPage from './Pages/ErrorPage/ErrorPage';
-import DonationsPage from './Pages/DonationsPage/DonationsPage';
 
 import './App.scss';
 
@@ -47,6 +46,18 @@ const App = () => {
     id: 'george-floyd'
   });
 
+  const openDonationsForm = () => {
+    const donationsForm = window.open('https://docs.google.com/forms/u/1/d/e/1FAIpQLSd33kN_1HqXCc6SSiL2-b1_IkMouM-rIyCbLsQrGpFN4amcAA/viewform', '_blank');
+
+    if (donationsForm) {
+      donationsForm.focus();
+    } else {
+      alert('Please allow popups for to open donations form');
+    }
+
+    return <Redirect to="/" />;
+  };
+
   const getRoutes = () => {
     if (incidentData && incidentData.length) {
       return (
@@ -58,8 +69,8 @@ const App = () => {
           />
           <Route
             exact
-            path="/donations"
-            render={(props) => <DonationsPage {...props} />}
+            path="/report-incident"
+            render={openDonationsForm}
           />
           <Route component={ErrorPage} />
         </Switch>
