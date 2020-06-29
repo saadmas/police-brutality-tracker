@@ -1,0 +1,34 @@
+@import '../../Styles/variables.scss';
+
+.DonationOrganizationTab {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 22px;
+  margin-top: 40px;
+  margin-left: 38.5vw;
+  
+  .DonationOrg {
+    display: inline-block;
+    text-decoration: none;
+    color: $primary-font-color;
+    margin-bottom: 20px;
+
+
+    .DonationOrgText {
+      &:hover {
+        border-bottom: 1px solid $primary-font-color;
+      }  
+    }
+    
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+  .DonationOrganizationTab {
+    font-size: 12px;
+    margin-left: 30vw;
+    
+    .DonationOrg {
+      margin-bottom: 20px;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-const donationOrganizations = [
+export const donationOrganizations = [
   {
     name: 'Know Your Rights Camp',
     url: 'https://secure.eifoundation.org/site/Donation2?df_id=6082&mfc_pref=T&6082.donation=form1&s_src=kyrcmain&utm_source=kyrcmain'

@@ -25,20 +25,21 @@ const DonationsPage = () => {
   };
 
   return (
-    <div className="DonationsPage">
+    <section className="DonationsPage">
       <Tabs
         value={tab}
         onChange={onTabChange}
         indicatorColor="primary"
         textColor="primary"
         centered
+        variant="fullWidth"
       >
         <Tab label="Bail Funds" textColor="primary" />
         <Tab label="Organizations" textColor="primary" />
         <Tab label="Black Owned Businesses" textColor="primary" />
       </Tabs>
       {getTabContent()}
-    </div>
+    </section>
   );
 };
 

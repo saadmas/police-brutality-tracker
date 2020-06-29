@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: center;
   margin-top: 50px;
+  width: 94vw;
   
   .MuiTab-root {
     margin: 0px 15px;
@@ -24,6 +25,7 @@
 @media only screen and (max-device-width: 480px) {
   .DonationsPage {
     margin-top: 30px;
+    width: 90vw;
     
     .MuiTab-root {
       margin: 0;
@@ -31,7 +33,7 @@
 
     
     .MuiTab-textColorPrimary {
-      font-size: 7px;
+      font-size: 6px;
     }
   
     .Mui-selected {
