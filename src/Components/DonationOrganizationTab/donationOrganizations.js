@@ -68,3 +68,54 @@ export const donationOrganizations = [
     url: 'https://www.unitingwisdom.com/'
   }
 ];
+
+export const blackBusinesses = [
+  {
+    name: 'Black owned business directory (US, Canada, Europe, and Africa)',
+    url: 'https://www.afrobizworld.com/'
+  },
+  {
+    name: 'Google Doc: Black owned businesses',
+    url: 'https://docs.google.com/document/d/1qpn5fFrG4-FLfGo3cUsiwb7OvDnnL10uOnF50X-1v90/edit'
+  },
+  {
+    name: 'Twitter thread: "Here’s a thread of black small businesses that were destroyed that you can donate to to help rebuild"',
+    url: 'https://twitter.com/hopewrlds/status/1266856971610632192'
+  },
+  {
+    name: 'Twitter thread: "Black owned business that have been affected by the protests that you can help!"',
+    url: 'https://twitter.com/TheyLoveTraviee/status/1266826175290265601'
+  },
+  {
+    name: 'Google Doc: Black-owned restaurants in LA',
+    url: 'https://docs.google.com/spreadsheets/u/1/d/18w-0RBhwBBlXDN9kRV9DVSCAGSCjtHb9K0Pq2YBv18U/edit?usp=sharing'
+  },
+  {
+    name: 'Twitter thread: "GoFundMe\'s and donation sites for the local minneapolis/st. paul black and brown owned businesses that need help right now (destroyed at the hands of white supremacists)"',
+    url: 'https://twitter.com/notsamiira/status/1266800128612016134'
+  },
+  {
+    name: 'Etsy: 200+ Black-owned shops',
+    url: 'https://themadmommy.com/black-owned-etsy-shops/'
+  },
+  {
+    name: 'Twitter thread: "Black-owned businesses"',
+    url: 'https://twitter.com/LAFEMMEDI0R/status/1268658763587825673'
+  },
+  {
+    name: 'Black-owned bookstores',
+    url: 'https://aalbc.com/bookstores/list.php'
+  },
+  {
+    name: 'Fund the Rebuild: list of businesses in need of rebuilding after the riots',
+    url: 'https://fund-the-rebuild.now.sh/'
+  },
+  {
+    name: 'List of Black artists for hire',
+    url: 'https://www.liinks.co/black.illustrators'
+  },
+  {
+    name: 'Chat Bot that recommends books by Black authors based on genre with links to purchase from Black-owned bookstore',
+    url: 'https://twitter.com/Ecmoy/status/1273370381211127809?s=20'
+  },
+];

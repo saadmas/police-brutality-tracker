@@ -1,15 +1,23 @@
 import React from 'react';
 
-import { donationOrganizations } from './donationOrganizations';
+import { donationOrganizations, blackBusinesses } from './donationOrganizations';
 
 import './DonationOrganizationTab.scss';
 
-const DonationOrganizationTab = () => {
+const DonationOrganizationTab = ({ donationType }) => {
 
   const getOrgs = () => {
-    donationOrganizations.sort((a, b) => a.name.localeCompare(b.name));
+    let orgs;
 
-    return donationOrganizations.map(org => (
+    if (donationType === 'blackBusinesses') {
+      orgs = blackBusinesses;
+    } else {
+      orgs = donationOrganizations;
+    }
+
+    orgs.sort((a, b) => a.name.localeCompare(b.name));
+
+    return orgs.map(org => (
       <div>
         <a href={org.url} className="DonationOrg" target="_blank">
           <span className="DonationOrgText">

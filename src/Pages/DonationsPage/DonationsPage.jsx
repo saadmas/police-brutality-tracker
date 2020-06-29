@@ -21,6 +21,8 @@ const DonationsPage = () => {
         return <BailFundsTable />;
       case 1:
         return <DonationOrganizationTab />;
+      case 2:
+        return <DonationOrganizationTab donationType="blackBusinesses" />;
     }
   };
 

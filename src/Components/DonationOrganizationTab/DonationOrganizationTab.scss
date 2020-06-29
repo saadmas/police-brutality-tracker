@@ -3,29 +3,26 @@
 .DonationOrganizationTab {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 22px;
-  margin-top: 40px;
-  margin-left: 38.5vw;
+  margin-top: 60px;
+  margin-left: 40px;
   
   .DonationOrg {
     display: inline-block;
-    text-decoration: none;
     color: $primary-font-color;
     margin-bottom: 20px;
 
-
     .DonationOrgText {
       &:hover {
-        border-bottom: 1px solid $primary-font-color;
+        opacity: 0.4;
       }  
     }
-    
   }
 }
 
 @media only screen and (max-device-width: 480px) {
   .DonationOrganizationTab {
     font-size: 12px;
-    margin-left: 30vw;
+    margin-left: 30px;
     
     .DonationOrg {
       margin-bottom: 20px;
