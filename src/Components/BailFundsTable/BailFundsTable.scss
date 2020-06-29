@@ -1,0 +1,60 @@
+@import '../../Styles/variables.scss';
+
+.BailFundsTable {
+  .MuiPaper-rounded {
+    padding: 10px;
+    background-color: black !important;
+  }
+
+  .MuiInputBase-root {
+    background: white;
+    height: 35px;
+    font-size: 14px;
+    color: black;
+    font-family: 'Montserrat', sans-serif !important; 
+
+    button {
+      top: 200px;
+    }
+
+    input {
+      padding: 5px;
+    }
+  }
+  
+  .MuiTableCell-head {
+    background-color: black !important;
+    color: white !important;
+    font-weight: 800 !important;
+  }
+  
+  .MuiTableCell-root {
+    font-size: 15px !important;
+    font-family: 'Montserrat', sans-serif !important; 
+  }
+  
+  [id*='MUIDataTableBodyRow']:hover {
+    cursor: pointer;
+    opacity: 0.4;
+  }
+  
+  [class*="MUIDataTableBodyRow-root"]:hover {
+    margin-right: 20px;
+  }
+
+  .MuiTablePagination-toolbar {
+    display: none;
+  }
+}
+
+
+@media only screen and (max-device-width: 480px) {
+  .MuiTableCell-root {
+    font-size: 8.5px !important;
+  }
+
+  .statsTable .MuiPaper-rounded {
+    padding: 0px;
+    background-color: black !important;
+  }
+}
