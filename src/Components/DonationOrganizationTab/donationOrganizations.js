@@ -1,5 +1,25 @@
 export const donationOrganizations = [
   {
+    name: 'Mutual Aid Networks',
+    url: 'https://mutualaid.carrd.co/'
+  },
+  {
+    name: '***WITHOUT MONEY*** By sharing BLM links',
+    url: 'https://twitter.com/kookpics/status/1268534687112335361?s=21'
+  },
+  {
+    name: '***WITHOUT MONEY*** By streaming a YouTube playlist',
+    url: 'https://www.youtube.com/playlist?list=PLtooIklzheqzORPbQBiEZKsw2T4s6SUxv'
+  },
+  {
+    name: '***WITHOUT MONEY*** By playing an iPhone game',
+    url: 'https://apps.apple.com/us/app/u-don/id1509911245'
+  },
+  {
+    name: 'Victim Funds',
+    url: 'https://blacklivesmatters.carrd.co/#victims'
+  },
+  {
     name: 'Know Your Rights Camp',
     url: 'https://secure.eifoundation.org/site/Donation2?df_id=6082&mfc_pref=T&6082.donation=form1&s_src=kyrcmain&utm_source=kyrcmain'
   },
@@ -28,7 +48,7 @@ export const donationOrganizations = [
     url: 'https://m4bl.org/'
   },
   {
-    name: 'The Marshall Project',
+    name: 'Marshall Project',
     url: 'https://www.themarshallproject.org/'
   },
   {
@@ -115,7 +135,7 @@ export const blackBusinesses = [
     url: 'https://www.liinks.co/black.illustrators'
   },
   {
-    name: 'Chat Bot that recommends books by Black authors based on genre with links to purchase from Black-owned bookstore',
+    name: 'Chat Bot that recommends books by Black authors based on genre with links to purchase from Black-owned bookstores',
     url: 'https://twitter.com/Ecmoy/status/1273370381211127809?s=20'
   },
 ];

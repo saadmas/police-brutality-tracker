@@ -7,12 +7,10 @@ import './DonationOrganizationTab.scss';
 const DonationOrganizationTab = ({ donationType }) => {
 
   const getOrgs = () => {
-    let orgs;
+    let orgs = donationOrganizations;
 
     if (donationType === 'blackBusinesses') {
       orgs = blackBusinesses;
-    } else {
-      orgs = donationOrganizations;
     }
 
     orgs.sort((a, b) => a.name.localeCompare(b.name));

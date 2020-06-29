@@ -7,6 +7,7 @@ import RefreshIcon from '@material-ui/icons/Refresh';
 import NavBar from './Components/NavBar/NavBar';
 import TimelinePage from './Pages/TimelinePage/TimelinePage';
 import DonationsPage from './Pages/DonationsPage/DonationsPage';
+import AboutPage from './Pages/AboutPage/AboutPage';
 
 import './App.scss';
 
@@ -77,6 +78,11 @@ const App = () => {
             exact
             path="/donate"
             render={(props) => <DonationsPage {...props} />}
+          />
+          <Route
+            exact
+            path="/about"
+            render={(props) => <AboutPage {...props} />}
           />
           <Route
             render={(props) => <TimelinePage incidentData={incidentData} {...props} />}
