@@ -26,3 +26,26 @@
     font-weight: 700;
   }
 }
+
+@media only screen and (max-device-width: 480px) {
+  .DonationsPage {
+    margin-top: 30px;
+    
+    .DonationsPaper {
+      padding: 0px;
+    }
+  
+    .MuiTab-root {
+      margin: 0;
+    }
+
+    
+    .MuiTab-textColorPrimary {
+      font-size: 7px;
+    }
+  
+    .Mui-selected {
+      font-weight: 700;
+    }
+  }
+}

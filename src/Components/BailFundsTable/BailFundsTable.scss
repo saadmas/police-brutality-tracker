@@ -13,10 +13,6 @@
     color: black;
     font-family: 'Montserrat', sans-serif !important; 
 
-    button {
-      top: 200px;
-    }
-
     input {
       padding: 5px;
     }
@@ -49,12 +45,27 @@
 
 
 @media only screen and (max-device-width: 480px) {
-  .MuiTableCell-root {
-    font-size: 8.5px !important;
-  }
+  .BailFundsTable {
+    .MuiTableCell-root {
+      font-size: 8.5px !important;
+    }
 
-  .statsTable .MuiPaper-rounded {
-    padding: 0px;
-    background-color: black !important;
+    [class*="clearIcon"] {
+      svg {
+        margin-left: 30px;
+        width: 20px;
+      }
+    }
+
+    .MuiInputBase-root {
+      margin: 5px 0px;
+      width: 180px;
+      height: 30px;
+      font-size: 16px;
+  
+      input {
+        padding: 2px;
+      }
+    }
   }
 }
