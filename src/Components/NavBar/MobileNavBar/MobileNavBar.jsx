@@ -33,9 +33,9 @@ const MobileNavBar = () => {
           <ListItemIcon><ScheduleIcon /></ListItemIcon>
           <ListItemText primary="Timeline" />
         </ListItem>
-        <ListItem button component={Link} to={'/donations'} onClick={closeBlade}>
+        <ListItem button component={Link} to={'/donate'} onClick={closeBlade}>
           <ListItemIcon><SendIcon /></ListItemIcon>
-          <ListItemText primary="Donations" />
+          <ListItemText primary="Donate" />
         </ListItem>
         <ListItem button component={Link} to={'/report-incident'} onClick={closeBlade}>
           <ListItemIcon><GavelOutlinedIcon /></ListItemIcon>

@@ -6,7 +6,7 @@ import RefreshIcon from '@material-ui/icons/Refresh';
 
 import NavBar from './Components/NavBar/NavBar';
 import TimelinePage from './Pages/TimelinePage/TimelinePage';
-import ErrorPage from './Pages/ErrorPage/ErrorPage';
+import DonationsPage from './Pages/DonationsPage/DonationsPage';
 
 import './App.scss';
 
@@ -46,13 +46,14 @@ const App = () => {
     id: 'george-floyd'
   });
 
-  const openDonationsForm = () => {
-    const donationsForm = window.open('https://docs.google.com/forms/u/1/d/e/1FAIpQLSd33kN_1HqXCc6SSiL2-b1_IkMouM-rIyCbLsQrGpFN4amcAA/viewform', '_blank');
+  const openIncidentReportingForm = () => {
+    const incidentReportForm =
+      window.open('https://docs.google.com/forms/u/1/d/e/1FAIpQLSd33kN_1HqXCc6SSiL2-b1_IkMouM-rIyCbLsQrGpFN4amcAA/viewform', '_blank');
 
-    if (donationsForm) {
-      donationsForm.focus();
+    if (incidentReportForm) {
+      incidentReportForm.focus();
     } else {
-      alert('Please allow popups for to open donations form');
+      alert('Please allow popups for to open indicent reporting form');
     }
 
     return <Redirect to="/" />;
@@ -70,7 +71,12 @@ const App = () => {
           <Route
             exact
             path="/report-incident"
-            render={openDonationsForm}
+            render={openIncidentReportingForm}
+          />
+          <Route
+            exact
+            path="/donate"
+            render={(props) => <DonationsPage {...props} />}
           />
           <Route
             render={(props) => <TimelinePage incidentData={incidentData} {...props} />}

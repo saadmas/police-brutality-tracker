@@ -3,7 +3,7 @@ import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeli
 import 'react-vertical-timeline-component/style.min.css';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
-import ScrollableAnchor, { goToAnchor } from 'react-scrollable-anchor';
+import ScrollableAnchor from 'react-scrollable-anchor';
 
 import Handcuffed from '../../Icons/Handcuffed';
 import Handcuffs from '../../Icons/Handcuffs';
@@ -18,13 +18,6 @@ import IncidentCard from '../IncidentCard/IncidentCard';
 import './Timeline.scss';
 
 const Timeline = ({ incidentData, loadMore, fullIncidentListLength, isSingleIncidentTimeline }) => {
-
-  React.useEffect(() => {
-    if (isSingleIncidentTimeline) {
-      const { id } = incidentData[0];
-      goToAnchor(id);
-    }
-  }, [isSingleIncidentTimeline]);
 
   const icons = [
     <Handcuffed className="RoundIcon" />,
@@ -67,6 +60,7 @@ const Timeline = ({ incidentData, loadMore, fullIncidentListLength, isSingleInci
 
       return (
         <VerticalTimelineElement
+          id={incident.id}
           key={`incident-${index}-timeline-element`}
           date={incident.date_text}
           dateClassName="IncidentDate" b
