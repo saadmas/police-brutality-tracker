@@ -31,9 +31,9 @@ const DonationsPage = () => {
           textColor="primary"
           centered
         >
-          <Tab label="Bail Funds" />
-          <Tab label="Organizations" />
-          <Tab label="Black Owned Businesses" />
+          <Tab label="Bail Funds" textColor="primary" />
+          <Tab label="Organizations" textColor="primary" />
+          <Tab label="Black Owned Businesses" textColor="primary" />
         </Tabs>
         {getTabContent()}
       </Paper>
