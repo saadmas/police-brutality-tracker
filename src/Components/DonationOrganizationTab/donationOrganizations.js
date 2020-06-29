@@ -4,15 +4,15 @@ export const donationOrganizations = [
     url: 'https://mutualaid.carrd.co/'
   },
   {
-    name: '***WITHOUT MONEY*** By sharing BLM links',
+    name: '*DONATE WITHOUT MONEY* By sharing BLM links',
     url: 'https://twitter.com/kookpics/status/1268534687112335361?s=21'
   },
   {
-    name: '***WITHOUT MONEY*** By streaming a YouTube playlist',
+    name: '*DONATE WITHOUT MONEY* By streaming a YouTube playlist',
     url: 'https://www.youtube.com/playlist?list=PLtooIklzheqzORPbQBiEZKsw2T4s6SUxv'
   },
   {
-    name: '***WITHOUT MONEY*** By playing an iPhone game',
+    name: '*DONATE WITHOUT MONEY* By playing an iPhone game',
     url: 'https://apps.apple.com/us/app/u-don/id1509911245'
   },
   {
