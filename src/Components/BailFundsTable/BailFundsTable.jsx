@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import MUIDataTable from 'mui-datatables';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 
@@ -57,34 +57,34 @@ const BailFundsTable = () => {
     overrides: {
       'MUIDataTableBodyCell': {
         root: {
-          backgroundColor: 'black',
-          color: 'white'
+          backgroundColor: '#0f0f0f',
+          color: '#e0e0e0'
         }
       },
       'MuiToolbar': {
         root: {
-          backgroundColor: 'black',
-          color: 'white'
+          backgroundColor: '#0f0f0f',
+          color: '#e0e0e0'
         }
       },
       'MuiSvgIcon': {
         root: {
-          color: 'white'
+          color: '#e0e0e0'
         }
       },
       'MuiTableCell': {
         footer: {
-          backgroundColor: 'black'
+          backgroundColor: '#0f0f0f'
         }
       },
       'MUIDataTableHeadCell': {
         'sortActive': {
-          color: 'white'
+          color: '#e0e0e0'
         }
       },
       'MuiTableSortLabel': {
         'icon': {
-          color: 'white !important'
+          color: '#e0e0e0 !important'
         }
       }
     }

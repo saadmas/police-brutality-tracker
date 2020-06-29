@@ -1,16 +1,20 @@
 @import '../../Styles/variables.scss';
 
 .BailFundsTable {
-  .MuiPaper-rounded {
+  // .MuiToolbar-root {
+  //   background-color: #0f0f0f !important;
+  // }
+
+  .MuiPaper-root {
     padding: 10px;
-    background-color: black !important;
+    background-color: #0f0f0f !important;
   }
 
   .MuiInputBase-root {
-    background: white;
+    background: #e0e0e0;
     height: 35px;
     font-size: 14px;
-    color: black;
+    color: #0f0f0f;
     font-family: 'Montserrat', sans-serif !important; 
 
     input {
@@ -19,8 +23,8 @@
   }
   
   .MuiTableCell-head {
-    background-color: black !important;
-    color: white !important;
+    background-color: #0f0f0f !important;
+    color: #e0e0e0 !important;
     font-weight: 800 !important;
   }
   

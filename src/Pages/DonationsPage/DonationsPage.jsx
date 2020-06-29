@@ -4,13 +4,14 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 
 import BailFundsTable from '../../Components/BailFundsTable/BailFundsTable';
+import DonationOrganizationTab from '../../Components/DonationOrganizationTab/DonationOrganizationTab';
 
 import './DonationsPage.scss';
 
 const DonationsPage = () => {
   const [tab, setTab] = React.useState(0);
 
-  const onTabChange = (event, newTab) => {
+  const onTabChange = (e, newTab) => {
     setTab(newTab);
   };
 
@@ -18,25 +19,25 @@ const DonationsPage = () => {
     switch (tab) {
       case 0:
         return <BailFundsTable />;
+      case 1:
+        return <DonationOrganizationTab />;
     }
   };
 
   return (
     <div className="DonationsPage">
-      <Paper className="DonationsPaper">
-        <Tabs
-          value={tab}
-          onChange={onTabChange}
-          indicatorColor="primary"
-          textColor="primary"
-          centered
-        >
-          <Tab label="Bail Funds" textColor="primary" />
-          <Tab label="Organizations" textColor="primary" />
-          <Tab label="Black Owned Businesses" textColor="primary" />
-        </Tabs>
-        {getTabContent()}
-      </Paper>
+      <Tabs
+        value={tab}
+        onChange={onTabChange}
+        indicatorColor="primary"
+        textColor="primary"
+        centered
+      >
+        <Tab label="Bail Funds" textColor="primary" />
+        <Tab label="Organizations" textColor="primary" />
+        <Tab label="Black Owned Businesses" textColor="primary" />
+      </Tabs>
+      {getTabContent()}
     </div>
   );
 };
