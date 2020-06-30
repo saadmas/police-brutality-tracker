@@ -91,6 +91,10 @@ export const donationOrganizations = [
 
 export const blackBusinesses = [
   {
+    name: 'NYC\'s Black owned businesses',
+    url: 'https://docs.google.com/document/u/1/d/1Gy_x5DaNjtbfmKP1xgbJdMa_g7q0qmL1HpQ9_t9Wq_0/mobilebasic'
+  },
+  {
     name: 'Black owned business directory (US, Canada, Europe, and Africa)',
     url: 'https://www.afrobizworld.com/'
   },

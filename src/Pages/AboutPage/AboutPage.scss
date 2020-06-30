@@ -1,8 +1,76 @@
+@import '../../Styles/variables.scss';
+
 .AboutPage {
   margin-top: 50px;
   
+  .MuiPaper-root {
+    overflow-x: hidden;
+  }
+
   .PanelSummary {
     font-size: 25px;
     font-family: 'Josefin Sans', sans-serif;
+    color: $primary-font-color;
+  }
+
+  .PanelDetails {
+    color: $primary-font-color;
+    font-size: 20px;  
+    font-family: 'Spectral', serif;
+  }
+  
+  ul {
+    // list-style: none;
+
+    li {
+      padding: 5px 0px;
+    }
+
+    a {
+      color: $primary-font-color;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .WhyBuildThisWebsite {
+    background: #ED213A;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #93291E, #ED213A);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #93291E, #ED213A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+  .DataSource {
+    background: #667db6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+    a {
+      color: $primary-font-color;
+    }
+  }
+
+  .HowCanIHelp {
+    background: #614385;
+    background: #614385;
+    background: linear-gradient(to left, #516395, #614385);
+
+  }
+
+  .AdditionalResources {
+    background: #73C8A9;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #373B44, #73C8A9);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #373B44, #73C8A9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
 } 
+
+@media only screen and (max-device-width: 480px) {
+  .PanelSummary {
+    font-size: 15px !important;
+  }
+
+  .PanelDetails {
+    font-size: 14px !important;  
+  }
+}
