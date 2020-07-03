@@ -127,7 +127,7 @@ export const blackBusinesses = [
     url: 'https://twitter.com/LAFEMMEDI0R/status/1268658763587825673'
   },
   {
-    name: 'Black-owned bookstores',
+    name: 'Black-owned bookstores (US)',
     url: 'https://aalbc.com/bookstores/list.php'
   },
   {

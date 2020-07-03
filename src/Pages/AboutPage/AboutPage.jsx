@@ -54,6 +54,12 @@ const AboutPage = () => {
     </article>
   );
 
+  const whyDefundPolice = () => (
+    <article>
+      TODO
+    </article>
+  );
+
   const dataSource = () => (
     <article>
       The police brutality incidents are sourced from <a href="https://github.com/2020PB/police-brutality" target="_blank">this GitHub repository</a>
@@ -96,9 +102,9 @@ const AboutPage = () => {
   return (
     <section className="AboutPage">
       {getExpansionPanel('Why build this website?', whyBuildThisWebsite(), 'WhyBuildThisWebsite')}
-      {getExpansionPanel('Why should the police be defunded?', whyBuildThisWebsite(), 'WhyDefundPolice')}
       {getExpansionPanel('Where is the data sourced from?', dataSource(), 'DataSource')}
       {getExpansionPanel('How can I help outside of donations?', getItems('HowCanIHelp'), 'HowCanIHelp')}
+      {getExpansionPanel('Why should the police be defunded?', whyDefundPolice(), 'WhyDefundPolice')}
       {getExpansionPanel('Additional resources', getItems('AdditionalResources'), 'AdditionalResources')}
     </section>
   );

@@ -18,9 +18,9 @@ const DonationsPage = () => {
   const getTabContent = () => {
     switch (tab) {
       case 0:
-        return <BailFundsTable />;
-      case 1:
         return <DonationOrganizationTab />;
+      case 1:
+        return <BailFundsTable />;
       case 2:
         return <DonationOrganizationTab donationType="blackBusinesses" />;
     }
@@ -36,8 +36,8 @@ const DonationsPage = () => {
         centered
         variant="fullWidth"
       >
-        <Tab label="Bail Funds" textColor="primary" />
         <Tab label="Organizations" textColor="primary" />
+        <Tab label="Bail Funds" textColor="primary" />
         <Tab label="Black Owned Businesses" textColor="primary" />
       </Tabs>
       {getTabContent()}
