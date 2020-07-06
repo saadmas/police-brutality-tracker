@@ -69,6 +69,15 @@ const TimelinePage = ({ incidentData, history, match }) => {
     return incident.state.toLowerCase().includes(location);
   };
 
+  const doesLinkMatchSearch = (links, loweredSearchValue) => {
+    for (const link of links) {
+      if (link.toLowerCase().includes(loweredSearchValue)) {
+        return true;
+      }
+    }
+    return false;
+  };
+
   const getFilteredIncidentData = () => {
     const loweredSearchValue = searchValue.toLowerCase();
     const filteredData = incidentData.filter(incident => {
@@ -77,7 +86,8 @@ const TimelinePage = ({ incidentData, history, match }) => {
       const isSearchMatch = incident.date_text.toLowerCase().includes(loweredSearchValue) ||
         incident.name.toLowerCase().includes(loweredSearchValue) ||
         incident.city.toLowerCase().includes(loweredSearchValue) ||
-        incident.state.toLowerCase().includes(loweredSearchValue);
+        incident.state.toLowerCase().includes(loweredSearchValue) ||
+        doesLinkMatchSearch(incident.links, loweredSearchValue);
       return isLocationMatch && isSearchMatch;
     });
     return filteredData;
