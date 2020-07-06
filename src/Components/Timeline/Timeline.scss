@@ -1,8 +1,13 @@
 @import '../../Styles/variables.scss';
 
+.SingleIncidentTimeline {
+  margin-top: -60px !important;
+}
+
 .Timeline {
   margin-top: 100px;
   margin-bottom: 25px;
+  
 
   .LoadMoreButton {
     box-shadow: none;
@@ -76,6 +81,10 @@
 }
 
 @media screen and (max-width: 420px) {
+  .SingleIncidentTimeline {
+    margin-top: 0px !important;
+  }
+
   .Timeline {
     margin-top: 10px;
 

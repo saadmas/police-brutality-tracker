@@ -106,8 +106,18 @@ const Timeline = ({ incidentData, loadMore, fullIncidentListLength, isSingleInci
     </Fab>
   );
 
+  const getClassName = () => {
+    const classList = ['Timeline'];
+
+    if (isSingleIncidentTimeline) {
+      classList.push('SingleIncidentTimeline');
+    }
+
+    return classList.join(' ');
+  };
+
   return (
-    <section className="Timeline">
+    <section className={getClassName()}>
       <VerticalTimeline>
         {getIncidents()}
         {getLoadMoreElement()}

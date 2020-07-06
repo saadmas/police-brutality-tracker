@@ -49,10 +49,9 @@ const AboutPage = () => {
         </li>
         <li>
           Visitors of the website leave with more awareness, information, and ways to help in eradicating police brutality.
-          And if you're reading this, maybe you ponder on what you,
-          <em>in your unique position with your unique skills, </em>
-          can do
-          to support the movement.
+          And if you're reading this, maybe you ponder on what you—
+          <em>in your unique position with your unique skills</em>
+          — can do to support the movement.
         </li>
         <li>
           The videos and sources supporting the police brutality incidents highlight that police brutality isn't
@@ -106,10 +105,10 @@ const AboutPage = () => {
 
   return (
     <section className="AboutPage">
+      {getExpansionPanel('Why should the police be defunded?', whyDefundPolice, 'WhyDefundPolice')}
       {getExpansionPanel('Why was this website built?', whyBuildThisWebsite(), 'WhyBuildThisWebsite')}
       {getExpansionPanel('Where is the police brutality incident data sourced from?', dataSource(), 'DataSource')}
       {getExpansionPanel('How can I help outside of donations?', getItems('HowCanIHelp'), 'HowCanIHelp')}
-      {getExpansionPanel('Why should the police be defunded?', whyDefundPolice, 'WhyDefundPolice')}
       {getExpansionPanel('Additional resources', getItems('AdditionalResources'), 'AdditionalResources')}
     </section>
   );

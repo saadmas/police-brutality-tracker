@@ -25,9 +25,12 @@ export const whyDefundPolice = (
         <a href="https://defund-the-police.today/timeline/ga-atlanta-3" target="_blank">
           pulled people out of their cars and tased them
         </a>
-        &nbsp;in Atlanta. These are just a few of the 500+ documented police brutality incidents since George Floyd's death.
-        The fact that there has been such an immense amount of police brutality at anti-police brutality protests highlights that there needs
-        to be sweeping changes to policing in the U.S. That starts with defunding the police.
+        &nbsp;in Atlanta.
+        <p>
+          These are just a few of the 500+ documented police brutality incidents since George Floyd's death.
+          The fact that there has been such an immense amount of police brutality at anti-police brutality protests highlights that there needs
+          to be sweeping changes to policing in the U.S. That starts with defunding the police.
+        </p>
       </p>
       <p>
         The U.S. spends more than $100 billion on policing per year. For most cities, police department budgets make up a disproportionate
@@ -54,9 +57,9 @@ export const whyDefundPolice = (
         department, EMTs, or mental-health professionals, not the police.
       </p>
       <p>
-        When police are assigned to schools, drug overdoses, mental health crises, suicide calls, homeless encampment issues, they aren’t
+        When police are assigned to schools, drug overdoses, mental health crises, suicide calls, and homeless encampment issues, they aren’t
         equipped with the tools and training to isolate the problem from the people. Cops end up criminalizing people rather than addressing
-        the real problem underlying a social-welfare situation. An officer trained to see killing as "not that big of a deal" is more likely
+        the real problem underlying a situation. An officer trained to see killing as "not that big of a deal" is more likely
         to choose a violent response rather than de-escalation tactics. Not to mention, police disproportionately use force against Black
         people, and Black people are more likely to be arrested and sentenced. Plus, about half of the people killed by police had some
         kind of mental disability, according to a 2015 Ruderman Foundation report. And, let’s not forget that that the police began in
@@ -74,6 +77,8 @@ export const whyDefundPolice = (
       <p>
         Some folks fear their safety is at risk if police presence is reduced. They forget that for many people the police is the real danger.
         The mindset that policing equals safety doesn’t always hold up. For example, a 2017 report which focused on several weeks in 2014 through 2015 when the New York Police Department purposely pulled back on proactive policing (systematic and aggressive enforcement of low-level violations" and heightened police presence in areas where "crime is anticipated) found that there were 2,100 fewer crime complaints during that time.
+      </p>
+      <p>
         So, it’s time to honor George Floyd, Breonna Taylor, Tamir Rice, and the countless other Black folks who have brutally
         lost their lives at the hands of the police. It’s time to invest in our communities. It’s time to defund the police.
       </p>

@@ -149,13 +149,13 @@ const TimelinePage = ({ incidentData, history, match }) => {
     <div className="TimelinePage">
       <TimelineSummary incidentData={timelineData} />
       {getTimelineFilterPanel()}
-      {getShowFullTimelineButton()}
       <Timeline
         incidentData={getIncidentsForTimeline()}
         loadMore={loadMore}
         isSingleIncidentTimeline={isSingleIncidentTimeline}
         fullIncidentListLength={timelineData.length}
       />
+      {getShowFullTimelineButton()}
     </div>
   );
 };
