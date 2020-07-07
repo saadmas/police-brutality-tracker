@@ -123,6 +123,7 @@ const TimelinePage = ({ incidentData, history, match }) => {
   const showFullTimeline = () => {
     setSingleIncidentTimeline(false);
     history.push('/');
+    window.scroll({ top: 0, left: 0, behavior: 'smooth' })
   };
 
   const getShowFullTimelineButton = () => isSingleIncidentTimeline && (

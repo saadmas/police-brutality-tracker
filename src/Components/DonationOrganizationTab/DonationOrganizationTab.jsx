@@ -17,7 +17,7 @@ const DonationOrganizationTab = ({ donationType }) => {
 
     return orgs.map(org => (
       <div>
-        <a href={org.url} className="DonationOrg" target="_blank">
+        <a href={org.url} className="DonationOrg" rel="noopener noreferrer" target="_blank">
           <span className="DonationOrgText">
             {org.name}
           </span>

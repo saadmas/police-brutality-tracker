@@ -12,17 +12,17 @@ export const whyDefundPolice = (
       </p>
       <p>
         A police officer&nbsp;
-        <a href="https://defund-the-police.today/timeline/tx-houston-1" target="_blank">
+        <a href="https://defund-the-police.today/timeline/tx-houston-1" rel="noopener noreferrer" target="_blank">
           trampled a protester with a horse
         </a>
         &nbsp;in Houston.
         A&nbsp;
-        <a href="https://defund-the-police.today/timeline/tx-austin-8" target="_blank">
+        <a href="https://defund-the-police.today/timeline/tx-austin-8" rel="noopener noreferrer" target="_blank">
           pregnant woman was shot with bean bag rounds
         </a>
         &nbsp;by police in Austin.
         Cops&nbsp;
-        <a href="https://defund-the-police.today/timeline/ga-atlanta-3" target="_blank">
+        <a href="https://defund-the-police.today/timeline/ga-atlanta-3" rel="noopener noreferrer" target="_blank">
           pulled people out of their cars and tased them
         </a>
         &nbsp;in Atlanta.
@@ -50,7 +50,7 @@ export const whyDefundPolice = (
       <p>
         Defunding the police is about shifting public safety from relying on a narrow definition of policing and punishment to investing in
         services that are better equipped to advance and uphold community safety.&nbsp;
-        <a href="https://www.mpd150.com/" target="_blank">According to MPD150</a>
+        <a href="https://www.mpd150.com/" rel="noopener noreferrer" target="_blank">According to MPD150</a>
         , instead of "strangers armed with guns, who very likely do not live in the neighborhoods they’re patrolling," it should be social
         workers, mental health care providers and victim or survivor advocates, among others, who address the problems police are called to
         handle. For example, when the Minneapolis City Council examined the city's 911 logs, it found most incidents required the fire
@@ -72,7 +72,7 @@ export const whyDefundPolice = (
         Unfortunately, the body cameras have only shown that police brutality can be officially documented yet left un-checked.
         And the training only emphasizes that the deep-rooted, violent culture of law enforcement is incapable of change.
         Black Americans and other marginalized communities are&nbsp;
-        <a href="https://mappingpoliceviolence.org/" target="_blank">still being disproportionately terrorized and killed by police</a>.
+        <a href="https://mappingpoliceviolence.org/" rel="noopener noreferrer" target="_blank">still being disproportionately terrorized and killed by police</a>.
       </p>
       <p>
         Some folks fear their safety is at risk if police presence is reduced. They forget that for many people the police is the real danger.
@@ -87,22 +87,22 @@ export const whyDefundPolice = (
       </h3>
       <ul>
         <li>
-          <a href="https://www.afsc.org/blogs/news-and-commentary/6-reasons-why-its-time-to-defund-police" target="_blank">
+          <a href="https://www.afsc.org/blogs/news-and-commentary/6-reasons-why-its-time-to-defund-police" rel="noopener noreferrer" target="_blank">
             6 reasons why it’s time to defund the police - AFC
           </a>
         </li>
         <li>
-          <a href="https://www.washingtonpost.com/opinions/2020/06/07/defund-police-heres-what-that-really-means/" target="_blank">
+          <a href="https://www.washingtonpost.com/opinions/2020/06/07/defund-police-heres-what-that-really-means/" rel="noopener noreferrer" target="_blank">
             Defund the police? Here’s what that really means - The Washington Post
           </a>
         </li>
         <li>
-          <a href="https://mcgilldaily.com/PoliceIssue/Restorative-Justice.html" target="_blank">
+          <a href="https://mcgilldaily.com/PoliceIssue/Restorative-Justice.html" rel="noopener noreferrer" target="_blank">
             Alternatives to the police - McGill Daily
           </a>
         </li>
         <li>
-          <a href="https://aworldwithoutpolice.org/" target="_blank">
+          <a href="https://aworldwithoutpolice.org/" rel="noopener noreferrer" target="_blank">
             A world without police
           </a>
         </li>
