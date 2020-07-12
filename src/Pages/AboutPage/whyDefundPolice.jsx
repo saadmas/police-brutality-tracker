@@ -7,7 +7,7 @@ export const whyDefundPolice = (
         How many more people have to unjustly die at the hands of the police before there’s real change?
       </p>
       <p>
-        Even with police brutality under a microscope after George Floyd’s death and the subsequent protests across the U.S.,
+        Even with police brutality under a microscope after George Floyd’s death and the subsequent protests across the world,
         the police continue to abuse their power and terrorize civilians.
       </p>
       <p>
@@ -64,11 +64,11 @@ export const whyDefundPolice = (
         Defunding the police simply entails a restructuring of public spending: taking money away from the police and funneling it into
         community services like education and medical access. Empowering community services with much-needed, currently lacking resources
         for their responsibilities reduces police intervention in situations where the police isn’t really needed, like substance abuse
-        disorders or mental health crises. Consequently, less police intervention means less violence and unjustifiable killings by cops.
+        disorders or mental health crises. Consequently, less police intervention means less violence and killings by cops.
       </p>
       <p>
         Defunding the police is about shifting public safety from relying on a narrow definition of policing and punishment to investing in
-        services that are better equipped to advance and uphold community safety.&nbsp;
+        services that are better equipped to advance and uphold community safety and care.&nbsp;
         <a href="https://www.mpd150.com/" rel="noopener noreferrer" target="_blank">According to MPD150</a>
         , instead of "strangers armed with guns, who very likely do not live in the neighborhoods they’re patrolling," it should be social
         workers, mental health care providers and victim or survivor advocates, among others, who address the problems police are called to

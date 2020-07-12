@@ -105,10 +105,10 @@ const AboutPage = () => {
 
   return (
     <section className="AboutPage">
-      {getExpansionPanel('Why should the police be defunded?', whyDefundPolice, 'WhyDefundPolice')}
+      {getExpansionPanel('Why should we defund the police?', whyDefundPolice, 'WhyDefundPolice')}
       {getExpansionPanel('Why was this website built?', whyBuildThisWebsite(), 'WhyBuildThisWebsite')}
       {getExpansionPanel('Where is the police brutality incident data sourced from?', dataSource(), 'DataSource')}
-      {getExpansionPanel('How can I help outside of donations?', getItems('HowCanIHelp'), 'HowCanIHelp')}
+      {getExpansionPanel('How can we help outside of donations?', getItems('HowCanIHelp'), 'HowCanIHelp')}
       {getExpansionPanel('Additional resources', getItems('AdditionalResources'), 'AdditionalResources')}
     </section>
   );
