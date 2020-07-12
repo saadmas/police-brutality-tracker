@@ -24,6 +24,18 @@
   button {
     margin: 10px;
   }
+
+  .CopyIncidentUrl {
+    font-size: 35px !important;
+    margin-left: 13px;
+    cursor: pointer;
+  }
+    
+  .CopyUrlTooltip {c
+    :hover {
+      cursor: pointer;
+    }
+  }
 }
 
 .ShareTimelineContent {
@@ -50,6 +62,13 @@
   button {
     margin: 10px;
   }
+
+  
+  .CopyAppUrl {
+    font-size: 38px !important;
+    margin-left: 10px;
+    cursor: pointer;
+  }
 }
 
 @media screen and (max-width: 420px) {
@@ -73,6 +92,10 @@
     button {
       margin: 5px;
     }
+
+    .CopyIncidentUrl {
+      margin-left: 5px;
+    }
   }
 
   .ShareTimelineContent {
@@ -94,6 +117,10 @@
 
     button {
       margin: 5px;
+    }
+
+    .CopyAppUrl {
+      font-size: 15px !important;
     }
   }
 }

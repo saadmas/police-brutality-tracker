@@ -5,14 +5,14 @@ import {
   RedditShareButton,
   TwitterShareButton,
   WhatsappShareButton,
-  WorkplaceShareButton,
   FacebookIcon,
   LinkedinIcon,
   RedditIcon,
   TwitterIcon,
-  WhatsappIcon,
-  WorkplaceIcon
+  WhatsappIcon
 } from "react-share";
+import FileCopyIcon from '@material-ui/icons/FileCopy';
+import Tooltip from '@material-ui/core/Tooltip';
 
 import './SharePopover.scss';
 
@@ -122,12 +122,26 @@ const SharePopover = ({ isPopoverVisible, incident }) => {
     return { title, url, separator };
   };
 
-  const getClassName = () => !!incident ? 'ShareIncidentContent' : 'ShareTimelineContent'
+  const onCopyUrl = () => {
+    let url;
+
+    if (incident) {
+      const shareIncidentProps = getShareIncidentProps(incident);
+      url = shareIncidentProps.url;
+    } else {
+      url = appUrl;
+    }
+
+    navigator.clipboard.writeText(url);
+  };
+
+  const getShareClassName = () => !!incident ? 'ShareIncidentContent' : 'ShareTimelineContent'
+  const getCopyUrlClassName = () => !!incident ? 'CopyIncidentUrl' : 'CopyAppUrl';
 
   const getShareContent = () => {
     return isPopoverVisible && (
       <div>
-        <div className={getClassName()}>
+        <div className={getShareClassName()}>
           <div className="Arrow" />
           <FacebookShareButton {...getFacebookShareProps()}>
             <FacebookIcon size={iconSize} borderRadius={borderRadius} />
@@ -144,9 +158,9 @@ const SharePopover = ({ isPopoverVisible, incident }) => {
           <WhatsappShareButton {...getWhatsappShareProps()}>
             <WhatsappIcon size={iconSize} borderRadius={borderRadius} />
           </WhatsappShareButton>
-          <WorkplaceShareButton {...getFacebookShareProps()}>
-            <WorkplaceIcon size={iconSize} borderRadius={borderRadius} />
-          </WorkplaceShareButton>
+          <Tooltip title="Copy URL" aria-label="copy URL" className="CopyUrlTooltip">
+            <FileCopyIcon className={getCopyUrlClassName()} onClick={onCopyUrl} />
+          </Tooltip>
         </div>
       </div>
     );
