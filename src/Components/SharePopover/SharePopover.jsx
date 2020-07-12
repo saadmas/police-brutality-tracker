@@ -24,7 +24,7 @@ const SharePopover = ({ isPopoverVisible, incident }) => {
 
   const getShareIncidentProps = (incident, removeUrlFromText) => {
     const { name, date_text, id } = incident;
-    const url = `${appUrl}/timeline/${id}`
+    const url = `${appUrl}timeline/${id}`
     let shareText = `${name} on ${date_text}.\n\nLearn more about it and view all police brutality incidents since George Floyd's death\n\n`;
 
     if (!removeUrlFromText) {
@@ -123,16 +123,20 @@ const SharePopover = ({ isPopoverVisible, incident }) => {
   };
 
   const onCopyUrl = () => {
-    let url;
+    const copyText = document.querySelector("#copyUrlInput");
+    copyText.type = 'text';
+    copyText.select();
+    document.execCommand("copy");
+    copyText.blur();
+    copyText.type = 'hidden';
+  };
 
+  const getUrl = () => {
     if (incident) {
       const shareIncidentProps = getShareIncidentProps(incident);
-      url = shareIncidentProps.url;
-    } else {
-      url = appUrl;
+      return shareIncidentProps.url;
     }
-
-    navigator.clipboard.writeText(url);
+    return appUrl;
   };
 
   const getShareClassName = () => !!incident ? 'ShareIncidentContent' : 'ShareTimelineContent'
@@ -162,6 +166,12 @@ const SharePopover = ({ isPopoverVisible, incident }) => {
             <FileCopyIcon className={getCopyUrlClassName()} onClick={onCopyUrl} />
           </Tooltip>
         </div>
+        <input
+          id="copyUrlInput"
+          name="copyUrlInput"
+          value={getUrl()}
+          type="hidden"
+        />
       </div>
     );
   };

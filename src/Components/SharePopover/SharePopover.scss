@@ -1,5 +1,9 @@
 @import '../../Styles//variables.scss';
 
+.copyUrlTextArea {
+  visibility: hidden;
+}
+
 .ShareIncidentContent {
   margin-top: 0px;
   z-index: 999;
