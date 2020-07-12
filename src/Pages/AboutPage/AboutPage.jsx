@@ -27,7 +27,7 @@ const AboutPage = () => {
 
   const whyBuildThisWebsite = () => (
     <article>
-      Upon George Floyd's tragic murder and the subsequent protests against systemic racism and police brutality in the U.S., like most folks,
+      Upon George Floyd's tragic murder and the subsequent protests against systemic racism and police brutality across the globe., like most folks,
       I knew I had to do my part for the movement.
       Beyond educating myself, making donations, and sharing pertinent information on social media,
       I wondered what I could do in my unique capacity to support the movement against police brutality.&nbsp;
@@ -35,7 +35,7 @@ const AboutPage = () => {
         I'm a software engineer
       </a>
       &nbsp;by profession.
-      So when I stumbled upon a well organized, consistently updated source of police brutality incidents,
+      So when I stumbled upon a well organized, consistently updated data source of police brutality incidents,
       I knew I had to create a website to communicate this information in a lucid, visually impactful manner. <br /> <br />
 
       My hope is that with this website:
@@ -43,7 +43,7 @@ const AboutPage = () => {
       <ul>
         <li>
           The injustices committed by the American police are documented in an easily accessible form. One that can be seamlessly shared with others,
-          and serve as a stark reminder that police brutality is an on-going issue. Not to be forgetten when the media decides it isn't trending anymore,
+          and serve as a stark reminder that police brutality is an on-going issue. Not to be forgotten when the media decides it isn't trending anymore,
           with much more work to be done before meaningful reform and change alleviates the suffering of the Black community and others
           who have been oppressed by the police.
         </li>
@@ -51,7 +51,7 @@ const AboutPage = () => {
           Visitors of the website leave with more awareness, information, and ways to help in eradicating police brutality.
           And if you're reading this, maybe you ponder on what you—
           <em>in your unique position with your unique skills</em>
-          — can do to support the movement.
+          —can do to support the movement.
         </li>
         <li>
           The videos and sources supporting the police brutality incidents highlight that police brutality isn't

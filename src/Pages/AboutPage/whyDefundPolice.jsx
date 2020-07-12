@@ -28,7 +28,7 @@ export const whyDefundPolice = (
         &nbsp;in Atlanta.
         <p>
           These are just a few of the 500+ documented police brutality incidents since George Floyd's death.
-          The fact that there has been such an immense amount of police brutality at anti-police brutality protests highlights that there needs
+          The fact that there has been such an immense amount of police brutality at anti-police brutality protests highlights that there need
           to be sweeping changes to policing in the U.S. That starts with defunding the police.
         </p>
       </p>
@@ -63,7 +63,7 @@ export const whyDefundPolice = (
         Defunding isn’t abolishment, it doesn’t equate to getting rid of cops or eliminating police budgets entirely.
         Defunding the police simply entails a restructuring of public spending: taking money away from the police and funneling it into
         community services like education and medical access. Empowering community services with much-needed, currently lacking resources
-        for their responsibilities reduces police intervention in situations where the police isn’t really needed, like substance abuse
+        for their responsibilities reduces police intervention in situations where the police aren't really needed, like substance abuse
         disorders or mental health crises. Consequently, less police intervention means less violence and killings by cops.
       </p>
       <p>
@@ -71,7 +71,7 @@ export const whyDefundPolice = (
         services that are better equipped to advance and uphold community safety and care.&nbsp;
         <a href="https://www.mpd150.com/" rel="noopener noreferrer" target="_blank">According to MPD150</a>
         , instead of "strangers armed with guns, who very likely do not live in the neighborhoods they’re patrolling," it should be social
-        workers, mental health care providers and victim or survivor advocates, among others, who address the problems police are called to
+        workers, mental health care providers, and victim or survivor advocates, among others, who address the problems police are called to
         handle. For example, when the Minneapolis City Council examined the&nbsp;
         <a href="https://www.cnn.com/2020/06/07/us/george-floyd-protests-sunday/index.html" rel="noopener noreferrer" target="_blank">
           city's 911 logs,
@@ -98,7 +98,7 @@ export const whyDefundPolice = (
         <a href="https://rudermanfoundation.org/wp-content/uploads/2017/08/MediaStudy-PoliceDisability_final-final.pdf" rel="noopener noreferrer" target="_blank">
           2015 Ruderman Foundation report.
         </a>
-        &nbsp;And, let’s not forget that that the&nbsp;
+        &nbsp;And, let’s not forget that the&nbsp;
         <a href="https://time.com/4779112/police-history-origins/" rel="noopener noreferrer" target="_blank">
           police began in the U.S. as a slave patrol.
         </a>
@@ -118,13 +118,13 @@ export const whyDefundPolice = (
           Tamir Rice
         </a>
         , implicit bias training, community police encounter sessions, and body cameras were brought in to fix police brutality.
-        Unfortunately, the body cameras have only shown that police brutality can be officially documented yet left un-checked.
+        Unfortunately, the body cameras have only shown that police brutality can be officially documented yet left unchecked.
         And the training only emphasizes that the deep-rooted, violent culture of law enforcement is incapable of change.
         Black Americans and other marginalized communities are&nbsp;
         <a href="https://mappingpoliceviolence.org/" rel="noopener noreferrer" target="_blank">still being disproportionately terrorized and killed by police</a>.
       </p>
       <p>
-        Some folks fear their safety is at risk if police presence is reduced. They forget that for many people the police is the real danger.
+        Some folks fear their safety is at risk if police presence is reduced. They forget that for many people the police are the real danger.
         The mindset that policing equals safety doesn’t always hold up. For example, a&nbsp;
         <a href="https://www.nature.com/articles/s41562-017-0211-5" rel="noopener noreferrer" target="_blank">
           2017 report
