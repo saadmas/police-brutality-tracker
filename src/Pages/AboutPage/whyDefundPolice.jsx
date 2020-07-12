@@ -33,9 +33,28 @@ export const whyDefundPolice = (
         </p>
       </p>
       <p>
-        The U.S. spends more than $100 billion on policing per year. For most cities, police department budgets make up a disproportionate
-        amount of overall spending, an asymmetry that’s deepened since other departments face steep cuts due to the COVID-19 pandemic.
-        For example, from 2014-19, New York City spent $41.1 billion on police and corrections while spending $9.9 billion on homeless
+        The U.S. spends&nbsp;
+        <a
+          href="https://www.washingtonpost.com/posteverything/wp/2017/03/10/we-spend-100-billion-on-policing-we-have-no-idea-what-works/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          more than $100 billion
+          </a>
+        &nbsp;on policing per year. For most cities, police department budgets make up a&nbsp;
+        <a href="https://www.gq.com/story/cops-cost-billions" rel="noopener noreferrer" target="_blank">
+          disproportionate amount
+        </a>
+        &nbsp;of overall spending, an asymmetry that’s deepened as other departments face&nbsp;
+        <a href="https://theintercept.com/2020/05/22/la-budget-nyc-police/" rel="noopener noreferrer" target="_blank">
+          steep cuts
+        </a>
+        &nbsp;due to the COVID-19 pandemic.
+        For example, from 2014-19,&nbsp;
+        <a href="https://ny.curbed.com/2020/6/5/21279214/nyc-defund-nypd-police-budget-affordable-housing-homelessness" rel="noopener noreferrer" target="_blank">
+          New York City spent
+        </a>
+        &nbsp;$41.1 billion on police and corrections while spending $9.9 billion on homeless
         services and $6.8 billion on housing preservation and development. If you combined the city’s spending on homelessness and housing
         and quadrupled it, that would still be less than what the city spent on policing and corrections.
       </p>
@@ -53,22 +72,52 @@ export const whyDefundPolice = (
         <a href="https://www.mpd150.com/" rel="noopener noreferrer" target="_blank">According to MPD150</a>
         , instead of "strangers armed with guns, who very likely do not live in the neighborhoods they’re patrolling," it should be social
         workers, mental health care providers and victim or survivor advocates, among others, who address the problems police are called to
-        handle. For example, when the Minneapolis City Council examined the city's 911 logs, it found most incidents required the fire
-        department, EMTs, or mental-health professionals, not the police.
+        handle. For example, when the Minneapolis City Council examined the&nbsp;
+        <a href="https://www.cnn.com/2020/06/07/us/george-floyd-protests-sunday/index.html" rel="noopener noreferrer" target="_blank">
+          city's 911 logs,
+        </a>
+        &nbsp;it found most incidents required the fire department, EMTs, or mental-health professionals, not the police.
       </p>
       <p>
         When police are assigned to schools, drug overdoses, mental health crises, suicide calls, and homeless encampment issues, they aren’t
         equipped with the tools and training to isolate the problem from the people. Cops end up criminalizing people rather than addressing
-        the real problem underlying a situation. An officer trained to see killing as "not that big of a deal" is more likely
-        to choose a violent response rather than de-escalation tactics. Not to mention, police disproportionately use force against Black
-        people, and Black people are more likely to be arrested and sentenced. Plus, about half of the people killed by police had some
-        kind of mental disability, according to a 2015 Ruderman Foundation report. And, let’s not forget that that the police began in
-        the U.S. as a slave patrol.
+        the real problem underlying a situation. An officer trained to see killing as "
+        <a href="https://www.insider.com/bulletproof-dave-grossman-police-trainer-teaching-officers-how-to-kill-2020-6" rel="noopener noreferrer" target="_blank">
+          not that big of a deal
+        </a>
+        " is more likely to choose a violent response rather than de-escalation tactics. Not to mention, police disproportionately&nbsp;
+        <a href="https://www.apa.org/monitor/2016/12/cover-policing" rel="noopener noreferrer" target="_blank">
+          use force against Black people,
+        </a>
+        &nbsp;and Black people are&nbsp;
+        <a href="https://www.naacp.org/criminal-justice-fact-sheet/" rel="noopener noreferrer" target="_blank">
+          more likely to be arrested and sentenced.
+        </a>
+        &nbsp;Plus, about half of the people killed by police had some
+        kind of mental disability, according to a&nbsp;
+        <a href="https://rudermanfoundation.org/wp-content/uploads/2017/08/MediaStudy-PoliceDisability_final-final.pdf" rel="noopener noreferrer" target="_blank">
+          2015 Ruderman Foundation report.
+        </a>
+        &nbsp;And, let’s not forget that that the&nbsp;
+        <a href="https://time.com/4779112/police-history-origins/" rel="noopener noreferrer" target="_blank">
+          police began in the U.S. as a slave patrol.
+        </a>
       </p>
       <p>
         Police reform has failed.
-        Five years ago, in addressing the murders of Eric Garner, Mike Brown, and Tamir Rice, implicit bias training,
-        community police encounter sessions, and body cameras were brought in to fix police brutality.
+        Five years ago, in addressing the murders of&nbsp;
+        <a href="https://www.motherjones.com/politics/2015/01/police-misconduct-payments-eric-garner-nypd/" rel="noopener noreferrer" target="_blank">
+          Eric Garner
+        </a>
+        ,&nbsp;
+        <a href="https://www.motherjones.com/politics/2014/11/ferguson-darren-wilson-grand-jury-decision-reaction/" rel="noopener noreferrer" target="_blank">
+          Mike Brown
+        </a>
+        , and&nbsp;
+        <a href="https://www.motherjones.com/politics/2015/12/grand-jury-does-not-indict-cop-who-killed-tamir-rice/" rel="noopener noreferrer" target="_blank">
+          Tamir Rice
+        </a>
+        , implicit bias training, community police encounter sessions, and body cameras were brought in to fix police brutality.
         Unfortunately, the body cameras have only shown that police brutality can be officially documented yet left un-checked.
         And the training only emphasizes that the deep-rooted, violent culture of law enforcement is incapable of change.
         Black Americans and other marginalized communities are&nbsp;
@@ -76,7 +125,11 @@ export const whyDefundPolice = (
       </p>
       <p>
         Some folks fear their safety is at risk if police presence is reduced. They forget that for many people the police is the real danger.
-        The mindset that policing equals safety doesn’t always hold up. For example, a 2017 report which focused on several weeks in 2014 through 2015 when the New York Police Department purposely pulled back on proactive policing (systematic and aggressive enforcement of low-level violations" and heightened police presence in areas where "crime is anticipated) found that there were 2,100 fewer crime complaints during that time.
+        The mindset that policing equals safety doesn’t always hold up. For example, a&nbsp;
+        <a href="https://www.nature.com/articles/s41562-017-0211-5" rel="noopener noreferrer" target="_blank">
+          2017 report
+        </a>
+        &nbsp;which focused on several weeks in 2014 through 2015 when the New York Police Department purposely pulled back on proactive policing (systematic and aggressive enforcement of low-level violations" and heightened police presence in areas where "crime is anticipated) found that there were 2,100 fewer crime complaints during that time.
       </p>
       <p>
         So, it’s time to honor George Floyd, Breonna Taylor, Tamir Rice, and the countless other Black folks who have brutally
