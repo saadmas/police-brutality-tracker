@@ -3,6 +3,7 @@ import CachedIcon from '@material-ui/icons/Cached';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 
+import { getDateParts } from '../../utils';
 import Timeline from '../../Components/Timeline/Timeline';
 import TimelineSummary from '../../Components/TimelineSummary/TimelineSummary';
 import TimelineFilterPanel from '../../Components/TimelineFilterPanel/TimelineFilterPanel';
@@ -45,13 +46,37 @@ const TimelinePage = ({ incidentData, history, match }) => {
     setSingleIncidentTimeline(true);
   };
 
+  const sortByDate = (dateStrA, dateStrB) => {
+
+    if (!dateStrA) {
+      return 1;
+    }
+
+    if (!dateStrB) {
+      return -1;
+    }
+
+    const datePartsA = getDateParts(dateStrA);
+    const dateA = new Date(...datePartsA);
+
+    const datePartsB = getDateParts(dateStrB);
+    const dateB = new Date(...datePartsB);
+
+    if (dateSort === 'asc') {
+      return dateA - dateB;
+    }
+
+    return dateB - dateA;
+  };
+
   const getSortedIncidentData = (data) => {
     const sortedIncidentData = [...data];
     if (dateSort === 'asc') {
-      sortedIncidentData.sort((a, b) => new Date(a.date) - new Date(b.date));
+      sortedIncidentData.sort((a, b) => sortByDate(a.date, b.date));
     } else {
-      sortedIncidentData.sort((a, b) => new Date(b.date) - new Date(a.date));
+      sortedIncidentData.sort((a, b) => sortByDate(a.date, b.date));
     }
+    console.log(sortedIncidentData) ///
     return sortedIncidentData;
   };
 

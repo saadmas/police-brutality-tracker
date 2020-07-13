@@ -2,19 +2,11 @@ import React from 'react';
 import CountUp from 'react-countup';
 import Paper from '@material-ui/core/Paper';
 
+import { getDateParts } from '../../utils';
+
 import './TimelineSummary.scss';
 
 const TimelineSummary = ({ incidentData }) => {
-
-  const getDateParts = (dateStr) => {
-    return dateStr
-      .split('-')
-      .map((datePart, index) => {
-        const partAsNum = Number(datePart);
-        if (index === 1) return partAsNum - 1;
-        return partAsNum;
-      });
-  };
 
   const getTotalIncidentCount = () => incidentData.filter(incident => incident.id !== 'george-floyd').length;
 
