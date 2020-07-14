@@ -76,7 +76,7 @@ const IncidentCard = ({ incident }) => {
       <TweetEmbed
         id={tweetId}
         options={{
-          width: getSocialEmbedWidth()
+          width: '100'
         }}
       />
     );
@@ -86,7 +86,7 @@ const IncidentCard = ({ incident }) => {
     return (
       <InstagramEmbed
         url={instaLink}
-        maxWidth={getSocialEmbedWidth()}
+        maxWidth={Number(getSocialEmbedWidth())}
         hideCaption={false}
       />
     );
