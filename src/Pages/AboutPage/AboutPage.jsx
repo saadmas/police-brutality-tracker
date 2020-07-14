@@ -82,6 +82,8 @@ const AboutPage = () => {
       case 'AdditionalResources':
         items = additionalResources;
         break;
+      default:
+        break;
     }
 
     items.sort((a, b) => a.description.localeCompare(b.description));
