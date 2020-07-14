@@ -30,8 +30,11 @@
   }
 
   .CopyIncidentUrl {
-    font-size: 35px !important;
-    margin-left: 13px;
+    font-size: 42px !important;
+    margin-left: 10px;
+    border: 1px solid $primary-font-color;
+    border-radius: 50%;
+    padding: 5px;
     cursor: pointer;
   }
     
@@ -69,7 +72,11 @@
 
   
   .CopyAppUrl {
-    font-size: 38px !important;
+    font-size: 40px !important;
+    border: 1px solid $primary-font-color;
+    color: $primary-font-color;
+    border-radius: 50%;
+    padding: 5px;
     margin-left: 10px;
     cursor: pointer;
   }
@@ -98,6 +105,7 @@
     }
 
     .CopyIncidentUrl {
+      font-size: 15px !important;
       margin-left: 5px;
     }
   }
@@ -124,7 +132,7 @@
     }
 
     .CopyAppUrl {
-      font-size: 15px !important;
+      font-size: 10px !important;
     }
   }
 }

@@ -35,7 +35,7 @@ const AboutPage = () => {
         I'm a software engineer
       </a>
       &nbsp;by profession.
-      So when I stumbled upon a well organized, consistently updated data source of police brutality incidents,
+      So when I stumbled upon a well organized data source of police brutality incidents,
       I knew I had to create a website to communicate this information in a lucid, visually impactful manner. <br /> <br />
 
       My hope is that with this website:
@@ -105,8 +105,8 @@ const AboutPage = () => {
 
   return (
     <section className="AboutPage">
-      {getExpansionPanel('Why should we defund the police?', whyDefundPolice, 'WhyDefundPolice')}
       {getExpansionPanel('Why was this website built?', whyBuildThisWebsite(), 'WhyBuildThisWebsite')}
+      {getExpansionPanel('Why should we defund the police?', whyDefundPolice, 'WhyDefundPolice')}
       {getExpansionPanel('Where is the police brutality incident data sourced from?', dataSource(), 'DataSource')}
       {getExpansionPanel('How can we help outside of donations?', getItems('HowCanIHelp'), 'HowCanIHelp')}
       {getExpansionPanel('Additional resources', getItems('AdditionalResources'), 'AdditionalResources')}

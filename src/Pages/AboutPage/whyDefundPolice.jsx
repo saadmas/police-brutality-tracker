@@ -4,7 +4,7 @@ export const whyDefundPolice = (
   <>
     <section>
       <p>
-        How many more people have to unjustly die at the hands of the police before there’s real change?
+        How many more people have to die at the hands of the police before there’s real change?
       </p>
       <p>
         Even with police brutality under a microscope after George Floyd’s death and the subsequent protests across the world,
@@ -61,8 +61,11 @@ export const whyDefundPolice = (
       <p>
         While defunding the police may sound like a radical statement to some, it isn’t if you dig into what it means.
         Defunding isn’t abolishment, it doesn’t equate to getting rid of cops or eliminating police budgets entirely.
-        Defunding the police simply entails a restructuring of public spending: taking money away from the police and funneling it into
-        community services like education and medical access. Empowering community services with much-needed, currently lacking resources
+        Defunding the police simply entails a restructuring of public spending: <b>taking money away from the police and funneling it into
+        community services like education and medical access</b>.
+      </p>
+      <p>
+        Empowering community services with much-needed, currently lacking resources
         for their responsibilities reduces police intervention in situations where the police aren't really needed, like substance abuse
         disorders or mental health crises. Consequently, less police intervention means less violence and killings by cops.
       </p>
@@ -104,7 +107,6 @@ export const whyDefundPolice = (
         </a>
       </p>
       <p>
-        Police reform has failed.
         Five years ago, in addressing the murders of&nbsp;
         <a href="https://www.motherjones.com/politics/2015/01/police-misconduct-payments-eric-garner-nypd/" rel="noopener noreferrer" target="_blank">
           Eric Garner
@@ -117,11 +119,12 @@ export const whyDefundPolice = (
         <a href="https://www.motherjones.com/politics/2015/12/grand-jury-does-not-indict-cop-who-killed-tamir-rice/" rel="noopener noreferrer" target="_blank">
           Tamir Rice
         </a>
-        , implicit bias training, community police encounter sessions, and body cameras were brought in to fix police brutality.
+        , implicit bias training, community police encounter sessions, and body cameras were introduced to fix police brutality.
         Unfortunately, the body cameras have only shown that police brutality can be officially documented yet left unchecked.
         And the training only emphasizes that the deep-rooted, violent culture of law enforcement is incapable of change.
         Black Americans and other marginalized communities are&nbsp;
         <a href="https://mappingpoliceviolence.org/" rel="noopener noreferrer" target="_blank">still being disproportionately terrorized and killed by police</a>.
+        &nbsp;Police reform has failed.
       </p>
       <p>
         Some folks fear their safety is at risk if police presence is reduced. They forget that for many people the police are the real danger.

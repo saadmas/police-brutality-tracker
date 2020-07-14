@@ -76,7 +76,7 @@ const IncidentCard = ({ incident }) => {
       <TweetEmbed
         id={tweetId}
         options={{
-          width: '100'
+          width: '10'
         }}
       />
     );
@@ -124,7 +124,6 @@ const IncidentCard = ({ incident }) => {
   const getYouTubeEmbed = (youtubeLink) => {
     const qs = youtubeLink.split('?')[1];
     const videoId = getYouTubeIdFromQueryString(qs);
-    const isMobile = width <= 420;
     return (
       <YouTube
         videoId={videoId}
@@ -140,7 +139,7 @@ const IncidentCard = ({ incident }) => {
     const isMobile = width <= 420;
 
     const tweetLink = links.find(link => link.includes('twitter'));
-    if (tweetLink) {
+    if (tweetLink && !isMobile) {
       return getTweet(tweetLink);
     }
 
