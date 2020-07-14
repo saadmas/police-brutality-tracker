@@ -38,7 +38,6 @@ const SharePopover = ({ isPopoverVisible, incident }) => {
   const getFacebookShareProps = () => {
     let quote;
     let url;
-    const hashtag = '#DefundThePolice';
 
     if (incident) {
       const shareIncidentProps = getShareIncidentProps(incident);
@@ -49,7 +48,7 @@ const SharePopover = ({ isPopoverVisible, incident }) => {
       url = appUrl;
     }
 
-    return { quote, hashtag, url };
+    return { quote, url };
   }
 
   const getLinkedInShareProps = () => {
