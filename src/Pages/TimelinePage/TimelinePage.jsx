@@ -21,6 +21,16 @@ const TimelinePage = ({ incidentData, history, match }) => {
   const [isSingleIncidentTimeline, setSingleIncidentTimeline] = React.useState(false);
 
   React.useEffect(() => {
+    setRouteIncidentId(match.params.incidentId);
+  }, [match.params]);
+
+  React.useEffect(() => {
+    if (history.location.pathname === '/') {
+      setSingleIncidentTimeline(false);
+    }
+  }, [history.location.pathname]);
+
+  React.useEffect(() => {
     handleIncidentFromRoute();
   }, [routeIncidentId]);
 
@@ -32,9 +42,14 @@ const TimelinePage = ({ incidentData, history, match }) => {
   }, [dateSort, searchValue, locationFilter])
 
   const handleIncidentFromRoute = () => {
+    if (history.location.pathname === '/') {
+      return;
+    }
+
     if (!routeIncidentId) {
       setSingleIncidentTimeline(false);
       history.push('/');
+      return;
     }
 
     const isValidIncident = incidentData.find(incident => incident.id === routeIncidentId);
@@ -71,12 +86,13 @@ const TimelinePage = ({ incidentData, history, match }) => {
 
   const getSortedIncidentData = (data) => {
     const sortedIncidentData = [...data];
+
     if (dateSort === 'asc') {
       sortedIncidentData.sort((a, b) => sortByDate(a.date, b.date));
     } else {
       sortedIncidentData.sort((a, b) => sortByDate(a.date, b.date));
     }
-    console.log(sortedIncidentData) ///
+
     return sortedIncidentData;
   };
 
