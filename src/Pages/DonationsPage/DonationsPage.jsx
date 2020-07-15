@@ -17,9 +17,9 @@ const DonationsPage = () => {
   const getTabContent = () => {
     switch (tab) {
       case 0:
-        return <DonationOrganizationTab />;
-      case 1:
         return <BailFundsTable />;
+      case 1:
+        return <DonationOrganizationTab />;
       case 2:
       default:
         return <DonationOrganizationTab donationType="blackBusinesses" />;

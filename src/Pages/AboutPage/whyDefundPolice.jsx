@@ -11,7 +11,7 @@ export const whyDefundPolice = (
         the police continue to abuse their power and terrorize civilians.
       </p>
       <p>
-        A police officer&nbsp;
+        <em>(TW) </em>A police officer&nbsp;
         <a href="https://defund-the-police.today/timeline/tx-houston-1" rel="noopener noreferrer" target="_blank">
           trampled a protester with a horse
         </a>
