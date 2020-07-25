@@ -14,11 +14,10 @@
     "react-instagram-embed": "^1.5.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
-    "react-scrollable-anchor": "^0.6.1",
     "react-share": "^4.2.0",
     "react-tweet-embed": "^1.2.2",
+    "react-twitter-embed": "^3.0.3",
     "react-vertical-timeline-component": "^3.0.2",
-    "react-visibility-sensor": "^5.1.1",
     "react-youtube": "^7.11.2",
     "use-debounce": "^3.4.2"
   },

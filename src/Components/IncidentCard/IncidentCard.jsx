@@ -1,5 +1,5 @@
 import React from 'react';
-import TweetEmbed from 'react-tweet-embed';
+import { TwitterTweetEmbed } from 'react-twitter-embed';
 import InstagramEmbed from 'react-instagram-embed';
 import YouTube from 'react-youtube';
 import Button from '@material-ui/core/Button';
@@ -73,10 +73,11 @@ const IncidentCard = ({ incident }) => {
     let tweetId = linkParts[linkParts.length - 1];
     tweetId = tweetId.split('?')[0];
     return (
-      <TweetEmbed
-        id={tweetId}
+      <TwitterTweetEmbed
+        tweetId={tweetId}
+        placeholder="Loading Tweet ..."
         options={{
-          width: '10'
+          width: getSocialEmbedWidth()
         }}
       />
     );

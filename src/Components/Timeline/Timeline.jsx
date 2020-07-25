@@ -3,7 +3,6 @@ import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeli
 import 'react-vertical-timeline-component/style.min.css';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
-import ScrollableAnchor from 'react-scrollable-anchor';
 
 import Handcuffed from '../../Icons/Handcuffed';
 import Handcuffs from '../../Icons/Handcuffs';
@@ -69,9 +68,7 @@ const Timeline = ({ incidentData, loadMore, fullIncidentListLength, isSingleInci
           iconStyle={{ background: '#0A0A0A' }}
           {...styleProps}
         >
-          <ScrollableAnchor id={incident.id}>
-            <IncidentCard incident={incident} />
-          </ScrollableAnchor>
+          <IncidentCard incident={incident} />
         </VerticalTimelineElement>
       );
     });

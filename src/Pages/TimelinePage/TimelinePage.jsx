@@ -7,6 +7,7 @@ import { getDateParts } from '../../utils';
 import Timeline from '../../Components/Timeline/Timeline';
 import TimelineSummary from '../../Components/TimelineSummary/TimelineSummary';
 import TimelineFilterPanel from '../../Components/TimelineFilterPanel/TimelineFilterPanel';
+import useWindowDimensions from '../../Hooks/useWindowDimensions';
 
 import './TimelinePage.scss';
 
@@ -17,8 +18,9 @@ const TimelinePage = ({ incidentData, history, match }) => {
   const [timelineData, setTimelineData] = React.useState(incidentData);
   const [locationFilter, setLocationFilter] = React.useState({ location: '', type: 'state' });
   const [searchValue, setSearchValue] = React.useState('');
-  const [timelineSize, setTimeLineSize] = React.useState(timelineIncrement);
+  const [timelineSize, setTimelineSize] = React.useState(timelineIncrement);
   const [isSingleIncidentTimeline, setSingleIncidentTimeline] = React.useState(false);
+  const { width } = useWindowDimensions();
 
   React.useEffect(() => {
     setRouteIncidentId(match.params.incidentId);
@@ -38,7 +40,7 @@ const TimelinePage = ({ incidentData, history, match }) => {
     const filteredData = getFilteredIncidentData();
     const sortedData = getSortedIncidentData(filteredData);
     setTimelineData(sortedData);
-    setTimeLineSize(timelineIncrement);
+    setTimelineSize(timelineIncrement);
   }, [dateSort, searchValue, locationFilter])
 
   const handleIncidentFromRoute = () => {
@@ -158,7 +160,22 @@ const TimelinePage = ({ incidentData, history, match }) => {
   };
 
   const loadMore = () => {
-    setTimeLineSize(prevSize => prevSize + timelineIncrement);
+    setTimelineSize(prevSize => prevSize + timelineIncrement);
+    preventAutoScrollToLoadMore();
+  };
+
+  const preventAutoScrollToLoadMore = () => {
+    const isMobile = width <= 420;
+    if (isMobile) {
+      return;
+    }
+
+    let x = window.scrollX;
+    let y = window.scrollY;
+    window.onscroll = function () { window.scrollTo(x, y); };
+    setTimeout(() => {
+      window.onscroll = function () { };
+    }, 100);
   };
 
   const showFullTimeline = () => {
