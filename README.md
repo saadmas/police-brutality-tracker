@@ -12,12 +12,12 @@ View the website [here](https://defund-the-police.today/)
 
 ### Timeline of police brutality incidents
 
-![Timeline](screenshots/timeline.jpg)
+![Timeline](screenshots/timeline.JPG)
 
 ### Donations 
 
-![Donations](screenshots/donations.jpg)
+![Donations](screenshots/donations.JPG)
 
 ### About
 
-![About](screenshots/about.jpg)
+![About](screenshots/about.JPG)
