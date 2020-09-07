@@ -36,8 +36,8 @@ const DonationsPage = () => {
         centered
         variant="fullWidth"
       >
-        <Tab label="Organizations" textColor="primary" />
         <Tab label="Bail Funds" textColor="primary" />
+        <Tab label="Organizations" textColor="primary" />
         <Tab label="Black Owned Businesses" textColor="primary" />
       </Tabs>
       {getTabContent()}

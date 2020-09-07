@@ -27,7 +27,7 @@ const AboutPage = () => {
 
   const whyBuildThisWebsite = () => (
     <article>
-      Upon George Floyd's tragic murder and the subsequent protests against systemic racism and police brutality across the globe., like most folks,
+      Upon George Floyd's tragic murder and the subsequent protests against systemic racism and police brutality across the globe, like most folks,
       I knew I had to do my part for the movement.
       Beyond educating myself, making donations, and sharing pertinent information on social media,
       I wondered what I could do in my unique capacity to support the movement against police brutality.&nbsp;
